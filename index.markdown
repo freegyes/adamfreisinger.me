@@ -1,4 +1,5 @@
 ---
 layout: home
 ---
-![Photos](/public/images/postcard-handheld.jpg)
+
+![A handheld postcard of mine](/public/images/postcard-handheld.jpg)
