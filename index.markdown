@@ -1,4 +1,4 @@
 ---
 layout: home
 ---
-![Adam Freisinger](/public/images/adam-freisinger.jpg)
+![Photos](/public/images/postcard-handheld.jpg)
