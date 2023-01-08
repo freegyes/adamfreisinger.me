@@ -274,7 +274,9 @@ table td { border: 1px solid #e8e8e8; }
 
 .highlight .il { color: #099; }
 
-.hero-section { display: flex; justify-content: space-evenly; margin-bottom: 1rem; padding: 0.5rem; border-top: 1px solid lightgrey; border-bottom: 1px solid lightgrey; }
+body { background-image: url("/public/images/yellow-splashes-watercolour.jpg"); background-size: cover; }
+
+.hero-section { display: flex; justify-content: space-evenly; margin-bottom: 1rem; padding: 0.5rem; border-top: 1px solid lightgrey; border-bottom: 1px solid #d3d3d3; }
 
 .hero-portrait > img { border-radius: 100%; max-height: 150px; }
 
