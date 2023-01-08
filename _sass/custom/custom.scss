@@ -1,5 +1,3 @@
-
-
 body {
     background-image: url('#{$baseurl}/public/images/yellow-splashes-watercolour.jpg');
     background-size: cover;
@@ -9,7 +7,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 1rem;
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid #d3d3d3;
 }
@@ -19,6 +17,32 @@ body {
     max-height: 150px;
 }
 
+.hero-bio {
+    padding: 1rem;
+    background-image: linear-gradient(
+        180deg,
+        hsla(0, 0%, 35.29%, 0) 0%,
+        hsla(0, 0%, 34.53%, 0.034375) 16.36%,
+        hsla(0, 0%, 32.42%, 0.125) 33.34%
+    );
+}
+
 .site-header {
     border-top: 0px;
+}
+
+.footer-col-right {
+    float: right;
+    text-align: end;
+    margin-bottom: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+
+@include media-query($on-palm + 200) {
+.footer-col-right {
+    float: none;
+    text-align: left;
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+}
 }

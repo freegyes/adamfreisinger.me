@@ -276,10 +276,16 @@ table td { border: 1px solid #e8e8e8; }
 
 body { background-image: url("/public/images/yellow-splashes-watercolour.jpg"); background-size: cover; }
 
-.hero-section { display: flex; justify-content: space-evenly; margin-bottom: 1rem; padding: 0.5rem; border-top: 1px solid lightgrey; border-bottom: 1px solid #d3d3d3; }
+.hero-section { display: flex; justify-content: space-evenly; margin-bottom: 1rem; padding: 1rem; border-top: 1px solid lightgrey; border-bottom: 1px solid #d3d3d3; }
 
 .hero-portrait > img { border-radius: 100%; max-height: 150px; }
 
+.hero-bio { padding: 1rem; background-image: linear-gradient(180deg, rgba(90, 90, 90, 0) 0%, rgba(88, 88, 88, 0.034375) 16.36%, rgba(83, 83, 83, 0.125) 33.34%); }
+
 .site-header { border-top: 0px; }
+
+.footer-col-right { float: right; text-align: end; margin-bottom: 15px; padding-left: 15px; }
+
+@media screen and (max-width: 800px) { .footer-col-right { float: none; text-align: left; width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); } }
 
 /*# sourceMappingURL=main.css.map */
