@@ -32,6 +32,11 @@ youtube_username: channel/UC6XYfDsswS7iY-p6nDej-6Q
 github_username: freegyes
 linkedin_username: freisingeradam
 
+collections:
+  projects:
+    output: true
+
+
 # Build settings
 theme: minima
 plugins:

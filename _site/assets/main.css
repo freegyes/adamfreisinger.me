@@ -282,6 +282,14 @@ body { background-image: url("/public/images/yellow-splashes-watercolour.jpg"); 
 
 .hero-bio { padding: 1rem; background-image: linear-gradient(180deg, rgba(90, 90, 90, 0) 0%, rgba(88, 88, 88, 0.034375) 16.36%, rgba(83, 83, 83, 0.125) 33.34%); }
 
+.projects-section { padding: 20px 0; }
+
+.projects-container { display: flex; flex-wrap: wrap; justify-content: space-around; }
+
+.project-card { box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 10px; padding: 20px; width: 300px; /* Adjust as needed */ text-align: center; }
+
+.project-card img { max-width: 100%; height: auto; }
+
 .site-header { border-top: 0px; }
 
 .footer-col-right { float: right; text-align: end; margin-bottom: 15px; padding-left: 15px; }
