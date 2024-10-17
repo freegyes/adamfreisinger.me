@@ -1,1 +1,4 @@
-# Site title
+---
+layout: welcome
+title: Welcome
+---
