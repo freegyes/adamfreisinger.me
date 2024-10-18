@@ -29,12 +29,15 @@
     </header>
     
     <main>
-        <section class="section">
-            <div class="container">
-                <div class="content">
-                </div>
-            </div>
-        </section>
+      <div class="columns is-centered">
+        <div class="column is-two-thirds ">
+          <section class="section has-background-light my-6">
+              <h1 class="title">{{ about.title }}</h1>
+              <p>{{ about.content1 }}</p>
+              <p>{{ about.content2 }}</p>
+          </section>
+        </div>
+      </div>
     </main>
 
     {% include "_footer.html" %}
