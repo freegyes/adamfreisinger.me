@@ -3,3 +3,9 @@
     background-size: cover;
     background-position: center;
 }
+
+/* Utility Classes */
+
+.no-wrap {
+    white-space: nowrap;
+}

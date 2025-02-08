@@ -14,12 +14,12 @@
                         {{ site.title }}
                       </h1>
                       <p class="tagline is-size-5">
-                        a curious generalist exploring the wonders of the universe
+                        {{ hero.tagline}}
                       </p>
                 </div>
                 <div class="column">
                     <figure image is-3by2>
-                        <img src="/assets/images/postcard-handheld.jpg" alt="A handheld postcard">
+                        <img src="{{ hero.image }}" alt="{{ hero.alt }}">
                     </figure>
                 </div>
             </div>
@@ -29,15 +29,80 @@
     </header>
     
     <main>
-      <div class="columns is-centered">
-        <div class="column is-two-thirds ">
-          <section class="section has-background-light my-6">
-              <h1 class="title">{{ about.title }}</h1>
-              <p>{{ about.content1 }}</p>
-              <p>{{ about.content2 }}</p>
-          </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="title is-2">{{ projects.title }}</h2>
+          
+          {% for project in projects.items %}
+          <a href="{{ project.url }}" target="_blank" rel="noopener" class="mb-5 has-text-grey-dark">
+            <div class="card mb-5">
+              <div class="card-content">
+                <article class="media">
+                  <figure class="media-left">
+                    <p class="image is-128x128">
+                      <img src="{{ project.image }}" alt="{{ project.alt }}">
+                    </p>
+                  </figure>
+                  <div class="media-content">
+                    <p class="title is-4">
+                      {{ project.name }}
+                    </p>
+                    <p class="content">
+                      {{ project.description }}
+                      <span class="no-wrap is-small has-text-grey">[ 🔗 {{ project.url | replace: 'https://', '' }} ]</span>
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+          
         </div>
-      </div>
+      </section>
+
+      <section class="section has-background-light">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-two-thirds">
+              <div class="card has-background-white">
+                <div class="card-content has-text-centered">
+                  <h1 class="title">{{ about.title }}</h1>
+                  <div class="columns is-vcentered">
+                    <div class="column is-two-quarters has-text-left">
+                      <p>{{ about.content1 }}</p>
+                      <p>{{ about.content2 }}</p>
+                    </div>
+                    
+                    <div class="column is-two-quarters">
+                      <figure class="image is-5by3">
+                        <img src="{{ about.photo }}" alt="{{ about.alt }}">
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- card -->
+            </div><!-- column is-two-thirds -->
+          </div><!-- columns is-centered -->
+        </div><!-- container -->
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-one-quarter">
+              <a href="{{site.socials.instagram}}" target="_blank" rel="noopener" >
+                <figure class="image is-3by2">
+                  <img src="/assets/images/postcard-handheld.jpg" alt="A handheld postcard of mine.">
+                </figure>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
     </main>
 
     {% include "_footer.html" %}
