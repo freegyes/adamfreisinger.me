@@ -4,6 +4,7 @@
     {% include "_head.html" %}
   
     <body>
+
     <header>
       <div class="hero is-fullheight hero-background">
         <div class="hero-body">
@@ -14,12 +15,12 @@
                         {{ site.title }}
                       </h1>
                       <p class="tagline is-size-5">
-                        {{ hero.tagline}}
+                        {{ site.tagline}}
                       </p>
                 </div>
                 <div class="column">
                     <figure image is-3by2>
-                        <img src="{{ hero.image }}" alt="{{ hero.alt }}">
+                        <img src="{{ images.hero }}" alt="{{ images.hero_alt }}">
                     </figure>
                 </div>
             </div>
@@ -87,6 +88,41 @@
           </div><!-- columns is-centered -->
         </div><!-- container -->
       </section>
+
+      <!-- Posts Section -->
+      <section class="section">
+        <div class="container">
+          <h2 class="title is-2">{{ posts.title }}</h2>
+          <div class="columns is-multiline">
+            {% for post in collections.posts reversed %}
+            <div class="column is-one-third is-flex">
+              <a href="{{ post.url }}" class="card-link is-flex-grow-1">
+                <div class="card custom-card-posts">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="{{ post.data.images.thumbnail }}" alt="Thumbnail image for {{ post.data.title }}">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="title is-4">{{ post.data.title }}</h3>
+                    <div class="content">
+                      {{ post.data.excerpt }}
+                    </div>
+                  </div>
+                  <footer class="card-footer">
+                    <span class="card-footer-item is-size-6 has-text-grey">{{ post.date | date: '%Y-%m-%d' }}</span>
+                    <span class="card-footer-item has-text-link">{{ posts.read_more }}</span>
+                  </footer>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <hr class="container" />
+
 
       <section class="section">
         <div class="container">

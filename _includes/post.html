@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+    {% include "_head.html" %}
+  
+    <body>
+      
+    {% include "_navbar.html" %}
+
+    <header style="background: url('{{ images.hero }}') no-repeat center center; background-size: cover;">
+      <div class="hero is-fullheight-with-navbar" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title has-text-grey-lighter is-size-1">
+              {{ title }}
+            </h1>
+          </div>
+        </div>
+        <div class="hero-foot" style="background-color: rgba(0, 0, 0, 0.3);">
+          <div class="container has-text-right p-2">
+            <span class="has-text-grey-lighter">
+              <span class="icon">
+                <i class="fas fa-pencil"></i>
+              </span> 
+              {{ page.date | date: "%Y-%m-%d" }}
+              |
+              <span class="icon">
+                <i class="fas fa-glasses"></i>
+              </span> 
+              <span>{{ readingTime }}</span>
+            </span>
+              
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="container pb-6">
+      <div class="columns is-centered">
+        <div class="column is-three-fifths">
+          <article>
+            <div class="box has-background-light is-italic m-6 is-size-5">
+              <blockquote>
+                {{ excerpt }}
+              </blockquote>
+            </div>
+            {{ content }}
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      {% include "_footer.html" %}
+    </footer>
+  </body>
+</html>

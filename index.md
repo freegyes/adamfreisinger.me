@@ -1,10 +1,11 @@
 ---
 layout: welcome
 title: Welcome
-hero:
-    tagline: A curious generalist exploring the wonders of the universe 
-    image: /assets/images/adam_river.jpg
-    alt: Yes, that is me.
+excerpt: >
+  A curious generalist at heart, I explore the intersection of craft, design, and technology—shaping ideas into tangible objects and meaningful experiences. From woodworking and digital design to education and problem-solving, my projects reflect a passion for high-quality craftsmanship, structured thinking, and hands-on making. Whether creating functional furniture, intuitive learning tools, or thought-provoking projects, I believe in exploring deeply, making with intention, and sharing what I learn.
+images:
+  hero: /assets/images/adam_river.jpg
+  hero_alt: Yes, that is me.
 about: 
     title: At First Glance
     content1: I’m a curious generalist who blends hands-on creativity with analytical thinking. I love turning abstract ideas into tangible objects, whether it’s woodworking, digital design, or something in between. I’m driven by a passion for high-quality craftsmanship, a love for structure and order, and a dedication to exploring how things work. With a background in education, design, and technology, I bring a balanced approach—both strategic and practical—to every project I take on.
@@ -12,7 +13,7 @@ about:
     photo: /assets/images/adam_rainbow.jpg
     alt: Yes, that is also me.
 projects:
-    title: Explore, Create, Inspire
+    title: The Heftier Chapters of Making & Meaning
     items:
       - name: facirkli.design – Functional and Aesthetic Custom Furniture
         url: https://facirkli.design
@@ -29,4 +30,7 @@ projects:
         image: /assets/images/yearcompass.png
         alt: YearCompass booklet illustration
         description: As a co-founder of YearCompass, I played a key role in both designing the virtual booklet and overseeing its physical production. This simple yet powerful tool guides you through structured self-reflection, helping turn past experiences into stepping stones for the future. YearCompass has quietly found its way into the hands of millions worldwide.
+posts:
+    title: Field Notes
+    read_more: Read more...
 ---

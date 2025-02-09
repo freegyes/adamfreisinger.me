@@ -1,7 +1,8 @@
 {
-    "email": "hello@adamfreisinger.me",
-    "tagline": "Explore, Create, Inspire",
     "title": "Adam Freisinger",
+    "tagline": "Explore, Create, Inspire",
+    "signoff": "Made with curiosity, crafted with care – a generalist exploring the wonders of the universe.",
+    "email": "hello@adamfreisinger.me",
     "socials": {
       "instagram": "https://www.instagram.com/adam.freisinger/"
     }
