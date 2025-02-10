@@ -8,12 +8,49 @@
     flex-grow: 1;
   }
 
+.navbar,
 .footer,
 .hero-background {
     background-image: url('/assets/images/yellow-splashes-watercolour.jpg');
     background-size: cover;
     background-position: center;
 }
+
+.navbar {
+  position: relative; 
+  overflow: hidden; 
+}
+
+.navbar-item {
+  position: relative; 
+  overflow: visible; 
+}
+
+.navbar-item:hover {
+  background-color: transparent !important; 
+  box-shadow: none !important;
+}
+
+.navbar-item:hover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 80%;
+  height: 2.5em;
+  background: rgba(0, 0, 0, 0.3);
+  filter: blur(30px);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+
+/* Typography */
+.rubik-vinyl-regular {
+  font-family: "Rubik Vinyl", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 /* Utility Classes */
 
