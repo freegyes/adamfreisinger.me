@@ -4,49 +4,77 @@ excerpt: From 3D sketches to tangible weight, this coffee table marks my first s
 tags:
   - creation
   - woodworking
-eleventyComputed:
-  images: 
-    hero: /assets/images/posts/{{ page.fileSlug }}-hero.jpg
-    thumbnail: /assets/images/posts/{{ page.fileSlug }}-thumbnail.jpg
-    img01: /assets/images/posts/{{ page.fileSlug }}-01.jpg
-    img02: /assets/images/posts/{{ page.fileSlug }}-02.mp4
-    img03: /assets/images/posts/{{ page.fileSlug }}-03.jpg
-    img04: /assets/images/posts/{{ page.fileSlug }}-04.jpg
-    img05: /assets/images/posts/{{ page.fileSlug }}-05.jpg
+media:
+  hero:
+    src: /assets/images/posts/coffee-table-hero.jpg
+    alt: An oak coffee table.
+    title: Beauty shot in the woods
+    width: 1920
+    height: 1080
+    aspect: is-16by9
+  thumbnail:
+    src: /assets/images/posts/coffee-table-thumbnail.jpg
+    alt: A preview of the coffee table project.
+    title: The leg details
+    width: 1024
+    height: 768
+    aspect: is-4by3
+  content:
+    img01:
+      src: /assets/images/posts/coffee-table-01.jpg
+      alt: From 3D plans and oak planks...
+      title: From 3D plans and oak planks...
+      width: 1080
+      height: 1920
+      aspect: is-9by16
+    img02:
+      src: /assets/images/posts/coffee-table-02.mp4
+      alt: through lots of hours and even more clamps...
+      title: through lots of hours and even more clamps...
+      type: video
+      width: 1080
+      height: 1920
+      aspect: is-9by16
+    img03:
+      src: /assets/images/posts/coffee-table-03.jpg
+      alt: with a charming character...
+      title: with a charming character...
+      width: 1080
+      height: 1920
+      aspect: is-9by16
+    img04:
+      src: /assets/images/posts/coffee-table-04.jpg
+      alt: ...to a welcoming home.
+      title: ...to a welcoming home.
+      width: 1080
+      height: 1920
+      aspect: is-9by16
+    img05:
+      src: /assets/images/posts/coffee-table-05.jpg
+      alt: An oak coffee table in the woods
+      title: Taking a stop in the woods
+      width: 1366
+      height: 768
+      aspect: is-16by9
+    img06:
+      src: /assets/images/posts/coffee-table-06.jpg
+      alt: A detailed shot of the table.
+      title: The leg details
+      width: 1366
+      height: 768
+      aspect: is-16by9
 ---
 
-<div class="container">
-  <div class="columns is-multiline is-variable is-2 px-3">
-    <div class="column is-half">
-      <figure class="image is-9by16">
-        <img src="{{ images.img01 }}" alt="Media 01">
-      </figure>
-    </div>
-    <div class="column is-half">
-      <figure class="video is-9by16">
-        <video autoplay loop muted playsinline style="width: 100%; height: 100%;">
-          <source src="{{ images.img02 }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </figure>
-    </div>
-    <div class="column is-half">
-      <figure class="image is-9by16">
-        <img src="{{ images.img03 }}" alt="Media 03">
-      </figure>
-    </div>
-    <div class="column is-half">
-      <figure class="image is-9by16">
-        <img src="{{ images.img04 }}" alt="Media 04">
-      </figure>
-    </div>
-  </div>
-</div>
+# Title
+Let's have some lorem ipsum sic dolor amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut eros eget eros ultrices aliquet. Nulla facilisi. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc n
 
-<div class="container p-3">
-    <figure class="image is-16by9">
-      <img src="{{ images.img05 }}" alt="In the woods">
-    </figure>
-  </div>
+{% renderMedia media.content.img05 %}
+{% renderMedia media.content.img06 %}
 
 
+{% mediaGrid %}
+  {% gridMedia media.content.img01 %}
+  {% gridMedia media.content.img02 %}
+  {% gridMedia media.content.img03 %}
+  {% gridMedia media.content.img04 %}
+{% endmediaGrid %}

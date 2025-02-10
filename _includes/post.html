@@ -7,7 +7,7 @@
       
     {% include "_navbar.html" %}
 
-    <header style="background: url('{{ images.hero }}') no-repeat center center; background-size: cover;">
+    <header style="background: url('{{ media.hero.src }}') no-repeat center center; background-size: cover;">
       <div class="hero is-fullheight-with-navbar" style="background-color: rgba(0, 0, 0, 0.5);">
         <div class="hero-body">
           <div class="container has-text-centered">
@@ -35,17 +35,21 @@
       </div>
     </header>
 
-    <section class="container pb-6">
-      <div class="columns is-centered">
-        <div class="column is-three-fifths">
-          <article>
-            <div class="box has-background-light is-italic m-6 is-size-5">
-              <blockquote>
-                {{ excerpt }}
-              </blockquote>
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-three-fifths">
+            <div class="columns is-centered is-mobile">
+              <div class="column is-four-fifths">
+                <blockquote class="block box has-background-light is-italic mb-5">
+                  {{ excerpt }}
+                </blockquote>
+              </div>
             </div>
-            {{ content }}
-          </article>
+            <article class="content block">
+              {{ content }}
+            </article>
+          </div>
         </div>
       </div>
     </section>
