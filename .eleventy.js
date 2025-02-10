@@ -1,9 +1,34 @@
+const siteData = require("./_data/site.json");
+const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
+
 module.exports = async function(eleventyConfig) {
   // Passthrough copies
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy({ "assets/favicons": "/" });
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("main.css");
+
+  eleventyConfig.addTemplateFormats("njk");
+  
+  // Register the RSS plugin
+  eleventyConfig.addPlugin(feedPlugin, {
+		type: "atom", // or "rss", "json"
+		outputPath: "/feed.xml",
+		collection: {
+			name: "posts", // iterate over `collections.posts`
+			limit: 10,     // 0 means no limit
+		},
+		metadata: {
+			language: "en",
+			title: siteData.title,
+			subtitle: siteData.tagline,
+			base: siteData.url,
+			author: {
+				name: siteData.author,
+				email: siteData.email,
+			}
+		}
+	});
   
   // Global computed data: readingTime (based on word count)
   eleventyConfig.addGlobalData("eleventyComputed", {
@@ -138,6 +163,8 @@ module.exports = async function(eleventyConfig) {
     dir: {
       input: ".",
       includes: "_includes",
+      pathPrefix: "/",
+      url: "https://adamfreisinger.me", // Ensure this is a valid absolute URL
       output: "_site"
     }
   };
