@@ -65,13 +65,12 @@ media:
       aspect: is-16by9
 ---
 
-{% renderMedia media.content.img05 %}
-{% renderMedia media.content.img06 %}
-
-
 {% mediaGrid %}
   {% gridMedia media.content.img01 %}
   {% gridMedia media.content.img02 %}
   {% gridMedia media.content.img03 %}
   {% gridMedia media.content.img04 %}
 {% endmediaGrid %}
+
+{% renderMedia media.content.img05 %}
+{% renderMedia media.content.img06 %}
