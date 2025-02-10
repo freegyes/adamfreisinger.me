@@ -65,9 +65,6 @@ media:
       aspect: is-16by9
 ---
 
-# Title
-Let's have some lorem ipsum sic dolor amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut eros eget eros ultrices aliquet. Nulla facilisi. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, eget ultricies nunc nisl eget nunc. Sed euismod, nisl eget ultricies aliquam, nunc n
-
 {% renderMedia media.content.img05 %}
 {% renderMedia media.content.img06 %}
 
