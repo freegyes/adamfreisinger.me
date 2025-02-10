@@ -14,14 +14,14 @@
     <script src="https://kit.fontawesome.com/87c79792aa.js" crossorigin="anonymous"></script><!-- Open Graph Meta Tags -->
     <meta property="og:site_name" content="Adam Freisinger">
     <meta property="og:title" content="Welcome">
-    <meta property="og:description" content="A curious generalist at heart, I explore the intersection of craft, design, and technology—shaping ideas into tangible objects and meaningful experiences. From woodworking and digital design to education and problem-solving, my projects reflect a passion for high-quality craftsmanship, structured thinking, and hands-on making. Whether creating functional furniture, intuitive learning tools, or thought-provoking projects, I believe in exploring deeply, making with intention, and sharing what I learn.
+    <meta property="og:description" content="A generalist’s quiet corner of the internet. I design, build, and teach—sometimes with wood, sometimes with code, always with curiosity. Exploring craft, design, and technology through projects, field notes, and thoughts on making things that matter.
 ">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://adamfreisinger.me/"><meta property="og:image" content="https://adamfreisinger.me/assets/images/adam_river.jpg">
-    <meta property="og:image:alt" content="Welcome"><meta property="article:published_time" content="2025-02-10T16:20:40Z"><!-- Twitter Card Meta Tags -->
+    <meta property="og:image:alt" content="Welcome"><meta property="article:published_time" content="2025-02-10T17:39:25Z"><!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Welcome">
-    <meta name="twitter:description" content="A curious generalist at heart, I explore the intersection of craft, design, and technology—shaping ideas into tangible objects and meaningful experiences. From woodworking and digital design to education and problem-solving, my projects reflect a passion for high-quality craftsmanship, structured thinking, and hands-on making. Whether creating functional furniture, intuitive learning tools, or thought-provoking projects, I believe in exploring deeply, making with intention, and sharing what I learn.
+    <meta name="twitter:description" content="A generalist’s quiet corner of the internet. I design, build, and teach—sometimes with wood, sometimes with code, always with curiosity. Exploring craft, design, and technology through projects, field notes, and thoughts on making things that matter.
 "><meta name="twitter:image" content="https://adamfreisinger.me/assets/images/adam_river.jpg"></head>
   
     <body>
@@ -31,7 +31,7 @@
         <div class="hero-body">
           <div class="container">
             <div class="columns is-vcentered">
-                <div class="column is-half">
+                <div class="column is-5">
                     <h1 class="title rubik-vinyl-regular">
                         Adam Freisinger
                       </h1>
@@ -40,7 +40,7 @@
                       </p>
                 </div>
                 <div class="column">
-                    <figure class="image is-4by3">
+                    <figure class="image custom-hero is-4by3">
                         <img src="/assets/images/adam_river.jpg" alt="Yes, that is me.">
                     </figure>
                 </div>
@@ -52,12 +52,12 @@
     
     <main>
 
-      <section class="section has-background-light">
+      <section class="welcome section has-background-light">
         <div class="container">
           <div class="columns is-centered">
             <div class="column is-6">
               <h3 class="title is-size-3">Welcome!</h3>
-              <p>If you’re here, you’re probably curious—about craft, design, technology, or the art of making things. I am too. My name is Adam, and I spend my days exploring the intersection of these worlds, turning ideas into tangible objects, meaningful experiences, and tools for learning. This site is where I document what I create, what I learn, and the stories behind them.
+              <p>Somehow, you’ve landed here. Maybe curiosity brought you—about craft, design, technology, or the art of making things. If so, you’re in good company! My name is Adam, and I spend my days exploring the intersection of these worlds, turning ideas into tangible objects, meaningful experiences, and tools for learning. This site is where I document what I create, what I learn, and the stories behind them.
 </p>
             </div>
           </div>
@@ -182,7 +182,7 @@
 </p>
               <p class="block">If you’ve made it this far, you’re probably my kind of person. Send a song you’ve had on repeat this week, or tell me: if you were a vending machine, what would you dispense?
 </p>
-              <p class="block">No pressure—just a fellow curious human open to a good conversation. Say hi anytime at:
+              <p class="block">No pressure—just a fellow curious human here, open to a good conversation. Say hi anytime at:
  <a href="mailto:hello@adamfreisinger.me">hello@adamfreisinger.me</a></p>
             </div>
           </div>
@@ -214,3 +214,92 @@
   
   </body>
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!window.matchMedia("(pointer: fine)").matches) return; // Only run for devices with a mouse
+
+    const welcomeSection = document.querySelector(".hero.hero-background");
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    
+    document.body.appendChild(canvas);
+    
+    canvas.style.position = "fixed";
+    canvas.style.pointerEvents = "none";
+    canvas.style.zIndex = "10";
+
+    const shapes = ["rect", "circle", "triangle", "diamond", "hexagon", "star"];
+    let currentShape = shapes[Math.floor(Math.random() * shapes.length)];
+
+    function resizeCanvas() {
+        const rect = welcomeSection.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        canvas.style.top = `${rect.top}px`;
+        canvas.style.left = `${rect.left}px`;
+        currentShape = shapes[Math.floor(Math.random() * shapes.length)];
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("scroll", resizeCanvas);
+
+    welcomeSection.addEventListener("mousemove", (e) => {
+        const rect = welcomeSection.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        ctx.fillStyle = "rgba(0, 0, 0, 0.42)"; 
+
+        switch (currentShape) {
+            case "rect":
+                ctx.fillRect(x, y, 7, 7);
+                break;
+            case "circle":
+                ctx.beginPath();
+                ctx.arc(x, y, 4, 0, Math.PI * 2);
+                ctx.fill();
+                break;
+            case "triangle":
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(x + 5, y + 9);
+                ctx.lineTo(x - 5, y + 9);
+                ctx.closePath();
+                ctx.fill();
+                break;
+            case "diamond":
+                ctx.beginPath();
+                ctx.moveTo(x, y - 5);
+                ctx.lineTo(x + 5, y);
+                ctx.lineTo(x, y + 5);
+                ctx.lineTo(x - 5, y);
+                ctx.closePath();
+                ctx.fill();
+                break;
+            case "hexagon":
+                ctx.beginPath();
+                ctx.moveTo(x - 4, y - 3);
+                ctx.lineTo(x + 4, y - 3);
+                ctx.lineTo(x + 6, y);
+                ctx.lineTo(x + 4, y + 3);
+                ctx.lineTo(x - 4, y + 3);
+                ctx.lineTo(x - 6, y);
+                ctx.closePath();
+                ctx.fill();
+                break;
+            case "star":
+                ctx.beginPath();
+                ctx.moveTo(x, y - 5);
+                ctx.lineTo(x + 3, y + 2);
+                ctx.lineTo(x - 5, y - 2);
+                ctx.lineTo(x + 5, y - 2);
+                ctx.lineTo(x - 3, y + 2);
+                ctx.closePath();
+                ctx.fill();
+                break;
+        }
+    });
+  });
+</script>
