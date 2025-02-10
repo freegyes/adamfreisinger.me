@@ -10,7 +10,7 @@
         <div class="hero-body">
           <div class="container">
             <div class="columns is-vcentered">
-                <div class="column is-half">
+                <div class="column is-5">
                     <h1 class="title rubik-vinyl-regular">
                         {{ site.title }}
                       </h1>
@@ -19,7 +19,7 @@
                       </p>
                 </div>
                 <div class="column">
-                    <figure class="image is-4by3">
+                    <figure class="image custom-hero is-4by3">
                         <img src="{{ images.hero }}" alt="{{ images.hero_alt }}">
                     </figure>
                 </div>
@@ -31,7 +31,7 @@
     
     <main>
 
-      <section class="section has-background-light">
+      <section class="welcome section has-background-light">
         <div class="container">
           <div class="columns is-centered">
             <div class="column is-6">
@@ -148,3 +148,92 @@
   
   </body>
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!window.matchMedia("(pointer: fine)").matches) return; // Only run for devices with a mouse
+
+    const welcomeSection = document.querySelector(".hero.hero-background");
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    
+    document.body.appendChild(canvas);
+    
+    canvas.style.position = "fixed";
+    canvas.style.pointerEvents = "none";
+    canvas.style.zIndex = "10";
+
+    const shapes = ["rect", "circle", "triangle", "diamond", "hexagon", "star"];
+    let currentShape = shapes[Math.floor(Math.random() * shapes.length)];
+
+    function resizeCanvas() {
+        const rect = welcomeSection.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        canvas.style.top = `${rect.top}px`;
+        canvas.style.left = `${rect.left}px`;
+        currentShape = shapes[Math.floor(Math.random() * shapes.length)];
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("scroll", resizeCanvas);
+
+    welcomeSection.addEventListener("mousemove", (e) => {
+        const rect = welcomeSection.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        ctx.fillStyle = "rgba(0, 0, 0, 0.42)"; 
+
+        switch (currentShape) {
+            case "rect":
+                ctx.fillRect(x, y, 7, 7);
+                break;
+            case "circle":
+                ctx.beginPath();
+                ctx.arc(x, y, 4, 0, Math.PI * 2);
+                ctx.fill();
+                break;
+            case "triangle":
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(x + 5, y + 9);
+                ctx.lineTo(x - 5, y + 9);
+                ctx.closePath();
+                ctx.fill();
+                break;
+            case "diamond":
+                ctx.beginPath();
+                ctx.moveTo(x, y - 5);
+                ctx.lineTo(x + 5, y);
+                ctx.lineTo(x, y + 5);
+                ctx.lineTo(x - 5, y);
+                ctx.closePath();
+                ctx.fill();
+                break;
+            case "hexagon":
+                ctx.beginPath();
+                ctx.moveTo(x - 4, y - 3);
+                ctx.lineTo(x + 4, y - 3);
+                ctx.lineTo(x + 6, y);
+                ctx.lineTo(x + 4, y + 3);
+                ctx.lineTo(x - 4, y + 3);
+                ctx.lineTo(x - 6, y);
+                ctx.closePath();
+                ctx.fill();
+                break;
+            case "star":
+                ctx.beginPath();
+                ctx.moveTo(x, y - 5);
+                ctx.lineTo(x + 3, y + 2);
+                ctx.lineTo(x - 5, y - 2);
+                ctx.lineTo(x + 5, y - 2);
+                ctx.lineTo(x - 3, y + 2);
+                ctx.closePath();
+                ctx.fill();
+                break;
+        }
+    });
+  });
+</script>

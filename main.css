@@ -16,6 +16,17 @@
     background-position: center;
 }
 
+.custom-hero {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  clip-path: polygon(
+    0% 8%, 8% 0%, 100% 0%, 100% 89%, 93% 100%, 0% 100%
+  );
+  transform: rotate(-2.3deg) translate(-5px, 3px);
+}
+
+
 .navbar {
   position: relative; 
   overflow: hidden; 

@@ -2,14 +2,14 @@
 layout: index.html
 title: Welcome
 excerpt: >
-  A curious generalist at heart, I explore the intersection of craft, design, and technology—shaping ideas into tangible objects and meaningful experiences. From woodworking and digital design to education and problem-solving, my projects reflect a passion for high-quality craftsmanship, structured thinking, and hands-on making. Whether creating functional furniture, intuitive learning tools, or thought-provoking projects, I believe in exploring deeply, making with intention, and sharing what I learn.
+  A generalist’s quiet corner of the internet. I design, build, and teach—sometimes with wood, sometimes with code, always with curiosity. Exploring craft, design, and technology through projects, field notes, and thoughts on making things that matter.
 images:
   hero: /assets/images/adam_river.jpg
   hero_alt: Yes, that is me.
 welcome:
   title: Welcome!
   content: >
-    If you’re here, you’re probably curious—about craft, design, technology, or the art of making things. I am too. My name is Adam, and I spend my days exploring the intersection of these worlds, turning ideas into tangible objects, meaningful experiences, and tools for learning. This site is where I document what I create, what I learn, and the stories behind them.
+    Somehow, you’ve landed here. Maybe curiosity brought you—about craft, design, technology, or the art of making things. If so, you’re in good company! My name is Adam, and I spend my days exploring the intersection of these worlds, turning ideas into tangible objects, meaningful experiences, and tools for learning. This site is where I document what I create, what I learn, and the stories behind them.
 about: 
   title: At First Glance
   content1: >
@@ -48,5 +48,5 @@ cta:
   content2: >
     If you’ve made it this far, you’re probably my kind of person. Send a song you’ve had on repeat this week, or tell me: if you were a vending machine, what would you dispense?
   content3: >
-    No pressure—just a fellow curious human open to a good conversation. Say hi anytime at:
+    No pressure—just a fellow curious human here, open to a good conversation. Say hi anytime at:
 ---
