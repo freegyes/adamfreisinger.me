@@ -66,27 +66,16 @@
       <section class="section has-background-light">
         <div class="container">
           <div class="columns is-centered">
-            <div class="column is-two-thirds">
-              <div class="card has-background-white">
-                <div class="card-content has-text-centered">
-                  <h1 class="title">{{ about.title }}</h1>
-                  <div class="columns is-vcentered">
-                    <div class="column is-two-quarters has-text-left">
-                      <p>{{ about.content1 }}</p>
-                      <p>{{ about.content2 }}</p>
-                    </div>
-                    
-                    <div class="column is-two-quarters">
-                      <figure class="image is-5by3">
-                        <img src="{{ about.photo }}" alt="{{ about.alt }}">
-                      </figure>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- card -->
-            </div><!-- column is-two-thirds -->
-          </div><!-- columns is-centered -->
-        </div><!-- container -->
+            <div class="column is-6">
+              <h1 class="title">{{ about.title }}</h1>
+              <p class="block">{{ about.content1 }}</p>
+              <figure class="image is-5by3 block">
+                <img src="{{ about.photo }}" alt="{{ about.alt }}">
+              </figure>
+              <p>{{ about.content2 }}</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Posts Section -->

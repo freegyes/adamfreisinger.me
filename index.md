@@ -32,5 +32,5 @@ projects:
         description: As a co-founder of YearCompass, I played a key role in both designing the virtual booklet and overseeing its physical production. This simple yet powerful tool guides you through structured self-reflection, helping turn past experiences into stepping stones for the future. YearCompass has quietly found its way into the hands of millions worldwide.
 posts:
     title: Field Notes
-    read_more: Read more...
+    read_more: See more...
 ---
