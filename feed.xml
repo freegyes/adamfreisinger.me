@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Adam Freisinger</title>
+  <subtitle>Explore, Create, Inspire</subtitle>
+  <link href="https://adamfreisinger.me/feed.xml" rel="self" />
+  <link href="https://adamfreisinger.me/" />
+  <updated>2025-02-09T00:00:00Z</updated>
+  <id>https://adamfreisinger.me/</id>
+  <author>
+    <name>Adam Freisinger</name>
+    <email>hello@adamfreisinger.me</email>
+  </author>
+  <entry>
+    <title>Four Weeks, Many Clamps, and an Oak Table That Stands</title>
+    <link href="https://adamfreisinger.me/posts/2025-02-09/coffee-table/" />
+    <updated>2025-02-09T00:00:00Z</updated>
+    <id>https://adamfreisinger.me/posts/2025-02-09/coffee-table/</id>
+    <content type="html">&lt;div class=&quot;columns is-centered is-multiline is-mobile&quot;&gt;
+  &lt;div class=&quot;column is-3&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-9by16&quot;&gt;
+            &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/coffee-table-01.jpg&quot; alt=&quot;From 3D plans and oak planks...&quot; title=&quot;From 3D plans and oak planks...&quot;&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-7&quot;&gt;From 3D plans and oak planks...&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;column is-3&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;video is-9by16&quot;&gt;
+            &lt;video autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot; playsinline=&quot;&quot; style=&quot;width: 100%; height: 100%;&quot;&gt;
+              &lt;source src=&quot;https://adamfreisinger.me/assets/images/posts/coffee-table-02.mp4&quot; type=&quot;video/mp4&quot;&gt;
+              Your browser does not support the video tag.
+            &lt;/video&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-7&quot;&gt;through lots of hours and even more clamps...&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;column is-3&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-9by16&quot;&gt;
+            &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/coffee-table-03.jpg&quot; alt=&quot;with a charming character...&quot; title=&quot;with a charming character...&quot;&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-7&quot;&gt;with a charming character...&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;column is-3&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-9by16&quot;&gt;
+            &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/coffee-table-04.jpg&quot; alt=&quot;...to a welcoming home.&quot; title=&quot;...to a welcoming home.&quot;&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-7&quot;&gt;...to a welcoming home.&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-16by9&quot;&gt;
+            &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/coffee-table-05.jpg&quot; alt=&quot;An oak coffee table in the woods&quot; title=&quot;Taking a stop in the woods&quot;&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-7&quot;&gt;Taking a stop in the woods&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-16by9&quot;&gt;
+            &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/coffee-table-06.jpg&quot; alt=&quot;A detailed shot of the table.&quot; title=&quot;The leg details&quot;&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-7&quot;&gt;The leg details&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+</content>
+  </entry>
+</feed>
