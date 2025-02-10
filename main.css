@@ -1,3 +1,11 @@
+html {
+  height: 100dvh;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
 .custom-card-posts {
     display: flex;
     flex-direction: column;
