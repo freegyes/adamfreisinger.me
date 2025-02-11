@@ -171,7 +171,7 @@ media:
     img22:
       src: /assets/images/posts/coffee-table-22.jpg
       alt: Making miter clamping cauls
-      title: Making miter clamps cauls
+      title: Making miter clamping cauls
       width: 768
       height: 1024
       aspect: is-3by4
@@ -316,7 +316,7 @@ The glue-up was intimidating. The tabletop was massive, too large for my planer,
 
 {% renderMedia media.content.img10 %}
 
-I tested different joinery methods—Lamello Clamex S-20, Festool Domino Connect, pocket hole screws with custom oak plugs—only to land on a classic, wood-and-glue-only solution. No plastic, no metal, just wood. And then, the finishing—after making a careful four-colour varnish sample board, my friends didn’t like any of them. I ended up using pigmented oil, which initially looked terrifyingly red before it settled into a deep, rich tone.
+I tested different joinery methods—Lamello Clamex S-20, Festool Domino Connector, pocket hole screws with custom oak plugs—only to land on a classic, wood-and-glue-only solution. No plastic, no metal, just wood. And then, the finishing—after making a careful four-colour varnish sample board, my friends didn’t like any of them. I ended up using pigmented oil, which initially looked terrifyingly red before it settled into a deep, rich tone.
 
 {% renderMedia media.content.img11 %}
 
@@ -330,8 +330,8 @@ And then, I delivered the table. Minutes later, one of my friends’ small child
 * Ovals behave differently than rectangles. Plan biscuit placement accordingly.
 * Jigsaw blades wander. I should have left more margin for error, or devised a guide rail solution for making the blade wander less.
 * Handheld template routing a large tabletop is risky—assemble the plunge router next time for more support.
-* When I tried fastening the first Lamello Clamex S-20, the hex head practically melted away at what I felt was the slightest of force, making the reversibility feature impossible.
-* The Festool Domino Connect leaves an ugly hole that’s practically impossible to plug with wood in a way that blends seamlessly.
+* When I tried fastening the first Lamello Clamex S-20, the hex head practically melted away at what I felt was the slightest of forces, making the reversibility feature impossible.
+* The Festool Domino Connector leaves an ugly hole that’s practically impossible to plug with wood in a way that blends seamlessly.
 * Pocket hole screws with matching oak plugs were a viable option but not aesthetically ideal.
 * Final solution: solid wood floating tenons and glue—no metal, no plastic, no visible joinery.
 * Pigmented oil looks terrifying when first applied but settles into a beautiful tone. Trust the process.
