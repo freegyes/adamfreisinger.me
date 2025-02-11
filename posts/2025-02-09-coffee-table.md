@@ -7,14 +7,14 @@ tags:
 media:
   hero:
     src: /assets/images/posts/coffee-table-hero.jpg
-    alt: An oak coffee table.
+    alt: An oak coffee table
     title: Beauty shot in the woods
     width: 1920
     height: 1080
     aspect: is-16by9
   thumbnail:
     src: /assets/images/posts/coffee-table-thumbnail.jpg
-    alt: A preview of the coffee table project.
+    alt: A preview of the coffee table project
     title: The leg details
     width: 1024
     height: 768
@@ -58,7 +58,7 @@ media:
       aspect: is-16by9
     img06:
       src: /assets/images/posts/coffee-table-06.jpg
-      alt: A detailed shot of the table.
+      alt: A detailed shot of the table
       title: The leg details
       width: 1366
       height: 768
@@ -79,8 +79,8 @@ media:
       aspect: is-4by3
     img09:
       src: /assets/images/posts/coffee-table-09.jpg
-      alt: Glue up.
-      title: Seventy bars usually help.
+      alt: Glue up
+      title: Seventy bars usually help
       width: 1024
       height: 768
       aspect: is-4by3
@@ -297,10 +297,10 @@ media:
 ---
 
 {% mediaGrid %}
-  {% gridMedia media.content.img01 %}
-  {% gridMedia media.content.img02 %}
-  {% gridMedia media.content.img03 %}
-  {% gridMedia media.content.img04 %}
+  {% gridMedia media.content.img01, "column is-3" %} 
+  {% gridMedia media.content.img02, "column is-3" %} 
+  {% gridMedia media.content.img03, "column is-3" %} 
+  {% gridMedia media.content.img04, "column is-3" %} 
 {% endmediaGrid %}
 
 ## And that was the moment I realised I forgot to take the oval shape into account when carefully planning the positions for the biscuits.

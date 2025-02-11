@@ -57,7 +57,7 @@ module.exports = async function(eleventyConfig) {
      * @returns {String} HTML markup for the figcaption.
      */
     function generateFigcaption(title) {
-      return title ? `<figcaption class="has-text-centered is-italic is-size-7">${title}</figcaption>` : '';
+      return title ? `<figcaption class="has-text-centered is-italic is-size-6">${title}</figcaption>` : '';
     }
 
     /**
@@ -115,13 +115,11 @@ module.exports = async function(eleventyConfig) {
    * @param {String} columnClass - (Optional) CSS classes for the column container.
    * @returns {String} HTML markup for the grid media element.
    */
-  eleventyConfig.addShortcode("gridMedia", function(
-    media,
-    columnClass = "column is-3"
-  ) {
+  eleventyConfig.addShortcode("gridMedia", function(media, columnClass = "column is-4") {
     const mediaMarkup = generateMediaMarkup(media);
     return `<div class="${columnClass}">${mediaMarkup}</div>`;
   });
+  
 
   /**
    * mediaGrid paired shortcode.
