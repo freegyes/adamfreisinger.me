@@ -103,9 +103,19 @@
                       {{ post.data.excerpt }}
                     </div>
                   </div>
-                  <footer class="card-footer">
-                    <span class="card-footer-item is-size-6 has-text-grey">{{ post.date | date: '%Y-%m-%d' }}</span>
-                    <span class="card-footer-item has-text-link">{{ posts.read_more }}</span>
+                  <footer class="card-footer is-size-6">
+                    <span class="card-footer-item has-text-grey">
+                      <span class="icon">
+                        <i class="fas fa-pencil"></i>
+                      </span>
+                      &nbsp;
+                      {{ post.date | date: '%Y-%m-%d' }}</span>
+                    <span class="card-footer-item has-text-link">
+                      <span class="icon">
+                        <i class="fas fa-glasses"></i>
+                      </span>
+                      &nbsp;
+                      {{ post.data.readingTime }}</span>
                   </footer>
                 </div>
               </a>
