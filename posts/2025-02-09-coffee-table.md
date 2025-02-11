@@ -271,7 +271,7 @@ media:
       alt: The final colour of the table
       title: Colour of a squirrel
       width: 768
-      height: 1024x
+      height: 1024
       aspect: is-3by4
     img37:
       src: /assets/images/posts/coffee-table-37.jpg

@@ -71,14 +71,18 @@ module.exports = async function(eleventyConfig) {
       let elementMarkup = "";
       if (media.type && media.type.toLowerCase() === "video") {
         elementMarkup = `<figure class="video ${media.aspect}">
-            <video autoplay loop muted playsinline preload="none" loading="lazy" style="width: 100%; height: 100%;">
-              <source src="${media.src}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <a href="${media.src}">
+              <video autoplay loop muted playsinline preload="none" loading="lazy" style="width: 100%; height: 100%;">
+                <source src="${media.src}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </a>
           </figure>`;
       } else {
         elementMarkup = `<figure class="image ${media.aspect}">
-            <img src="${media.src}" alt="${media.alt}" title="${media.title || ''}" loading="lazy">
+            <a href="${media.src}">
+              <img src="${media.src}" alt="${media.alt}" title="${media.title || ''}" loading="lazy">
+            </a>
           </figure>`;
       }
       return `<div>
