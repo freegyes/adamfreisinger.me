@@ -91,7 +91,7 @@ Somewhere in the rhythm of my life, birds have been a quiet, constant presence. 
 
 Birds fascinate me—not just for their movement and freedom, but for the intricate details in their feathers, the way they observe their surroundings, and the quiet moments they allow when I stop to notice them. Over time, I’ve captured a set of bird portraits that I keep on rotation (a little round robin, if you will) as my desktop background. They bring a sense of stillness, curiosity, and fleeting connection.
 
-Birds, for me, have always been tied to rhythm and story—both in nature, and in the music that has accompanied my thoughts on them: 
+Birds, for me, have always been tied to rhythm and story—both in nature and in the music that has accompanied my thoughts on them: 
 - I wholeheartedly recommend [Hidden Orchestra’s Wingbeats](https://hiddenorchestra.bandcamp.com/album/wingbeats). It’s a stunning piece of music, and what makes it even more special for me is that the birds are treated as an individual instrument in the released source tracks on the album. 
 - I also recommend [Laurie Anderson’s The Beginning of Memory](https://www.youtube.com/watch?v=_RZpphITFM4), a moving imagining of how memory was born.
 
@@ -108,7 +108,7 @@ These birds have been my quiet digital companions for years, shifting with light
 ➡️ [Download Background Birds (.zip)](/assets/digital_downloads/background-birds.zip)
 
 ### A Little More About This Collection
-This curated set includes nine high-resolution images (available in 16:9 and 16:10), designed to be detailed enough to appreciate yet subtle enough to sit comfortably as a background. Each bird carries its own presence—some mid-flight, some still, each with a quiet story to tell.
+This curated set includes nine high-resolution images (available in 16:9 and 16:10), detailed enough to appreciate yet subtle enough to sit comfortably as a background. Each bird carries its own presence—some mid-flight, some still, each with a quiet story to tell.
 
 ### If You’d Like to Support My Work
 This collection is free, and I’m happy to share it. But if you enjoy it and would like to support me in creating more, you can consider a small “pay-what-you-feel” donation:
