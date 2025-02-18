@@ -123,6 +123,20 @@
             {% endfor %}
 
           </div>
+
+          <div class="columns is-centered">
+            <div class="column is-9 has-text-centered">
+              <article class="message">
+                <div class="message-body">
+                  <p>{{ rss_to_email.pretext }}
+                  <a href="{{ rss_to_email.url }}" target="_blank" rel="noopener">{{ rss_to_email.link_text }}</a>
+                  {{ rss_to_email.posttext }}
+                  </p> 
+                </div> 
+                </article>
+            </div>
+          </div>
+
         </div>
       </section>
 

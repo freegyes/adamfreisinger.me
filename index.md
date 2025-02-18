@@ -41,10 +41,15 @@ posts:
   title: Field Notes
   subtitle: Following curiosity, one post at a time.
   read_more: See more...
+rss_to_email:
+  pretext: If you’d be happy to receive my infrequent notes in your inbox, an
+  url: "https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fadamfreisinger.me%2Ffeed.xml"
+  link_text: RSS-to-email service like Feedrabbit
+  posttext: can help.
 cta:
   title: Let’s Connect!
   content1: >
-    I don’t have a newsletter, a funnel, or a ‘subscribe’ button. Just a quiet corner of the internet where curiosity can thrive.
+    I don’t have a newsletter, a marketing pipeline, or an <i>algorithm-approved engagement strategy</i>. Just a quiet corner of the internet where curiosity can thrive.
   content2: >
     If you’ve made it this far, you’re probably my kind of person. Send a song you’ve had on repeat this week, or tell me: if you were a vending machine, what would you dispense?
   content3: >
