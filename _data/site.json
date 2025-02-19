@@ -5,9 +5,14 @@
     "url": "https://adamfreisinger.me",
     "defaultHero": "/assets/images/adam_river.jpg",
     "signoff": "Made with curiosity, crafted with care—just a generalist exploring the wonders of the universe.",
+    "rss_to_email": {
+      "pretext": "If you’d be happy to receive my infrequent notes in your inbox, an",
+      "url": "https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fadamfreisinger.me%2Ffeed.xml",
+      "link_text": "RSS-to-email service like Feedrabbit",
+      "posttext": "can help."
+    },
     "email": "hello@adamfreisinger.me",
     "socials": {
       "instagram": "https://www.instagram.com/adam.freisinger/"
     }
 }
-  
