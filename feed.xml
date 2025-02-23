@@ -4,12 +4,73 @@
   <subtitle>Explore, Create, Inspire</subtitle>
   <link href="https://adamfreisinger.me/feed.xml" rel="self" />
   <link href="https://adamfreisinger.me/" />
-  <updated>2025-02-16T00:00:00Z</updated>
+  <updated>2025-02-23T00:00:00Z</updated>
   <id>https://adamfreisinger.me/</id>
   <author>
     <name>Adam Freisinger</name>
     <email>hello@adamfreisinger.me</email>
   </author>
+  <entry>
+    <title>Waving My Hand and Hearing Sound Respond in Real-Time</title>
+    <link href="https://adamfreisinger.me/posts/2025-02-23/microbit-and-plugdata/" />
+    <updated>2025-02-23T00:00:00Z</updated>
+    <id>https://adamfreisinger.me/posts/2025-02-23/microbit-and-plugdata/</id>
+    <content type="html">&lt;h2&gt;plugdata&lt;/h2&gt;
+&lt;p&gt;For the past two weeks, I’ve been diving into &lt;a href=&quot;https://plugdata.org/&quot;&gt;plugdata&lt;/a&gt;, a modern reimagining of Pure Data, a &amp;quot;visual programming environment designed for sound experimentation, prototyping, and education&amp;quot;. If you&#39;ve ever been fascinated by modular synths, interactive sound design, or generative music, plugdata makes these ideas instantly accessible, so it instantly won me over.&lt;/p&gt;
+&lt;p&gt;It offers the same enjoyment for me that working with modular synthesizers (both in the physical world and via emulations like &lt;a href=&quot;https://vcvrack.com/&quot;&gt;vcvrack&lt;/a&gt;) or the &lt;a href=&quot;https://empresseffects.com/products/zoia&quot;&gt;Empress Zoia&lt;/a&gt; always had. I love modular thinking—connecting objects, seeing the flow of information—and plugdata aligns perfectly with that mindset.&lt;/p&gt;
+&lt;h2&gt;The Catalyst: A Local Workshop on Electronic Instruments&lt;/h2&gt;
+&lt;p&gt;I’ve been experimenting with music, instruments, and coding for years, but two weeks ago, I stumbled upon a three-part &lt;a href=&quot;https://adapterujbuda.hu/hangszerepito-kurzus/&quot;&gt;electronic instrument workshop&lt;/a&gt; nearby. The first session introduced the fundamentals of sound synthesis in &lt;a href=&quot;http://cycling74.com/&quot;&gt;Max&lt;/a&gt;—and just like that, I was all in again.&lt;/p&gt;
+&lt;p&gt;The workshop reignited something in me—this desire to build something that exists outside of a traditional computer setup, something tangible and expressive. That led me down a rabbit hole of research into embeddable systems that could support the kind of instruments I want to build. That’s how I landed on the &lt;a href=&quot;https://electro-smith.com/products/daisy-seed&quot;&gt;Electrosmith Daisy Seed&lt;/a&gt;, a powerful microcontroller designed for audio applications. It can host Pure Data patches (converted to C++), meaning I could eventually run my creations as standalone instruments—no laptop required. That vision became my new north star. But before I could get there, I wanted to test something simpler: how motion could shape sound in real-time.&lt;/p&gt;
+&lt;h2&gt;Bringing Motion into the Equation&lt;/h2&gt;
+&lt;p&gt;After spending hours patching in plugdata, I wondered—what if I could control sound with motion? I had an early version of a &lt;a href=&quot;https://microbit.org/&quot;&gt;micro:bit&lt;/a&gt; lying around, which has a built-in accelerometer. The idea was simple: use the XYZ coordinates of the micro:bit&#39;s accelerometer to modify parameters in my patch.&lt;/p&gt;
+&lt;p&gt;To make this work, I:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;flashed a custom JavaScript program onto the micro:bit to continuously send accelerometer data,&lt;/li&gt;
+&lt;li&gt;ran a Python script using &lt;a href=&quot;https://pypi.org/project/python-osc/&quot;&gt;python-osc&lt;/a&gt; to translate motion data into a format plugdata can read, and&lt;/li&gt;
+&lt;li&gt;modified my plugdata patch to receive, filter, and scale the motion data to control sound in real-time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;columns is-centered is-multiline is-mobile&quot;&gt;
+  &lt;div class=&quot;column is-3&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/microbit-and-plugdata-01.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/microbit-and-plugdata-01.jpg&quot; alt=&quot;A screenshot of MakeCode editor&quot; title=&quot;MakeCode editor for uploading to micro:bit&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;MakeCode editor for uploading to micro:bit&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt; 
+  &lt;div class=&quot;column is-3&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/microbit-and-plugdata-02.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/microbit-and-plugdata-02.jpg&quot; alt=&quot;A screenshot of Visual Studio Code&quot; title=&quot;The Python bridge script sending data&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;The Python bridge script sending data&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt; 
+  &lt;div class=&quot;column is-3&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/microbit-and-plugdata-03.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/microbit-and-plugdata-03.jpg&quot; alt=&quot;A screenshot of plugdata&quot; title=&quot;The plugdata patcher receiving parameters&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;The plugdata patcher receiving parameters&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h2&gt;A Tiny Card, a Big Feeling&lt;/h2&gt;
+&lt;p&gt;And then, it worked.&lt;/p&gt;
+&lt;figure class=&quot;image is-16by9 block&quot;&gt;
+  &lt;iframe class=&quot;has-ratio&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/JhcDPnzj3jU?si=D3seO8Nk-e73dnZJ&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/figure&gt;
+&lt;p&gt;I lifted my hand, tilting the tiny card ever so slightly. Instantly, the sound shifted—trembling, bending, shimmering—like a living thing responding to my touch. For a moment, it felt like I was sculpting sound in mid-air. Pure magic.&lt;/p&gt;
+&lt;p&gt;It reminded me of watching &lt;a href=&quot;https://www.youtube.com/watch?v=3QtklTXbKUQ&amp;amp;t=689s&quot;&gt;Imogen Heap’s Tiny Desk performance&lt;/a&gt;, where she demonstrated her MiMU gloves. That performance was one of many inspirations that planted a seed in my mind years ago—of making music in a way that feels fluid, intuitive, and physically expressive.&lt;/p&gt;
+&lt;h2&gt;Code &amp;amp; Patch Downloads&lt;/h2&gt;
+&lt;p&gt;For anyone interested in taking a closer look at this setup, find my experimental code and patcher &lt;a href=&quot;https://gist.github.com/freegyes/db35bc8d0b530abe511fdf8a1d54cdd7&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Takeaways &amp;amp; Next Steps&lt;/h2&gt;
+&lt;p&gt;This was a small experiment, but it opened up so many possibilities. What if I combine this with other sensors? What if I replace the micro:bit with a more powerful and versatile device? What if the instrument I eventually build is less about pushing buttons and more about sculpting sound in space?&lt;/p&gt;
+&lt;p&gt;This was just a small wave of my hand, but it felt like a giant step toward something bigger—an instrument that blends woodworking, sound, coding, and visuals into something truly expressive. I’m hooked.&lt;/p&gt;
+&lt;h2&gt;If You’re Curious&lt;/h2&gt;
+&lt;p&gt;If Max, Pure Data, or plugdata sounds like your kind of thing, &lt;a href=&quot;https://www.takumiogata.com/&quot;&gt;Takumi Ogata&lt;/a&gt;’s &lt;a href=&quot;https://www.youtube.com/watch?v=1o5Wasmd8yU&amp;amp;list=PLyFkFo29zHvD4eRftIAjcLqIXCtSo7w8g&amp;amp;ab_channel=SoundSimulator&quot;&gt;Sound Simulator YouTube series&lt;/a&gt; has been my main guide so far, and I can’t recommend it enough—and if you end up experimenting with it, I’d love to hear what you create.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Background Birds – A Collection of Nine Bird Portraits as Wallpapers</title>
     <link href="https://adamfreisinger.me/posts/2025-02-16/background-birds/" />
