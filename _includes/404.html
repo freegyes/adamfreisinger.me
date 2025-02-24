@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include "_head.html" %}
+
+    <style>
+      .hover-swap {
+          transition: opacity 0.3s ease-in-out;
+      }
+  
+      .hover-swap:hover {
+          content: url("{{ media.content.img02.src }}"); 
+      }
+    </style>
+  
+    <body>
+
+    <header>
+      <div class="hero is-fullheight hero-background">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-5">
+                    <h1 class="title rubik-vinyl-regular">
+                        {{ title}}
+                      </h1>
+                      <p class="tagline is-size-5 block">
+                        {{ tagline }}
+                      </p>
+                      <p class="tagline is-size-5">
+                        {{ content }}
+                      </p>
+                </div>
+                <div class="column">
+                  <figure class="image custom-hero is-4by3">
+                    <a href="/">
+                        <img src="{{ media.content.img01.src }}" 
+                            alt="{{ media.content.img01.alt }}" 
+                            class="hover-swap">
+                    </a>
+                  </figure>                
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+ 
+    <main>
+      <hr />
+    </main>
+    {% include "_footer.html" %}
+  
+  </body>
+</html>
