@@ -4,12 +4,77 @@
   <subtitle>Explore, Create, Inspire</subtitle>
   <link href="https://adamfreisinger.me/feed.xml" rel="self" />
   <link href="https://adamfreisinger.me/" />
-  <updated>2025-09-03T00:00:00Z</updated>
+  <updated>2025-09-20T00:00:00Z</updated>
   <id>https://adamfreisinger.me/</id>
   <author>
     <name>Adam Freisinger</name>
     <email>hello@adamfreisinger.me</email>
   </author>
+  <entry>
+    <title>A Logic Game from Leftover Wood</title>
+    <link href="https://adamfreisinger.me/posts/2025-09-20/logic-game-from-leftover-wood/" />
+    <updated>2025-09-20T00:00:00Z</updated>
+    <id>https://adamfreisinger.me/posts/2025-09-20/logic-game-from-leftover-wood/</id>
+    <content type="html">&lt;p&gt;A few days ago I came across a logic game I had never seen before. I’m always curious about games, and this one struck me as both simple and ingenious. The rules: each piece has four dimensions (height, shape, colour, hollowness), and the goal is to get four in a row sharing any single dimension. The twist is that you don’t place your own piece, rather you choose one for your opponent (since then, I&#39;ve learnt that the name of the game is &lt;a href=&quot;https://en.wikipedia.org/wiki/Quarto_%28board_game%29&quot;&gt;Quarto!&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Out of curiosity, I asked a friend to introduce me to resin printing, and recreating this game from my Shapr3D plans was a perfect first project. I quickly realised I still dislike the feel of plastic, so I decided to build a wooden version instead.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/logic-game-from-leftover-wood-01.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/logic-game-from-leftover-wood-01.jpg&quot; alt=&quot;Resin printed prototype&quot; title=&quot;Resin printed prototype&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Resin printed prototype&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;This project gave me several firsts. I had never created a rod before, and now I managed one using a roundover bit, pushing a slat against a simple router fence, shaping some leftover aniegre. For the game board, I found a piece of cherry that was just the perfect size, and carved it by hand with a V-bit. Later, I improvised a small container from birch offcuts, on which the game board could double as a lid. That was my first time using a guide bushing with the router instead of a templating bit with a bearing. Next time, I’ll probably take out most of the material with a forstner bit first.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-multiline is-mobile&quot;&gt;
+  &lt;div class=&quot;column is-4&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/logic-game-from-leftover-wood-02.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/logic-game-from-leftover-wood-02.jpg&quot; alt=&quot;Making a rod from a rectangular slat with a roundover bit&quot; title=&quot;Satisfying shaping of a rod&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Satisfying shaping of a rod&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;column is-4&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/logic-game-from-leftover-wood-03.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/logic-game-from-leftover-wood-03.jpg&quot; alt=&quot;Some game pieces on the game board before sanding and finishing&quot; title=&quot;Starting to take shape&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Starting to take shape&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;I considered various hinge mechanisms for the lid, but magnets have always fascinated me. I embedded small neodymium magnets, carefully aligning all four pairs, so that the lid can snap onto the base from any direction. It works beautifully, though I’ll remember not to try fitting the magnets next time before sanding and finishing again. Once inside, they refused to come out by any non-destructive way.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/logic-game-from-leftover-wood-04.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/logic-game-from-leftover-wood-04.jpg&quot; alt=&quot;Various things upon smaller things acting as a press&quot; title=&quot;My professional &quot; zen&quot;=&quot;&quot; press,=&quot;&quot; holding=&quot;&quot; the=&quot;&quot; magnets=&quot;&quot; in=&quot;&quot; place=&quot;&quot; until=&quot;&quot; PU=&quot;&quot; glue=&quot;&quot; cures&quot;=&quot;&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;My professional &quot;zen&quot; press, holding the magnets in place until the PU glue cures&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;Now that the piece is finished, I find it lovely to look at and satisfying to interact with. It turned out polished in some ways, while still carrying the imperfections that make it unmistakably handmade. I enjoy the interplay of three different woods and the two pigments, the contrast of rounded and rectangular features, and the satisfying snap of the magnets. It makes me smile every time I pick it up.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-16by9&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/logic-game-from-leftover-wood-hero.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/logic-game-from-leftover-wood-hero.jpg&quot; alt=&quot;Logic game Quarto! made of wood&quot; title=&quot;I love the interplay of patterns, shapes and colours&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;I love the interplay of patterns, shapes and colours&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Piano Keys in Oak: A Coat Rack That Refused to Be Ordinary</title>
     <link href="https://adamfreisinger.me/posts/2025-09-03/live-edge-coat-rack/" />
