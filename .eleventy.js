@@ -161,6 +161,12 @@ module.exports = async function(eleventyConfig) {
     });
   });
 
+  eleventyConfig.addCollection("music", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("music/*.md").sort((a, b) => {
+      return a.date - b.date;
+    });
+  });
+
   return {
     dir: {
       input: ".",
