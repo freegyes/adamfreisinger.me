@@ -49,4 +49,7 @@ cta:
     If you’ve made it this far, you’re probably my kind of person. Send a song you’ve had on repeat this week, or tell me: if you were a vending machine, what would you dispense?
   content3: >
     No pressure—just a fellow curious human here, open to a good conversation. Say hi anytime at:
+music:
+  title: What I’ve had on repeat for a while
+  subtitle: Songs that found me at just the right time
 ---

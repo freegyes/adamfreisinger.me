@@ -78,38 +78,41 @@ html, body {
     white-space: nowrap;
 }
 
-/* Music cards */
-.card {
+.music-rail {
+  position: relative;
+}
+
+.music-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.music-card {
+  flex: 0 0 auto;
+  width: 293px;
+  scroll-snap-align: start;
+  color: inherit;
+}
+
+.music-card:hover {
+  text-decoration: none;
+}
+
+.music-rail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 73px;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease-in-out;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(0,0,0,0), rgba(245,245,245,1));
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-content .content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-content .buttons {
-  margin-top: auto;
-  padding-top: 1rem;
-}
-
-/* Ensure images cover the card */
-.card-image img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.music-row {
+  padding-right: 149px;
 }
