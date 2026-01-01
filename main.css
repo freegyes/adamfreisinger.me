@@ -77,3 +77,42 @@ html, body {
 .no-wrap {
     white-space: nowrap;
 }
+
+.music-rail {
+  position: relative;
+}
+
+.music-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.music-card {
+  flex: 0 0 auto;
+  width: 293px;
+  scroll-snap-align: start;
+  color: inherit;
+}
+
+.music-card:hover {
+  text-decoration: none;
+}
+
+.music-rail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 73px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(0,0,0,0), rgba(245,245,245,1));
+}
+
+.music-row {
+  padding-right: 149px;
+}

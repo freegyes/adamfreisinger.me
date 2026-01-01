@@ -22,7 +22,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://adamfreisinger.me/">
     <meta property="og:image" content="https://adamfreisinger.me/assets/images/adam_river.jpg">
-    <meta property="og:image:alt" content="Welcome"><meta property="article:published_time" content="2025-10-20T17:14:43Z"><!-- Twitter Card Meta Tags -->
+    <meta property="og:image:alt" content="Welcome"><meta property="article:published_time" content="2026-01-01T16:04:07Z"><!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Welcome">
     <meta name="twitter:description" content="A generalist’s quiet corner of the internet. I design, build, and teach—sometimes with wood, sometimes with code, always with curiosity. Exploring craft, design, and technology through projects, field notes, and thoughts on making things that matter.
@@ -396,6 +396,47 @@
 
       <hr class="container" />
 
+      <section class="section has-background-light">
+  <div class="container">
+    <h3 class="title is-3">What I’ve had on repeat for a while</h3>
+    <p class="subtitle is-5">Songs that found me at just the right time</p>
+
+    <div class="music-rail">
+      <div class="music-row" id="musicRow">
+        
+        <a href="https://haniarani.bandcamp.com/track/komeda" target="_blank" rel="noopener" class="card-link music-card">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-square">
+                <img src="/assets/images/music/hania_rani-komeda.jpg" alt="Komeda by Hania Rani">
+              </figure>
+            </div>
+
+            <div class="card-content">
+              <h3 class="title is-5">Komeda</h3>
+              <p class="subtitle is-6">by Hania Rani</p>
+              <div class="content">Magical flow of piano and rhodes/wurlitzer sounds. Frequently gives me chills when it *blooms* (like around 3:50.)</div>
+            </div>
+
+            <footer class="card-footer is-size-7">
+              <span class="card-footer-item has-text-link">
+                <span class="icon is-small"><i class="fas fa-music"></i></span>
+                &nbsp;Listen
+              </span>
+              <span class="card-footer-item has-text-grey-light">
+                pinned: 2026-01-01
+              </span>
+            </footer>
+          </div>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+      <hr class="container" />
+
 
       <section class="section">
         <div class="container">
@@ -539,3 +580,18 @@
     });
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const row = document.getElementById("musicRow");
+    if (!row) return;
+
+    const items = Array.from(row.children);
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      row.appendChild(items[j]);
+      items.splice(j, 1);
+    }
+  });
+</script>
+
