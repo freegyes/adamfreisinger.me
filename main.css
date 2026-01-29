@@ -120,3 +120,11 @@ html, body {
 .image picture {
   display: contents;
 }
+
+a[data-glightbox] img {
+  transition: opacity 0.2s ease;
+}
+
+a[data-glightbox]:hover img {
+  opacity: 0.85;
+}

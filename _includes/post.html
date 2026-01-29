@@ -60,5 +60,16 @@
     <footer>
       {% include "_footer.html" %}
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        GLightbox({
+          selector: '[data-glightbox]',
+          touchNavigation: true,
+          loop: true,
+          closeOnOutsideClick: true
+        });
+      });
+    </script>
   </body>
 </html>

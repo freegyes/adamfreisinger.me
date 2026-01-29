@@ -132,8 +132,13 @@ module.exports = async function(eleventyConfig) {
       } else {
         const metadata = processImage(media.src);
         const pictureMarkup = buildPictureMarkup(metadata, media.alt || "", "", undefined, "lazy");
+        // Use the largest processed image for the lightbox href
+        const formats = Object.keys(metadata);
+        const fallbackFormat = formats[formats.length - 1];
+        const largestImage = metadata[fallbackFormat][metadata[fallbackFormat].length - 1];
+        const glightboxAttr = `data-glightbox="${media.title ? `title: ${media.title}` : ``}"`;
         elementMarkup = `<figure class="image ${media.aspect}">
-            <a href="${media.src}">
+            <a href="${largestImage.url}" ${glightboxAttr}>
               ${pictureMarkup}
             </a>
           </figure>`;
