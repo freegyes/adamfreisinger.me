@@ -2,6 +2,8 @@ const siteData = require("./_data/site.json");
 const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
+const fs = require("fs");
+const crypto = require("crypto");
 
 module.exports = async function(eleventyConfig) {
   // Passthrough copies
@@ -9,6 +11,11 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "assets/favicons": "/" });
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("main.css");
+
+  // Cache-busting hash for main.css
+  const cssContent = fs.readFileSync("main.css", "utf8");
+  const cssHash = crypto.createHash("md5").update(cssContent).digest("hex").slice(0, 8);
+  eleventyConfig.addGlobalData("cssHash", cssHash);
 
   eleventyConfig.addTemplateFormats("njk");
   
