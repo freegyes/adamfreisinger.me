@@ -34,9 +34,7 @@
                 <div class="column">
                   <figure class="image custom-hero is-4by3">
                     <a href="/">
-                        <img src="{{ media.content.img01.src }}" 
-                            alt="{{ media.content.img01.alt }}" 
-                            class="hover-swap">
+                        {% image media.content.img01.src, media.content.img01.alt, "hover-swap", "", "eager" %}
                     </a>
                   </figure>                
                 </div>

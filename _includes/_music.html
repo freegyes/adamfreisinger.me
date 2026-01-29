@@ -10,7 +10,8 @@
           <div class="card">
             <div class="card-image">
               <figure class="image is-square">
-                <img src="{{ track.data.image }}" alt="{{ track.data.title }} by {{ track.data.artist }}">
+                {% capture musicAlt %}{{ track.data.title }} by {{ track.data.artist }}{% endcapture %}
+                {% image track.data.image, musicAlt %}
               </figure>
             </div>
 

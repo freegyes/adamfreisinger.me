@@ -116,3 +116,7 @@ html, body {
 .music-row {
   padding-right: 149px;
 }
+
+.image picture {
+  display: contents;
+}

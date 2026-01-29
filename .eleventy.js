@@ -1,5 +1,7 @@
 const siteData = require("./_data/site.json");
 const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
+const Image = require("@11ty/eleventy-img");
+const path = require("path");
 
 module.exports = async function(eleventyConfig) {
   // Passthrough copies
@@ -50,6 +52,55 @@ module.exports = async function(eleventyConfig) {
   });
 
     /**
+     * Process an image through eleventy-img, returning metadata with
+     * multiple widths and WebP + original format variants.
+     */
+    function processImage(src) {
+      const inputPath = path.join(".", src);
+      const ext = path.extname(src).toLowerCase();
+      const formats = (ext === ".png") ? ["webp", "png"] : ["webp", "jpeg"];
+
+      const options = {
+        widths: [400, 800, 1200, 1600, "auto"],
+        formats,
+        fixOrientation: true,
+        outputDir: "./_site/img/",
+        urlPath: "/img/",
+        filenameFormat: function (_id, _src, width, format) {
+          const name = path.basename(src, ext);
+          return `${name}-${width}w.${format}`;
+        },
+      };
+
+      Image.statsSync(inputPath, options);
+      Image(inputPath, options);
+
+      return Image.statsSync(inputPath, options);
+    }
+
+    /**
+     * Build a <picture> element from eleventy-img metadata.
+     */
+    function buildPictureMarkup(metadata, alt, cls, sizes, loading) {
+      loading = loading || "lazy";
+      sizes = sizes || "(min-width: 1024px) 50vw, 100vw";
+      const formats = Object.keys(metadata);
+      const fallbackFormat = formats[formats.length - 1];
+      const fallback = metadata[fallbackFormat][metadata[fallbackFormat].length - 1];
+
+      let sources = "";
+      for (const format of formats) {
+        const srcset = metadata[format]
+          .map((entry) => `${entry.url} ${entry.width}w`)
+          .join(", ");
+        sources += `<source type="image/${format}" srcset="${srcset}" sizes="${sizes}">`;
+      }
+
+      const classAttr = cls ? ` class="${cls}"` : "";
+      return `<picture>${sources}<img src="${fallback.url}" width="${fallback.width}" height="${fallback.height}" alt="${alt}"${classAttr} loading="${loading}" decoding="async"></picture>`;
+    }
+
+    /**
      * Helper function to generate the figcaption markup.
      * Returns a figcaption element if a title is provided.
      *
@@ -79,9 +130,11 @@ module.exports = async function(eleventyConfig) {
             </a>
           </figure>`;
       } else {
+        const metadata = processImage(media.src);
+        const pictureMarkup = buildPictureMarkup(metadata, media.alt || "", "", undefined, "lazy");
         elementMarkup = `<figure class="image ${media.aspect}">
             <a href="${media.src}">
-              <img src="${media.src}" alt="${media.alt}" title="${media.title || ''}" loading="lazy">
+              ${pictureMarkup}
             </a>
           </figure>`;
       }
@@ -123,7 +176,15 @@ module.exports = async function(eleventyConfig) {
     const mediaMarkup = generateMediaMarkup(media);
     return `<div class="${columnClass}">${mediaMarkup}</div>`;
   });
-  
+
+  /**
+   * image shortcode for template use.
+   * Usage: {% image src, alt, cls, sizes, loading %}
+   */
+  eleventyConfig.addShortcode("image", function(src, alt, cls, sizes, loading) {
+    const metadata = processImage(src);
+    return buildPictureMarkup(metadata, alt || "", cls || "", sizes || undefined, loading || "lazy");
+  });
 
   /**
    * mediaGrid paired shortcode.

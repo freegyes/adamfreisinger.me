@@ -4,3 +4,6 @@ node_modules/
 
 # Ignore Eleventy's output directory
 _site/
+
+# eleventy-img disk cache
+.cache/
