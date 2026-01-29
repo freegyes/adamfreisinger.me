@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/versions/bulma-no-dark-mode.min.css">
     <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
@@ -96,24 +97,24 @@
 <div class="columns is-centered is-multiline is-mobile">
   <div class="column is-3"><div>
                 <figure class="image is-4by3">
-            <a href="/assets/images/posts/microbit-and-plugdata-01.jpg">
-              <img src="/assets/images/posts/microbit-and-plugdata-01.jpg" alt="A screenshot of MakeCode editor" title="MakeCode editor for uploading to micro:bit" loading="lazy">
+            <a href="/img/microbit-and-plugdata-01-1024w.jpeg" data-glightbox="title: MakeCode editor for uploading to micro:bit">
+              <picture><source type="image/webp" srcset="/img/microbit-and-plugdata-01-400w.webp 400w, /img/microbit-and-plugdata-01-800w.webp 800w, /img/microbit-and-plugdata-01-1024w.webp 1024w" sizes="(min-width: 1024px) 50vw, 100vw"><source type="image/jpeg" srcset="/img/microbit-and-plugdata-01-400w.jpeg 400w, /img/microbit-and-plugdata-01-800w.jpeg 800w, /img/microbit-and-plugdata-01-1024w.jpeg 1024w" sizes="(min-width: 1024px) 50vw, 100vw"><img src="/img/microbit-and-plugdata-01-1024w.jpeg" width="1024" height="768" alt="A screenshot of MakeCode editor" loading="lazy" decoding="async"></picture>
             </a>
           </figure>
                 <figcaption class="has-text-centered is-italic is-size-6">MakeCode editor for uploading to micro:bit</figcaption>
               </div></div> 
   <div class="column is-3"><div>
                 <figure class="image is-4by3">
-            <a href="/assets/images/posts/microbit-and-plugdata-02.jpg">
-              <img src="/assets/images/posts/microbit-and-plugdata-02.jpg" alt="A screenshot of Visual Studio Code" title="The Python bridge script sending data" loading="lazy">
+            <a href="/img/microbit-and-plugdata-02-1024w.jpeg" data-glightbox="title: The Python bridge script sending data">
+              <picture><source type="image/webp" srcset="/img/microbit-and-plugdata-02-400w.webp 400w, /img/microbit-and-plugdata-02-800w.webp 800w, /img/microbit-and-plugdata-02-1024w.webp 1024w" sizes="(min-width: 1024px) 50vw, 100vw"><source type="image/jpeg" srcset="/img/microbit-and-plugdata-02-400w.jpeg 400w, /img/microbit-and-plugdata-02-800w.jpeg 800w, /img/microbit-and-plugdata-02-1024w.jpeg 1024w" sizes="(min-width: 1024px) 50vw, 100vw"><img src="/img/microbit-and-plugdata-02-1024w.jpeg" width="1024" height="768" alt="A screenshot of Visual Studio Code" loading="lazy" decoding="async"></picture>
             </a>
           </figure>
                 <figcaption class="has-text-centered is-italic is-size-6">The Python bridge script sending data</figcaption>
               </div></div> 
   <div class="column is-3"><div>
                 <figure class="image is-4by3">
-            <a href="/assets/images/posts/microbit-and-plugdata-03.jpg">
-              <img src="/assets/images/posts/microbit-and-plugdata-03.jpg" alt="A screenshot of plugdata" title="The plugdata patcher receiving parameters" loading="lazy">
+            <a href="/img/microbit-and-plugdata-03-1024w.jpeg" data-glightbox="title: The plugdata patcher receiving parameters">
+              <picture><source type="image/webp" srcset="/img/microbit-and-plugdata-03-400w.webp 400w, /img/microbit-and-plugdata-03-800w.webp 800w, /img/microbit-and-plugdata-03-1024w.webp 1024w" sizes="(min-width: 1024px) 50vw, 100vw"><source type="image/jpeg" srcset="/img/microbit-and-plugdata-03-400w.jpeg 400w, /img/microbit-and-plugdata-03-800w.jpeg 800w, /img/microbit-and-plugdata-03-1024w.jpeg 1024w" sizes="(min-width: 1024px) 50vw, 100vw"><img src="/img/microbit-and-plugdata-03-1024w.jpeg" width="1024" height="768" alt="A screenshot of plugdata" loading="lazy" decoding="async"></picture>
             </a>
           </figure>
                 <figcaption class="has-text-centered is-italic is-size-6">The plugdata patcher receiving parameters</figcaption>
@@ -188,5 +189,16 @@
 </footer>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        GLightbox({
+          selector: '[data-glightbox]',
+          touchNavigation: true,
+          loop: true,
+          closeOnOutsideClick: true
+        });
+      });
+    </script>
   </body>
 </html>

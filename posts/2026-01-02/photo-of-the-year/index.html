@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/versions/bulma-no-dark-mode.min.css">
     <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
@@ -92,8 +93,8 @@
               <div class="column is-four-fifths">
                 <div>
                 <figure class="image is-4by3">
-            <a href="/assets/images/posts/photo-of-the-year-thumbnail.jpg">
-              <img src="/assets/images/posts/photo-of-the-year-thumbnail.jpg" alt="A bird submerging into water" title="Photo of the Year 2026" loading="lazy">
+            <a href="/img/photo-of-the-year-thumbnail-1024w.jpeg" data-glightbox="title: Photo of the Year 2026">
+              <picture><source type="image/webp" srcset="/img/photo-of-the-year-thumbnail-400w.webp 400w, /img/photo-of-the-year-thumbnail-800w.webp 800w, /img/photo-of-the-year-thumbnail-1024w.webp 1024w" sizes="(min-width: 1024px) 50vw, 100vw"><source type="image/jpeg" srcset="/img/photo-of-the-year-thumbnail-400w.jpeg 400w, /img/photo-of-the-year-thumbnail-800w.jpeg 800w, /img/photo-of-the-year-thumbnail-1024w.jpeg 1024w" sizes="(min-width: 1024px) 50vw, 100vw"><img src="/img/photo-of-the-year-thumbnail-1024w.jpeg" width="1024" height="683" alt="A bird submerging into water" loading="lazy" decoding="async"></picture>
             </a>
           </figure>
                 <figcaption class="has-text-centered is-italic is-size-6">Photo of the Year 2026</figcaption>
@@ -148,5 +149,16 @@
 </footer>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        GLightbox({
+          selector: '[data-glightbox]',
+          touchNavigation: true,
+          loop: true,
+          closeOnOutsideClick: true
+        });
+      });
+    </script>
   </body>
 </html>
