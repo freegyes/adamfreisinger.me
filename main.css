@@ -98,6 +98,16 @@ html, body {
   color: inherit;
 }
 
+.music-card .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.music-card .card-content {
+  flex-grow: 1;
+}
+
 .music-card:hover {
   text-decoration: none;
 }
