@@ -7,7 +7,8 @@
       
     {% include "_navbar.html" %}
 
-    <header style="background: url('{{ media.hero.src }}') no-repeat center center; background-size: cover;">
+    <header class="post-hero">
+      {% image media.hero.src, title, "post-hero-img", "100vw", "eager" %}
       <div class="hero is-fullheight-with-navbar" style="background-color: rgba(0, 0, 0, 0.5);">
         <div class="hero-body">
           <div class="container has-text-centered">
