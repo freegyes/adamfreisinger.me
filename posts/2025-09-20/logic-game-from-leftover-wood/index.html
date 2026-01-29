@@ -140,6 +140,12 @@
               </div>
             </div>
             </article>
+            <div class="has-text-centered my-5">
+              <button id="like-btn" class="like-btn" data-slug="/posts/2025-09-20/logic-game-from-leftover-wood/">
+                <span class="icon"><i id="like-icon" class="far fa-heart"></i></span>
+                <span id="like-count" class="like-count"></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -194,6 +200,52 @@
           closeOnOutsideClick: true
         });
       });
+    </script>
+    <script>
+      (function() {
+        var API = "https://adamfreisinger-likes.adamfreisinger.workers.dev".replace(/\/+$/, "");
+        var btn = document.getElementById("like-btn");
+        var icon = document.getElementById("like-icon");
+        var countEl = document.getElementById("like-count");
+        var slug = btn.getAttribute("data-slug");
+        var storageKey = "liked:" + slug;
+        var liked = false;
+
+        function showCount(n) {
+          if (n > 0) {
+            countEl.textContent = n;
+            countEl.style.display = "";
+          }
+        }
+
+        function setLiked() {
+          liked = true;
+          btn.classList.add("is-liked");
+          icon.classList.replace("far", "fas");
+        }
+
+        if (localStorage.getItem(storageKey)) {
+          setLiked();
+        }
+
+        if (!API) return;
+
+        fetch(API + "/likes/" + encodeURIComponent(slug))
+          .then(function(r) { return r.json(); })
+          .then(function(data) { showCount(data.likes); })
+          .catch(function() {});
+
+        btn.addEventListener("click", function() {
+          if (liked) return;
+          setLiked();
+          localStorage.setItem(storageKey, "1");
+
+          fetch(API + "/likes/" + encodeURIComponent(slug), { method: "POST" })
+            .then(function(r) { return r.json(); })
+            .then(function(data) { showCount(data.likes); })
+            .catch(function() {});
+        });
+      })();
     </script>
   </body>
 </html>
