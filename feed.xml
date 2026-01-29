@@ -4,12 +4,107 @@
   <subtitle>Explore, Create, Inspire</subtitle>
   <link href="https://adamfreisinger.me/feed.xml" rel="self" />
   <link href="https://adamfreisinger.me/" />
-  <updated>2026-01-02T00:00:00Z</updated>
+  <updated>2026-01-29T00:00:00Z</updated>
   <id>https://adamfreisinger.me/</id>
   <author>
     <name>Adam Freisinger</name>
     <email>hello@adamfreisinger.me</email>
   </author>
+  <entry>
+    <title>Instruments That Currently Inspire Me</title>
+    <link href="https://adamfreisinger.me/posts/2026-01-29/inspiring-instruments/" />
+    <updated>2026-01-29T00:00:00Z</updated>
+    <id>https://adamfreisinger.me/posts/2026-01-29/inspiring-instruments/</id>
+    <content type="html">&lt;p&gt;I&#39;ve been looking for an instrument I can fall in love with for years now. Not just admire or find fascinating (fortunately, I have several of those), but truly love. An instrument that becomes a meditation device, a companion to noodle on, a way to express my current state intuitively with as little friction as possible.&lt;/p&gt;
+&lt;h2&gt;The Journey So Far&lt;/h2&gt;
+&lt;p&gt;I learned to play the flute as a kid. Later, I was a bassist in a few small bands. A couple of years ago, I started exploring electronic music-making devices, and the rabbit holes went deep: quirky standalone grooveboxes, live-coded music, live performance samplers. Each new discovery taught me something, but none quite clicked in the way I was searching for.&lt;/p&gt;
+&lt;p&gt;What I miss is the &amp;quot;simplicity&amp;quot; of getting to know the ins and outs of a limited instrument. One that needs no patch initialization. One that isn’t an infinite canvas, but offers an opinionated framework, a space where I can get better and better at one thing through practice.&lt;/p&gt;
+&lt;p&gt;I like more than one music-making device of mine. I admire them, they fascinate me, each in their own way. But I really miss that one special instrument that I love.&lt;/p&gt;
+&lt;h2&gt;What I&#39;m Drawn To&lt;/h2&gt;
+&lt;p&gt;I&#39;m inspired by the world of organic-electronic standalone instruments. Devices that combine organic or tactile elements (wooden enclosures, acoustic components, natural materials) with unconventional interaction methods (magnetic fields, touch surfaces, physical gestures).&lt;/p&gt;
+&lt;p&gt;I know how deeply aesthetics affect me, and how all the small sensory things add up. Touching mostly wooden and metallic surfaces calms me. Touching plastic repels and drains me. These aren&#39;t trivial details, they shape the entire experience of playing for me.&lt;/p&gt;
+&lt;h2&gt;The Dream Instrument&lt;/h2&gt;
+&lt;p&gt;For a while now, I’ve been thinking about creating such an instrument myself.&lt;/p&gt;
+&lt;p&gt;Maybe it won&#39;t sound astonishing at first. Maybe I won&#39;t succeed on the first try. But this idea inspires me and keeps pulling me back, again and again.&lt;/p&gt;
+&lt;p&gt;I want to create something that feels genuinely organic — a standalone hybrid of acoustic and electronic, beautiful enough to create awe simply by being seen. Something that invites playful experimentation through touch and gesture rather than screens and menus, and that needs no formal musical knowledge to coax hauntingly beautiful sounds from. Ideally, it wouldn&#39;t even need a cable or a line out to sing.&lt;/p&gt;
+&lt;h2&gt;Building Toward It&lt;/h2&gt;
+&lt;p&gt;As a kid, I built a lot of weird percussion instruments. Then, as I developed some woodworking skills over the past years, I built a proper cajón. A few months back, I learned soldering and built the ingenious &lt;a href=&quot;https://www.synthux.academy/simple-synth/touch2&quot;&gt;Touch 2 kit by SynthUX&lt;/a&gt;. Now I&#39;m working on my C++ skills to program the Daisy Seed, connecting various sensors to it, and designing custom PCBs.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/inspiring-instruments-04.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/inspiring-instruments-04.jpg&quot; alt=&quot;A Daisy Seed microcontroller with touch sensors and wiring on a workbench&quot; title=&quot;Current state of my Daisy Seed experiments&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Current state of my Daisy Seed experiments&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;I hope that, one day, these paths will merge into something beautiful. Something that can be played. Something I can play.&lt;/p&gt;
+&lt;h2&gt;Current Strongest Inspirations&lt;/h2&gt;
+&lt;p&gt;I&#39;ve been keeping an eye on the music-making world for a while, learning about instruments and creations, and my list of fascinating gear is near-infinite at this point. But these three speak to me more loudly than anything else right now.&lt;/p&gt;
+&lt;h3&gt;Mulatar by Lockruf-music / Rubi Mo&lt;/h3&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/inspiring-instruments-01.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/inspiring-instruments-01.jpg&quot; alt=&quot;Mulatar by Lockruf-music, a modular string and percussion instrument&quot; title=&quot;Image courtesy of Rubi Mo / Lockruf-music&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Image courtesy of Rubi Mo / Lockruf-music&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;A &amp;quot;modular&amp;quot; string and percussion instrument. You can decide whether you prefer a sitar-like or slide-guitar-like string setup, and pick the types of percussion heads. What fascinates me most is the clever dual output: you can pull the volume knobs in or out, routing the audio signal to one of the outputs, so you can change the effect chains for the pickups and internal mics.&lt;/p&gt;
+&lt;p&gt;The previous, triangular version was built by bending wood. The current bamboo version (as far as I understand) uses a single piece of bamboo as the body. I can imagine myself trying a much simpler experiment based on this idea.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.rubimo.net/bamboo-mulatar&quot;&gt;rubimo.net&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;image is-16by9 block&quot;&gt;
+  &lt;iframe class=&quot;has-ratio&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/lvx2qxOPzHk&quot; title=&quot;Mulatar by Lockruf-music / Rubi Mo&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/figure&gt;
+&lt;h3&gt;TERRA by Soma Laboratories&lt;/h3&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/inspiring-instruments-02.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/inspiring-instruments-02.jpg&quot; alt=&quot;TERRA by Soma Laboratories&quot; title=&quot;Image courtesy of Soma Laboratories&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Image courtesy of Soma Laboratories&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;A gorgeous instrument with touch interaction, a limited set of sounds, and movement-based modulation. The layout of the notes, the transposing keys, and the modulation macros is unconventional, yet somehow makes total sense. The &amp;quot;menu&amp;quot; is a triangle of LEDs that reminds me of learning a new language. I can feel the pull of the TERRA every time I look at it.&lt;/p&gt;
+&lt;p&gt;My current Daisy Seed-based project uses an MPR121 touch sensor, and I previously dabbled in &lt;a href=&quot;https://adamfreisinger.me/posts/2025-02-23/microbit-and-plugdata/&quot;&gt;gyroscope-driven sound design&lt;/a&gt;. Out of the three, this feels the closest to something I could imagine building a “lite” version of soon.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://somasynths.com/terra/&quot;&gt;somasynths.com&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;image is-16by9 block&quot;&gt;
+  &lt;iframe class=&quot;has-ratio&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/C_Zyx_kmVC4&quot; title=&quot;TERRA by Soma Laboratories&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/figure&gt;
+&lt;h3&gt;Aurelia by Terraphones&lt;/h3&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/inspiring-instruments-03.jpg&quot;&gt;
+              &lt;img src=&quot;https://adamfreisinger.me/assets/images/posts/inspiring-instruments-03.jpg&quot; alt=&quot;Aurelia by Terraphones, a wooden ocarina-shaped electronic instrument&quot; title=&quot;Image courtesy of Terraphones&quot; loading=&quot;lazy&quot;&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Image courtesy of Terraphones&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;Shaped like a giant ocarina, made of wood, using silent mechanical Cherry keys (why hadn’t I thought of using mechanical keys for my instrument before?), with a built-in power source and speaker. I&#39;m curious how my experience playing the flute (and the EWI Solo) could be translated into playing the Aurelia. I would very much like to spend time with it.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.terraphones.com/aurelia/&quot;&gt;terraphones.com&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;image is-16by9 block&quot;&gt;
+  &lt;iframe class=&quot;has-ratio&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/kklq2BiTTT8&quot; title=&quot;Aurelia by Terraphones&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;These three instruments embody what I&#39;m searching for: the marriage of organic materials and thoughtful electronics, the priority of touch and gesture over menus and presets, the confidence to be a specific thing rather than anything you want. They&#39;re not trying to be infinite. They&#39;re trying to be unapologetically themselves. And they succeed beautifully.&lt;/p&gt;
+&lt;p&gt;I hope that one day I&#39;ll build something that belongs in this family.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Photo of the Year</title>
     <link href="https://adamfreisinger.me/posts/2026-01-02/photo-of-the-year/" />
