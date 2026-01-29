@@ -14,5 +14,6 @@
     "email": "hello@adamfreisinger.me",
     "socials": {
       "instagram": "https://www.instagram.com/adam.freisinger/"
-    }
+    },
+    "likesApiUrl": "https://adamfreisinger-likes.adamfreisinger.workers.dev"
 }

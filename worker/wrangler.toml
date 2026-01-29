@@ -1,0 +1,7 @@
+name = "adamfreisinger-likes"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "LIKES"
+id = "dcfc3cc7f9d44c44a2f34c668cbb21a3"  # ← paste your KV namespace id here
