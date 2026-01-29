@@ -11,6 +11,7 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "assets/favicons": "/" });
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("main.css");
+  eleventyConfig.addPassthroughCopy("robots.txt");
 
   // Cache-busting hash for main.css
   const cssContent = fs.readFileSync("main.css", "utf8");
