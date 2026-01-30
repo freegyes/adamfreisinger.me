@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://adamfreisinger.me/posts/2026-01-29/inspiring-instruments/">
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/versions/bulma-no-dark-mode.min.css" integrity="sha384-Mzv683sNGpHoqzflgja8HtOOXwSkg0WYgbi6iV3IjnOLZAsGNzzkdXxfHmJYT5dY" crossorigin="anonymous">
-    <link rel="stylesheet" href="/main.css?v=cb128315">
+    <link rel="stylesheet" href="/main.css?v=da1ab067">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" integrity="sha384-GPAzSuZc0kFvdIev6wm9zg8gnafE8tLso7rsAYQfc9hAdWCpOcpcNI5W9lWkYcsd" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -199,11 +199,15 @@
 <p>I hope that one day I'll build something that belongs in this family.</p>
 
             </article>
-            <div class="has-text-centered my-5">
-              <button id="like-btn" class="like-btn" data-slug="/posts/2026-01-29/inspiring-instruments/">
-                <span class="icon"><i id="like-icon" class="far fa-heart"></i></span>
-                <span id="like-count" class="like-count"></span>
+            <div class="has-text-centered my-5 fire-container">
+              <button id="fire-btn" class="fire-btn" data-slug="/posts/2026-01-29/inspiring-instruments/">
+                <span class="icon"><i id="fire-icon" class="fa-solid fa-fire"></i></span>
+                <span id="fire-count" class="fire-count"></span>
               </button>
+              <span id="fire-message" class="fire-message">tend the fire if this resonated with you</span>
+              <a id="fire-music" class="fire-music" href="https://www.youtube.com/watch?v=3G4kCi_ldr8" target="_blank" rel="noopener" title="Listen.">
+                <span class="icon"><i class="fa-solid fa-music"></i></span>
+              </a>
             </div>
           </div>
         </div>
@@ -263,12 +267,14 @@
     <script>
       (function() {
         var API = "https://adamfreisinger-likes.adamfreisinger.workers.dev".replace(/\/+$/, "");
-        var btn = document.getElementById("like-btn");
-        var icon = document.getElementById("like-icon");
-        var countEl = document.getElementById("like-count");
+        var btn = document.getElementById("fire-btn");
+        var icon = document.getElementById("fire-icon");
+        var countEl = document.getElementById("fire-count");
+        var messageEl = document.getElementById("fire-message");
+        var musicEl = document.getElementById("fire-music");
         var slug = btn.getAttribute("data-slug");
         var storageKey = "liked:" + slug;
-        var liked = false;
+        var tended = false;
 
         function showCount(n) {
           if (n > 0) {
@@ -277,14 +283,16 @@
           }
         }
 
-        function setLiked() {
-          liked = true;
-          btn.classList.add("is-liked");
-          icon.classList.replace("far", "fas");
+        function setTended() {
+          tended = true;
+          btn.classList.add("is-tended");
+          icon.classList.add("is-lit");
+          messageEl.textContent = "sitting around the fire";
+          musicEl.style.display = "inline-flex";
         }
 
         if (localStorage.getItem(storageKey)) {
-          setLiked();
+          setTended();
         }
 
         if (!API) return;
@@ -294,9 +302,10 @@
           .then(function(data) { showCount(data.likes); })
           .catch(function() {});
 
-        btn.addEventListener("click", function() {
-          if (liked) return;
-          setLiked();
+        btn.addEventListener("click", function(e) {
+          if (e.target.closest('.fire-music')) return;
+          if (tended) return;
+          setTended();
           localStorage.setItem(storageKey, "1");
 
           fetch(API + "/likes/" + encodeURIComponent(slug), { method: "POST" })
