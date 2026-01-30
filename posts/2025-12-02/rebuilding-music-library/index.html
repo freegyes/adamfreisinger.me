@@ -252,6 +252,7 @@ Something I can carry in my pocket, not because it contains all the music in the
           if (tended) return;
           setTended();
           localStorage.setItem(storageKey, "1");
+          plausible("Sat Around The Fire", { props: { post: slug } });
 
           fetch(API + "/likes/" + encodeURIComponent(slug), { method: "POST" })
             .then(function(r) { return r.json(); })
