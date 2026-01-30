@@ -75,18 +75,7 @@ To make this work, I:
 
 And then, it worked.
 
-<figure class="image is-16by9 block">
-  <iframe
-    class="has-ratio"
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/JhcDPnzj3jU?si=D3seO8Nk-e73dnZJ"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen
-  ></iframe>
-</figure>
+{% youtube "JhcDPnzj3jU", "Micro:bit and plugdata demo" %}
 
 I lifted my hand, tilting the tiny card ever so slightly. Instantly, the sound shifted—trembling, bending, shimmering—like a living thing responding to my touch. For a moment, it felt like I was sculpting sound in mid-air. Pure magic.
 

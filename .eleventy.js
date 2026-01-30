@@ -218,6 +218,36 @@ module.exports = async function(eleventyConfig) {
             `;
   });
 
+  /**
+   * youtube shortcode - embeds YouTube video with RSS-friendly fallback.
+   * Renders iframe for web, but includes a linked thumbnail that RSS readers can display.
+   * Usage: {% youtube "VIDEO_ID", "Video Title" %}
+   */
+  eleventyConfig.addShortcode("youtube", function(videoId, title = "YouTube video") {
+    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+    
+    return `<figure class="image is-16by9 block youtube-embed">
+  <a href="${videoUrl}" class="youtube-fallback" target="_blank" rel="noopener">
+    <img src="${thumbnailUrl}" alt="${title}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+    <span class="youtube-play-btn" aria-hidden="true"></span>
+  </a>
+  <iframe
+    class="has-ratio youtube-iframe"
+    width="560"
+    height="315"
+    src="${embedUrl}"
+    title="${title}"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+</figure>`;
+  });
+
   // Register a custom Liquid filter "absolute_url"
   eleventyConfig.addLiquidFilter("absolute_url", function(url) {
     // If the URL is already absolute, just return it.

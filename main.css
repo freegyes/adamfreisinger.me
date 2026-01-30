@@ -208,3 +208,20 @@ a[data-glightbox]:hover img {
 }
 
 .fire-music:hover { color: var(--fire-lit); }
+
+/* YouTube embed: show iframe, hide fallback thumbnail on web */
+.youtube-embed {
+  position: relative;
+}
+
+.youtube-embed .youtube-fallback {
+  display: none;
+}
+
+.youtube-embed .youtube-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

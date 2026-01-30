@@ -96,18 +96,7 @@ The previous, triangular version was built by bending wood. The current bamboo v
 
 [rubimo.net](https://www.rubimo.net/bamboo-mulatar)
 
-<figure class="image is-16by9 block">
-  <iframe
-    class="has-ratio"
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/lvx2qxOPzHk"
-    title="Mulatar by Lockruf-music / Rubi Mo"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-  ></iframe>
-</figure>
+{% youtube "lvx2qxOPzHk", "Mulatar by Lockruf-music / Rubi Mo" %}
 
 ### TERRA by Soma Laboratories
 
@@ -119,18 +108,7 @@ My current Daisy Seed-based project uses an MPR121 touch sensor, and I previousl
 
 [somasynths.com](https://somasynths.com/terra/)
 
-<figure class="image is-16by9 block">
-  <iframe
-    class="has-ratio"
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/C_Zyx_kmVC4"
-    title="TERRA by Soma Laboratories"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-  ></iframe>
-</figure>
+{% youtube "C_Zyx_kmVC4", "TERRA by Soma Laboratories" %}
 
 ### Aurelia by Terraphones
 
@@ -140,18 +118,7 @@ Shaped like a giant ocarina, made of wood, using silent mechanical Cherry keys (
 
 [terraphones.com](https://www.terraphones.com/aurelia/)
 
-<figure class="image is-16by9 block">
-  <iframe
-    class="has-ratio"
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/kklq2BiTTT8"
-    title="Aurelia by Terraphones"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-  ></iframe>
-</figure>
+{% youtube "kklq2BiTTT8", "Aurelia by Terraphones" %}
 
 ---
 
