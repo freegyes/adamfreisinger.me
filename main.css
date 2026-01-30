@@ -162,31 +162,49 @@ a[data-glightbox]:hover img {
   opacity: 0.85;
 }
 
-.like-btn {
+.fire-container {
+  --fire-muted: #888;
+  --fire-warm: #b5725a;
+  --fire-lit: #e25822;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  color: var(--fire-muted);
+}
+
+.fire-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
-  padding: 0.5em 1.2em;
+  padding: 0.5em 1em;
   border: 2px solid #ccc;
   border-radius: 9999px;
   background: none;
-  color: #888;
+  color: inherit;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color 0.2s, border-color 0.2s;
 }
 
-.like-btn:hover {
-  color: #b5725a;
-  border-color: #b5725a;
+.fire-btn:hover,
+.fire-btn.is-tended {
+  color: var(--fire-warm);
+  border-color: var(--fire-warm);
 }
 
-.like-btn .like-count {
+.fire-btn.is-tended { cursor: default; }
+
+.fire-btn .fire-count { display: none; }
+
+.fire-btn #fire-icon.is-lit { color: var(--fire-lit); }
+
+.fire-message { font-size: 0.9rem; }
+
+.fire-music {
   display: none;
+  font-size: 0.75rem;
+  color: inherit;
 }
 
-.like-btn.is-liked {
-  color: #b5725a;
-  border-color: #b5725a;
-  cursor: default;
-}
+.fire-music:hover { color: var(--fire-lit); }
