@@ -116,6 +116,13 @@
                       </span>
                       &nbsp;
                       {{ post.data.readingTime }}</span>
+                    <span class="card-footer-item fire-footer-item" data-slug="{{ post.url }}" style="display: none;">
+                      <span class="icon has-text-warning">
+                        <i class="fas fa-fire"></i>
+                      </span>
+                      &nbsp;
+                      <span class="fire-footer-count"></span>
+                    </span>
                   </footer>
                 </div>
               </a>
@@ -266,6 +273,27 @@
       row.appendChild(items[j]);
       items.splice(j, 1);
     }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var API = "{{ site.likesApiUrl }}".replace(/\/+$/, "");
+    if (!API) return;
+
+    var items = document.querySelectorAll(".fire-footer-item");
+    items.forEach(function(item) {
+      var slug = item.getAttribute("data-slug");
+      fetch(API + "/likes/" + encodeURIComponent(slug))
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (data.likes > 0) {
+            item.querySelector(".fire-footer-count").textContent = data.likes;
+            item.style.display = "";
+          }
+        })
+        .catch(function() {});
+    });
   });
 </script>
 
