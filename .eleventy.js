@@ -129,14 +129,34 @@ module.exports = async function(eleventyConfig) {
     function generateMediaMarkup(media) {
       let elementMarkup = "";
       if (media.type && media.type.toLowerCase() === "video") {
-        elementMarkup = `<figure class="video ${media.aspect}">
-            <a href="${media.src}">
-              <video autoplay loop muted playsinline preload="none" loading="lazy" style="width: 100%; height: 100%;">
-                <source src="${media.src}" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </a>
-          </figure>`;
+        if (media.poster) {
+          // With poster: fallback image for RSS/email, video overlays on web
+          const posterMetadata = processImage(media.poster);
+          const posterMarkup = buildPictureMarkup(posterMetadata, media.alt || "", "video-poster", undefined, "lazy");
+          const formats = Object.keys(posterMetadata);
+          const fallbackFormat = formats[formats.length - 1];
+          const posterUrl = posterMetadata[fallbackFormat][posterMetadata[fallbackFormat].length - 1].url;
+          elementMarkup = `<figure class="video ${media.aspect} video-embed">
+              <a href="${media.src}" class="video-fallback" target="_blank" rel="noopener">
+                ${posterMarkup}
+                <span class="video-play-btn" aria-hidden="true"></span>
+              </a>
+              <a href="${media.src}" class="video-link" target="_blank" rel="noopener">
+                <video class="video-player" autoplay loop muted playsinline preload="none" loading="lazy" poster="${posterUrl}">
+                  <source src="${media.src}" type="video/mp4">
+                </video>
+              </a>
+            </figure>`;
+        } else {
+          // Without poster: simple video in link
+          elementMarkup = `<figure class="video ${media.aspect}">
+              <a href="${media.src}" target="_blank" rel="noopener">
+                <video autoplay loop muted playsinline preload="none" loading="lazy" style="width: 100%; height: 100%;">
+                  <source src="${media.src}" type="video/mp4">
+                </video>
+              </a>
+            </figure>`;
+        }
       } else {
         const metadata = processImage(media.src);
         const pictureMarkup = buildPictureMarkup(metadata, media.alt || "", "", undefined, "lazy");

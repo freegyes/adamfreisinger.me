@@ -225,3 +225,63 @@ a[data-glightbox]:hover img {
   width: 100%;
   height: 100%;
 }
+
+/* Video embed: video layers on top of fallback (fallback visible in RSS/email) */
+.video-embed {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fallback stays in flow to give the figure dimensions */
+.video-embed .video-fallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.video-embed .video-fallback img,
+.video-embed .video-fallback picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Video link overlays the fallback */
+.video-embed .video-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: block;
+}
+
+.video-embed .video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Play button overlay for video fallback (visible in RSS/email) */
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+}
+
+.video-play-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent #fff;
+}
