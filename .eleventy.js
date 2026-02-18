@@ -221,7 +221,8 @@ module.exports = async function(eleventyConfig) {
     if (!photos.length) return "";
 
     const sizes = "(min-width: 1024px) 25vw, (min-width: 769px) 33vw, 50vw";
-    const selected = photos.slice(0, 11);
+    const activePhotos = photos.filter(p => p.active !== false);
+    const selected = activePhotos.slice(0, 11);
     return selected.map(photo => {
       const metadata = processImage(photo.src);
       const pictureHtml = buildPictureMarkup(metadata, photo.alt || "", "", sizes, "lazy");

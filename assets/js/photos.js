@@ -37,6 +37,12 @@
     var fromCurrent = shuffle(current).slice(0, Math.min(target, current.length));
     var remainder = count - fromCurrent.length;
     var fromOther = shuffle(other).slice(0, remainder);
+    // Backfill from current-month pool if other pool is exhausted
+    if (fromOther.length < remainder) {
+      var usedIds = fromCurrent.map(function (p) { return p.id; });
+      var backfill = shuffle(current).filter(function (p) { return usedIds.indexOf(p.id) === -1; });
+      fromOther = fromOther.concat(backfill.slice(0, remainder - fromOther.length));
+    }
     return shuffle(fromCurrent.concat(fromOther));
   }
 

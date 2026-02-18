@@ -53,21 +53,26 @@ for file in "${files[@]}"; do
   id="${capture_date}-${basename_noext}"
 
   # Duplicate check by ID (exact match)
-  if python3 -c "import json,sys; data=json.load(open('$DATA_FILE')); sys.exit(0 if any(p['id']=='$id' for p in data) else 1)" 2>/dev/null; then
+  if PHOTO_ID="$id" python3 -c "
+import json, os, sys
+data = json.load(open('$DATA_FILE'))
+sys.exit(0 if any(p['id'] == os.environ['PHOTO_ID'] for p in data) else 1)
+" 2>/dev/null; then
     echo "⚠ Skipping $filename — ID '$id' already exists in photos.json"
     continue
   fi
 
   # Duplicate check by original filename (catches same file added under a different date)
-  if python3 -c "
-import json, sys
+  if PHOTO_BASENAME="$basename_noext" PHOTO_FILENAME="$filename" python3 -c "
+import json, os, sys
 data = json.load(open('$DATA_FILE'))
-target = '${basename_noext}'
+target = os.environ['PHOTO_BASENAME']
+filename = os.environ['PHOTO_FILENAME']
 for p in data:
     parts = p['id'].split('-', 2)
     existing_basename = parts[2] if len(parts) >= 3 else p['id']
     if existing_basename == target:
-        print('⚠ Skipping ${filename} — filename already in archive as ' + p['id'], file=sys.stderr)
+        print('⚠ Skipping ' + filename + ' — filename already in archive as ' + p['id'], file=sys.stderr)
         sys.exit(0)
 sys.exit(1)
 " 2>&1; then
@@ -113,17 +118,17 @@ sys.exit(1)
     -overwrite_original "$dest_file"
 
   # Append to photos.json
-  python3 -c "
-import json
+  PHOTO_ID="$id" PHOTO_BASENAME="$basename_noext" PHOTO_DATE="$capture_date" PHOTO_WIDTH="$width" PHOTO_HEIGHT="$height" python3 -c "
+import json, os
 with open('$DATA_FILE', 'r') as f:
     data = json.load(f)
 data.append({
-    'id': '$id',
-    'src': '/assets/images/photos/${basename_noext}.jpg',
-    'captureDate': '$capture_date',
+    'id': os.environ['PHOTO_ID'],
+    'src': '/assets/images/photos/' + os.environ['PHOTO_BASENAME'] + '.jpg',
+    'captureDate': os.environ['PHOTO_DATE'],
     'active': True,
-    'width': $width,
-    'height': $height
+    'width': int(os.environ['PHOTO_WIDTH']),
+    'height': int(os.environ['PHOTO_HEIGHT'])
 })
 with open('$DATA_FILE', 'w') as f:
     json.dump(data, f, indent=2)
