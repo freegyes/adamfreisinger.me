@@ -6,8 +6,6 @@
   var container = document.getElementById("photo-snippet");
   if (!container) return;
 
-  var lightbox = null;
-
   // Fisher-Yates shuffle
   function shuffle(arr) {
     var a = arr.slice();
@@ -43,15 +41,16 @@
     var html = "";
     for (var i = 0; i < selected.length; i++) {
       var p = selected[i];
+      // Link to the photos page with this photo's hash — opens it directly in the grid lightbox
       html += '<div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">' +
         '<div class="photo-grid-item">' +
-          '<a href="' + p.lightboxHref + '" class="glightbox-snippet" data-glightbox="" data-photo-id="' + p.id + '">' +
+          '<a href="/photos/#' + p.id + '">' +
             p.pictureHtml +
           '</a>' +
         '</div>' +
       '</div>';
     }
-    // Deal card — same visual style as the full grid's deal card
+    // Deal card
     html += '<div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">' +
       '<div class="deal-card" id="snippet-deal-card" role="button" tabindex="0" aria-label="Deal a new set of photos">' +
         '<span class="icon is-large"><i class="fas fa-shuffle fa-2x"></i></span>' +
@@ -61,28 +60,16 @@
     return html;
   }
 
-  function initLightbox() {
-    if (lightbox) lightbox.destroy();
-    lightbox = GLightbox({
-      selector: ".glightbox-snippet",
-      touchNavigation: true,
-      loop: true,
-      closeOnOutsideClick: true
-    });
-  }
-
   function render(selected, animate) {
     if (animate) {
       container.style.opacity = "0";
       setTimeout(function () {
         container.innerHTML = buildSnippet(selected);
-        initLightbox();
         bindDealCard();
         container.style.opacity = "1";
       }, 300);
     } else {
       container.innerHTML = buildSnippet(selected);
-      initLightbox();
       bindDealCard();
     }
   }
