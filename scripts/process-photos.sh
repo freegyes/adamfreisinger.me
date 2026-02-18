@@ -6,7 +6,7 @@ set -euo pipefail
 # Default input: ./photos-input/
 #
 # For each photo found:
-#   - Prompts for a YYYY-MM capture date
+#   - Reads capture date from EXIF (DateTimeOriginal); falls back to prompt if absent
 #   - Generates ID as YYYY-MM-<OriginalBasename> (original capitalization preserved)
 #   - Strips privacy-sensitive EXIF (GPS, serial numbers, etc.)
 #   - Appends entry to _data/photos.json with captureDate and active:true
@@ -40,14 +40,20 @@ for file in "${files[@]}"; do
   # Preserve original capitalization; strip extension only
   basename_noext="${filename%.*}"
 
-  # Prompt for capture date
-  while true; do
-    read -rp "Capture date for $filename (YYYY-MM): " capture_date
-    if [[ "$capture_date" =~ ^[0-9]{4}-[0-9]{2}$ ]]; then
-      break
-    fi
-    echo "  Invalid format. Enter as YYYY-MM (e.g. 2023-08)"
-  done
+  # Read capture date from EXIF; fall back to prompt if not found
+  capture_date=$(exiftool -s3 -DateTimeOriginal -d "%Y-%m" "$file" 2>/dev/null | tr -d '[:space:]')
+  if [[ ! "$capture_date" =~ ^[0-9]{4}-[0-9]{2}$ ]]; then
+    echo "  No EXIF date found for $filename."
+    while true; do
+      read -rp "  Enter capture date manually (YYYY-MM): " capture_date
+      if [[ "$capture_date" =~ ^[0-9]{4}-[0-9]{2}$ ]]; then
+        break
+      fi
+      echo "  Invalid format. Enter as YYYY-MM (e.g. 2023-08)"
+    done
+  else
+    echo "  EXIF date: $capture_date"
+  fi
 
   # Build the ID: YYYY-MM-OriginalBasename (original capitalization)
   id="${capture_date}-${basename_noext}"
