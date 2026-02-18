@@ -69,7 +69,7 @@ module.exports = async function(eleventyConfig) {
       const formats = (ext === ".png") ? ["webp", "png"] : ["webp", "jpeg"];
 
       const options = {
-        widths: [400, 800, 1200, 1600, "auto"],
+        widths: [400, 800, 1200, 1600, 2400],
         formats,
         fixOrientation: true,
         outputDir: "./_site/img/",
