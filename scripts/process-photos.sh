@@ -55,8 +55,18 @@ for file in "${files[@]}"; do
     echo "  EXIF date: $capture_date"
   fi
 
-  # Build the ID: YYYY-MM-OriginalBasename (original capitalization)
-  id="${capture_date}-${basename_noext}"
+  # Build clean camera code from filename:
+  #   strip leading date prefix (YYYY-MM-DD[_-]), strip leading underscores,
+  #   remove underscore before digits (IMG_0922 → IMG0922),
+  #   strip Lightroom edit suffixes (-Edit, -Edit-2, etc.)
+  camera_code="$basename_noext"
+  camera_code=$(echo "$camera_code" | sed 's/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}[_-]//')
+  camera_code=$(echo "$camera_code" | sed 's/^_*//')
+  camera_code=$(echo "$camera_code" | sed 's/_\([0-9]\)/\1/g')
+  camera_code=$(echo "$camera_code" | sed 's/\(-Edit\(-[0-9]*\)\?\)\+$//')
+
+  # Build the ID: YYYY-MM-CameraCode
+  id="${capture_date}-${camera_code}"
 
   # Duplicate check by ID (exact match)
   if PHOTO_ID="$id" python3 -c "

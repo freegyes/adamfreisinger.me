@@ -1,1 +1,698 @@
-[]
+[
+  {
+    "id": "2026-02-DSF3615",
+    "src": "/assets/images/photos/_DSF3615.jpg",
+    "captureDate": "2026-02",
+    "active": true,
+    "width": 5386,
+    "height": 3591
+  },
+  {
+    "id": "2024-01-IMG8372",
+    "src": "/assets/images/photos/__reflection_IMG_8372.jpg",
+    "captureDate": "2024-01",
+    "active": true,
+    "width": 1450,
+    "height": 1932
+  },
+  {
+    "id": "2022-03-DSF1028",
+    "src": "/assets/images/photos/_DSF1028.jpg",
+    "captureDate": "2022-03",
+    "active": true,
+    "width": 1708,
+    "height": 1137
+  },
+  {
+    "id": "2022-04-DSF1410",
+    "src": "/assets/images/photos/_DSF1410.jpg",
+    "captureDate": "2022-04",
+    "active": true,
+    "width": 5519,
+    "height": 3679
+  },
+  {
+    "id": "2022-04-DSF1530",
+    "src": "/assets/images/photos/_DSF1530.jpg",
+    "captureDate": "2022-04",
+    "active": true,
+    "width": 6179,
+    "height": 4119
+  },
+  {
+    "id": "2022-04-DSF1697",
+    "src": "/assets/images/photos/_DSF1697.jpg",
+    "captureDate": "2022-04",
+    "active": true,
+    "width": 5169,
+    "height": 3446
+  },
+  {
+    "id": "2022-04-DSF1884",
+    "src": "/assets/images/photos/_DSF1884.jpg",
+    "captureDate": "2022-04",
+    "active": true,
+    "width": 6240,
+    "height": 4160
+  },
+  {
+    "id": "2022-05-DSF2111",
+    "src": "/assets/images/photos/_DSF2111.jpg",
+    "captureDate": "2022-05",
+    "active": true,
+    "width": 6146,
+    "height": 4097
+  },
+  {
+    "id": "2023-03-DSF2266",
+    "src": "/assets/images/photos/_DSF2266.jpg",
+    "captureDate": "2023-03",
+    "active": true,
+    "width": 6240,
+    "height": 4160
+  },
+  {
+    "id": "2023-04-DSF2378",
+    "src": "/assets/images/photos/_DSF2378.jpg",
+    "captureDate": "2023-04",
+    "active": true,
+    "width": 6056,
+    "height": 4037
+  },
+  {
+    "id": "2023-05-DSF2577",
+    "src": "/assets/images/photos/_DSF2577.jpg",
+    "captureDate": "2023-05",
+    "active": true,
+    "width": 2302,
+    "height": 1535
+  },
+  {
+    "id": "2023-12-DSF2939",
+    "src": "/assets/images/photos/_DSF2939.jpg",
+    "captureDate": "2023-12",
+    "active": true,
+    "width": 5457,
+    "height": 3639
+  },
+  {
+    "id": "2023-12-DSF3032",
+    "src": "/assets/images/photos/_DSF3032.jpg",
+    "captureDate": "2023-12",
+    "active": true,
+    "width": 1804,
+    "height": 2706
+  },
+  {
+    "id": "2023-12-DSF3056",
+    "src": "/assets/images/photos/_DSF3056.jpg",
+    "captureDate": "2023-12",
+    "active": true,
+    "width": 4194,
+    "height": 2796
+  },
+  {
+    "id": "2022-05-DSF3067",
+    "src": "/assets/images/photos/_DSF3067.jpg",
+    "captureDate": "2022-05",
+    "active": true,
+    "width": 6240,
+    "height": 4160
+  },
+  {
+    "id": "2022-05-DSF3085",
+    "src": "/assets/images/photos/_DSF3085.jpg",
+    "captureDate": "2022-05",
+    "active": true,
+    "width": 6240,
+    "height": 4160
+  },
+  {
+    "id": "2022-05-DSF3196",
+    "src": "/assets/images/photos/_DSF3196.jpg",
+    "captureDate": "2022-05",
+    "active": true,
+    "width": 3594,
+    "height": 2396
+  },
+  {
+    "id": "2022-05-DSF3227",
+    "src": "/assets/images/photos/_DSF3227.jpg",
+    "captureDate": "2022-05",
+    "active": true,
+    "width": 2169,
+    "height": 1446
+  },
+  {
+    "id": "2025-11-DSF3355",
+    "src": "/assets/images/photos/_DSF3355.jpg",
+    "captureDate": "2025-11",
+    "active": true,
+    "width": 6240,
+    "height": 4160
+  },
+  {
+    "id": "2026-01-DSF3412",
+    "src": "/assets/images/photos/_DSF3412.jpg",
+    "captureDate": "2026-01",
+    "active": true,
+    "width": 5180,
+    "height": 3453
+  },
+  {
+    "id": "2026-01-DSF3449",
+    "src": "/assets/images/photos/_DSF3449.jpg",
+    "captureDate": "2026-01",
+    "active": true,
+    "width": 2805,
+    "height": 2805
+  },
+  {
+    "id": "2022-06-DSF3450",
+    "src": "/assets/images/photos/_DSF3450.jpg",
+    "captureDate": "2022-06",
+    "active": true,
+    "width": 3959,
+    "height": 2639
+  },
+  {
+    "id": "2026-01-DSF3484",
+    "src": "/assets/images/photos/_DSF3484.jpg",
+    "captureDate": "2026-01",
+    "active": true,
+    "width": 5518,
+    "height": 3679
+  },
+  {
+    "id": "2025-07-DSF3963",
+    "src": "/assets/images/photos/_DSF3963.jpg",
+    "captureDate": "2025-07",
+    "active": true,
+    "width": 6065,
+    "height": 4043
+  },
+  {
+    "id": "2025-07-DSF3982",
+    "src": "/assets/images/photos/_DSF3982.jpg",
+    "captureDate": "2025-07",
+    "active": true,
+    "width": 5618,
+    "height": 3745
+  },
+  {
+    "id": "2022-06-DSF4407",
+    "src": "/assets/images/photos/_DSF4407.jpg",
+    "captureDate": "2022-06",
+    "active": true,
+    "width": 4025,
+    "height": 6038
+  },
+  {
+    "id": "2022-06-DSF4482",
+    "src": "/assets/images/photos/_DSF4482.jpg",
+    "captureDate": "2022-06",
+    "active": true,
+    "width": 5569,
+    "height": 3713
+  },
+  {
+    "id": "2022-06-DSF4598",
+    "src": "/assets/images/photos/_DSF4598.jpg",
+    "captureDate": "2022-06",
+    "active": true,
+    "width": 6216,
+    "height": 4144
+  },
+  {
+    "id": "2022-06-DSF4866",
+    "src": "/assets/images/photos/_DSF4866-Edit.jpg",
+    "captureDate": "2022-06",
+    "active": true,
+    "width": 4740,
+    "height": 3160
+  },
+  {
+    "id": "2022-06-DSF5061",
+    "src": "/assets/images/photos/_DSF5061.jpg",
+    "captureDate": "2022-06",
+    "active": true,
+    "width": 5736,
+    "height": 3824
+  },
+  {
+    "id": "2022-06-DSF5360",
+    "src": "/assets/images/photos/_DSF5360.jpg",
+    "captureDate": "2022-06",
+    "active": true,
+    "width": 4844,
+    "height": 3229
+  },
+  {
+    "id": "2022-09-DSF6452",
+    "src": "/assets/images/photos/_DSF6452.jpg",
+    "captureDate": "2022-09",
+    "active": true,
+    "width": 4650,
+    "height": 3100
+  },
+  {
+    "id": "2022-09-DSF6594",
+    "src": "/assets/images/photos/_DSF6594.jpg",
+    "captureDate": "2022-09",
+    "active": true,
+    "width": 6240,
+    "height": 4160
+  },
+  {
+    "id": "2022-09-DSF6665",
+    "src": "/assets/images/photos/_DSF6665.jpg",
+    "captureDate": "2022-09",
+    "active": true,
+    "width": 1742,
+    "height": 1161
+  },
+  {
+    "id": "2022-09-DSF6719",
+    "src": "/assets/images/photos/_DSF6719.jpg",
+    "captureDate": "2022-09",
+    "active": true,
+    "width": 6240,
+    "height": 4160
+  },
+  {
+    "id": "2022-10-DSF6847",
+    "src": "/assets/images/photos/_DSF6847.jpg",
+    "captureDate": "2022-10",
+    "active": true,
+    "width": 2573,
+    "height": 3860
+  },
+  {
+    "id": "2022-10-DSF6957",
+    "src": "/assets/images/photos/_DSF6957.jpg",
+    "captureDate": "2022-10",
+    "active": true,
+    "width": 2571,
+    "height": 3856
+  },
+  {
+    "id": "2022-10-DSF6971",
+    "src": "/assets/images/photos/_DSF6971.jpg",
+    "captureDate": "2022-10",
+    "active": true,
+    "width": 5844,
+    "height": 3287
+  },
+  {
+    "id": "2022-10-DSF6979",
+    "src": "/assets/images/photos/_DSF6979.jpg",
+    "captureDate": "2022-10",
+    "active": true,
+    "width": 6240,
+    "height": 4160
+  },
+  {
+    "id": "2022-12-DSF7073",
+    "src": "/assets/images/photos/_DSF7073.jpg",
+    "captureDate": "2022-12",
+    "active": true,
+    "width": 5877,
+    "height": 3918
+  },
+  {
+    "id": "2023-06-DSF8529",
+    "src": "/assets/images/photos/_DSF8529.jpg",
+    "captureDate": "2023-06",
+    "active": true,
+    "width": 5474,
+    "height": 3649
+  },
+  {
+    "id": "2023-06-DSF8631",
+    "src": "/assets/images/photos/_DSF8631.jpg",
+    "captureDate": "2023-06",
+    "active": true,
+    "width": 3765,
+    "height": 2510
+  },
+  {
+    "id": "2014-11-IMG0922",
+    "src": "/assets/images/photos/2014-11-07_IMG_0922.jpg",
+    "captureDate": "2014-11",
+    "active": true,
+    "width": 3456,
+    "height": 5184
+  },
+  {
+    "id": "2014-12-IMG3804",
+    "src": "/assets/images/photos/2014-12-05_IMG_3804.jpg",
+    "captureDate": "2014-12",
+    "active": true,
+    "width": 4396,
+    "height": 2931
+  },
+  {
+    "id": "2014-12-IMG4270",
+    "src": "/assets/images/photos/2014-12-17_IMG_4270-Edit-Edit.jpg",
+    "captureDate": "2014-12",
+    "active": true,
+    "width": 5184,
+    "height": 3456
+  },
+  {
+    "id": "2014-12-IMG5019",
+    "src": "/assets/images/photos/2014-12-21_IMG_5019.jpg",
+    "captureDate": "2014-12",
+    "active": true,
+    "width": 5184,
+    "height": 3456
+  },
+  {
+    "id": "2014-12-IMG5590",
+    "src": "/assets/images/photos/2014-12-28_IMG_5590-Edit.jpg",
+    "captureDate": "2014-12",
+    "active": true,
+    "width": 4002,
+    "height": 2668
+  },
+  {
+    "id": "2015-01-IMG6135",
+    "src": "/assets/images/photos/2015-01-03_IMG_6135.jpg",
+    "captureDate": "2015-01",
+    "active": true,
+    "width": 1843,
+    "height": 2763
+  },
+  {
+    "id": "2015-10-IMG9397",
+    "src": "/assets/images/photos/2015-10-02_IMG_9397-Edit-2-Edit.jpg",
+    "captureDate": "2015-10",
+    "active": true,
+    "width": 5184,
+    "height": 3456
+  },
+  {
+    "id": "2015-10-IMG9470",
+    "src": "/assets/images/photos/2015-10-02_IMG_9470-Edit.jpg",
+    "captureDate": "2015-10",
+    "active": true,
+    "width": 4290,
+    "height": 2860
+  },
+  {
+    "id": "2015-10-IMG9486",
+    "src": "/assets/images/photos/2015-10-02_IMG_9486-Edit.jpg",
+    "captureDate": "2015-10",
+    "active": true,
+    "width": 5184,
+    "height": 3456
+  },
+  {
+    "id": "2021-06-film-29",
+    "src": "/assets/images/photos/29.jpg",
+    "captureDate": "2021-06",
+    "active": true,
+    "width": 2959,
+    "height": 1973
+  },
+  {
+    "id": "2021-06-film-4A",
+    "src": "/assets/images/photos/4A.jpg",
+    "captureDate": "2021-06",
+    "active": true,
+    "width": 3000,
+    "height": 2000
+  },
+  {
+    "id": "2021-06-film-5A",
+    "src": "/assets/images/photos/5A.jpg",
+    "captureDate": "2021-06",
+    "active": true,
+    "width": 3000,
+    "height": 2000
+  },
+  {
+    "id": "2023-07-IMG5437",
+    "src": "/assets/images/photos/IMG_5437.jpg",
+    "captureDate": "2023-07",
+    "active": true,
+    "width": 1070,
+    "height": 1427
+  },
+  {
+    "id": "2023-07-IMG5517",
+    "src": "/assets/images/photos/IMG_5517.jpg",
+    "captureDate": "2023-07",
+    "active": true,
+    "width": 3960,
+    "height": 2970
+  },
+  {
+    "id": "2022-11-R0000023",
+    "src": "/assets/images/photos/R0000023.jpg",
+    "captureDate": "2022-11",
+    "active": true,
+    "width": 5788,
+    "height": 3859
+  },
+  {
+    "id": "2020-02-R0000277",
+    "src": "/assets/images/photos/R0000277.jpg",
+    "captureDate": "2020-02",
+    "active": true,
+    "width": 4911,
+    "height": 3273
+  },
+  {
+    "id": "2020-02-R0000284",
+    "src": "/assets/images/photos/R0000284.jpg",
+    "captureDate": "2020-02",
+    "active": true,
+    "width": 4408,
+    "height": 2937
+  },
+  {
+    "id": "2020-02-R0000359",
+    "src": "/assets/images/photos/R0000359.jpg",
+    "captureDate": "2020-02",
+    "active": true,
+    "width": 5591,
+    "height": 3727
+  },
+  {
+    "id": "2020-02-R0000408",
+    "src": "/assets/images/photos/R0000408.jpg",
+    "captureDate": "2020-02",
+    "active": true,
+    "width": 4257,
+    "height": 2839
+  },
+  {
+    "id": "2020-03-R0000844",
+    "src": "/assets/images/photos/R0000844.jpg",
+    "captureDate": "2020-03",
+    "active": true,
+    "width": 1843,
+    "height": 1228
+  },
+  {
+    "id": "2020-07-R0001482",
+    "src": "/assets/images/photos/R0001482.jpg",
+    "captureDate": "2020-07",
+    "active": true,
+    "width": 5421,
+    "height": 3614
+  },
+  {
+    "id": "2020-07-R0001516",
+    "src": "/assets/images/photos/R0001516.jpg",
+    "captureDate": "2020-07",
+    "active": true,
+    "width": 5372,
+    "height": 3581
+  },
+  {
+    "id": "2020-08-R0002287",
+    "src": "/assets/images/photos/R0002287.jpg",
+    "captureDate": "2020-08",
+    "active": true,
+    "width": 5881,
+    "height": 3921
+  },
+  {
+    "id": "2020-09-R0002912",
+    "src": "/assets/images/photos/R0002912.jpg",
+    "captureDate": "2020-09",
+    "active": true,
+    "width": 2459,
+    "height": 3689
+  },
+  {
+    "id": "2020-09-R0002991",
+    "src": "/assets/images/photos/R0002991.jpg",
+    "captureDate": "2020-09",
+    "active": true,
+    "width": 3567,
+    "height": 5353
+  },
+  {
+    "id": "2020-09-R0003655",
+    "src": "/assets/images/photos/R0003655.jpg",
+    "captureDate": "2020-09",
+    "active": true,
+    "width": 3614,
+    "height": 2409
+  },
+  {
+    "id": "2020-09-R0003840",
+    "src": "/assets/images/photos/R0003840.jpg",
+    "captureDate": "2020-09",
+    "active": true,
+    "width": 6000,
+    "height": 4000
+  },
+  {
+    "id": "2020-09-R0004135",
+    "src": "/assets/images/photos/R0004135.jpg",
+    "captureDate": "2020-09",
+    "active": true,
+    "width": 5814,
+    "height": 3874
+  },
+  {
+    "id": "2020-09-R0004381",
+    "src": "/assets/images/photos/R0004381.jpg",
+    "captureDate": "2020-09",
+    "active": true,
+    "width": 6000,
+    "height": 4000
+  },
+  {
+    "id": "2020-11-R0004660",
+    "src": "/assets/images/photos/R0004660.jpg",
+    "captureDate": "2020-11",
+    "active": true,
+    "width": 5560,
+    "height": 3705
+  },
+  {
+    "id": "2021-01-R0005083",
+    "src": "/assets/images/photos/R0005083.jpg",
+    "captureDate": "2021-01",
+    "active": true,
+    "width": 3929,
+    "height": 5893
+  },
+  {
+    "id": "2021-02-R0005639",
+    "src": "/assets/images/photos/R0005639.jpg",
+    "captureDate": "2021-02",
+    "active": true,
+    "width": 4047,
+    "height": 2698
+  },
+  {
+    "id": "2021-02-R0005719",
+    "src": "/assets/images/photos/R0005719.jpg",
+    "captureDate": "2021-02",
+    "active": true,
+    "width": 5044,
+    "height": 3363
+  },
+  {
+    "id": "2021-02-R0005752",
+    "src": "/assets/images/photos/R0005752.jpg",
+    "captureDate": "2021-02",
+    "active": true,
+    "width": 5224,
+    "height": 3483
+  },
+  {
+    "id": "2021-02-R0005963",
+    "src": "/assets/images/photos/R0005963.jpg",
+    "captureDate": "2021-02",
+    "active": true,
+    "width": 5370,
+    "height": 3579
+  },
+  {
+    "id": "2021-02-R0006074",
+    "src": "/assets/images/photos/R0006074.jpg",
+    "captureDate": "2021-02",
+    "active": true,
+    "width": 5638,
+    "height": 3759
+  },
+  {
+    "id": "2021-03-R0006467",
+    "src": "/assets/images/photos/R0006467.jpg",
+    "captureDate": "2021-03",
+    "active": true,
+    "width": 6000,
+    "height": 4000
+  },
+  {
+    "id": "2021-05-R0007026",
+    "src": "/assets/images/photos/R0007026.jpg",
+    "captureDate": "2021-05",
+    "active": true,
+    "width": 3689,
+    "height": 2459
+  },
+  {
+    "id": "2021-06-R0007393",
+    "src": "/assets/images/photos/R0007393.jpg",
+    "captureDate": "2021-06",
+    "active": true,
+    "width": 5905,
+    "height": 3937
+  },
+  {
+    "id": "2021-07-R0007685",
+    "src": "/assets/images/photos/R0007685.jpg",
+    "captureDate": "2021-07",
+    "active": true,
+    "width": 6000,
+    "height": 4000
+  },
+  {
+    "id": "2021-07-R0007802",
+    "src": "/assets/images/photos/R0007802.jpg",
+    "captureDate": "2021-07",
+    "active": true,
+    "width": 5954,
+    "height": 3969
+  },
+  {
+    "id": "2021-08-R0008155",
+    "src": "/assets/images/photos/R0008155.jpg",
+    "captureDate": "2021-08",
+    "active": true,
+    "width": 5606,
+    "height": 3737
+  },
+  {
+    "id": "2021-11-R0008580",
+    "src": "/assets/images/photos/R0008580.jpg",
+    "captureDate": "2021-11",
+    "active": true,
+    "width": 2754,
+    "height": 1836
+  },
+  {
+    "id": "2021-12-R0008768",
+    "src": "/assets/images/photos/R0008768.jpg",
+    "captureDate": "2021-12",
+    "active": true,
+    "width": 5455,
+    "height": 3637
+  },
+  {
+    "id": "2021-12-R0009043",
+    "src": "/assets/images/photos/R0009043.jpg",
+    "captureDate": "2021-12",
+    "active": true,
+    "width": 5870,
+    "height": 3913
+  }
+]
