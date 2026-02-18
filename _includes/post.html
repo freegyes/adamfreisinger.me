@@ -65,7 +65,20 @@
       </div>
             
       {% include "_get-notified.html" %}
-      
+
+    </section>
+
+    <hr class="container" />
+
+    <section class="section">
+      <div class="container">
+        <h3 class="title is-size-3">What caught my eye</h3>
+        <p class="subtitle is-size-5">A randomly dealt hand from the archive. Shuffle for a new one.</p>
+        <div id="photo-snippet" class="columns is-multiline is-mobile"></div>
+        <p class="mt-3 has-text-right">
+          <a href="/photos/">See more photos &rarr;</a>
+        </p>
+      </div>
     </section>
 
     <footer>
@@ -134,5 +147,9 @@
         });
       })();
     </script>
+    <script>
+      window.__PHOTOS__ = {% photosJson %};
+    </script>
+    <script src="/assets/js/snippet.js"></script>
   </body>
 </html>
