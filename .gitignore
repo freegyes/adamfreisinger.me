@@ -9,8 +9,9 @@ _site/
 # eleventy-img disk cache
 .cache/
 
-# Claude Code local settings
+# Claude Code local settings and generated plans
 .claude/
+docs/
 
 # Photo processing drop zone
 photos-input/
