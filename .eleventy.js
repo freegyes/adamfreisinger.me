@@ -188,8 +188,11 @@ module.exports = async function(eleventyConfig) {
     const photos = JSON.parse(fs.readFileSync(photosPath, "utf8"));
     if (!photos.length) return "[]";
 
+    const activePhotos = photos.filter(p => p.active !== false);
+    if (!activePhotos.length) return "[]";
+
     const sizes = "(min-width: 1024px) 25vw, (min-width: 769px) 33vw, 50vw";
-    const result = photos.map(photo => {
+    const result = activePhotos.map(photo => {
       const metadata = processImage(photo.src);
       const pictureHtml = buildPictureMarkup(metadata, photo.alt || "", "", sizes, "lazy");
       const formats = Object.keys(metadata);
@@ -197,6 +200,7 @@ module.exports = async function(eleventyConfig) {
       const lightboxHref = metadata[fallbackFormat][metadata[fallbackFormat].length - 1].url;
       return {
         id: photo.id,
+        captureDate: photo.captureDate || null,
         alt: photo.alt || "",
         pictureHtml: pictureHtml,
         lightboxHref: lightboxHref,
