@@ -4,6 +4,13 @@ set -euo pipefail
 # Process photos for the gallery.
 # Usage: ./scripts/process-photos.sh [input-dir]
 # Default input: ./photos-input/
+#
+# For each photo found:
+#   - Prompts for a YYYY-MM capture date
+#   - Generates ID as YYYY-MM-<OriginalBasename> (original capitalization preserved)
+#   - Strips privacy-sensitive EXIF (GPS, serial numbers, etc.)
+#   - Appends entry to _data/photos.json with captureDate and active:true
+#   - Moves original to photos-input/done/
 
 INPUT_DIR="${1:-./photos-input}"
 OUTPUT_DIR="./assets/images/photos"
@@ -30,12 +37,40 @@ for file in "${files[@]}"; do
   [ -f "$file" ] || continue
 
   filename=$(basename "$file")
-  # Generate kebab-case ID from filename (strip extension, lowercase, replace spaces/underscores)
-  id=$(echo "${filename%.*}" | tr '[:upper:]' '[:lower:]' | sed 's/[_ ]/-/g' | sed 's/[^a-z0-9-]//g' | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//')
+  # Preserve original capitalization; strip extension only
+  basename_noext="${filename%.*}"
 
-  # Check for duplicates
+  # Prompt for capture date
+  while true; do
+    read -rp "Capture date for $filename (YYYY-MM): " capture_date
+    if [[ "$capture_date" =~ ^[0-9]{4}-[0-9]{2}$ ]]; then
+      break
+    fi
+    echo "  Invalid format. Enter as YYYY-MM (e.g. 2023-08)"
+  done
+
+  # Build the ID: YYYY-MM-OriginalBasename (original capitalization)
+  id="${capture_date}-${basename_noext}"
+
+  # Duplicate check by ID (exact match)
   if python3 -c "import json,sys; data=json.load(open('$DATA_FILE')); sys.exit(0 if any(p['id']=='$id' for p in data) else 1)" 2>/dev/null; then
-    echo "Skipping $filename — ID '$id' already exists in photos.json"
+    echo "⚠ Skipping $filename — ID '$id' already exists in photos.json"
+    continue
+  fi
+
+  # Duplicate check by original filename (catches same file added under a different date)
+  if python3 -c "
+import json, sys
+data = json.load(open('$DATA_FILE'))
+target = '${basename_noext}'
+for p in data:
+    parts = p['id'].split('-', 2)
+    existing_basename = parts[2] if len(parts) >= 3 else p['id']
+    if existing_basename == target:
+        print('⚠ Skipping ${filename} — filename already in archive as ' + p['id'], file=sys.stderr)
+        sys.exit(0)
+sys.exit(1)
+" 2>&1; then
     continue
   fi
 
@@ -45,10 +80,10 @@ for file in "${files[@]}"; do
   width=$(sips -g pixelWidth "$file" | tail -1 | awk '{print $2}')
   height=$(sips -g pixelHeight "$file" | tail -1 | awk '{print $2}')
 
-  # Convert HEIC to JPG if needed, then strip metadata (preserving ICC profile)
+  # Convert HEIC to JPG if needed; keep original filename for dest
   ext="${filename##*.}"
   ext_lower=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
-  dest_file="$OUTPUT_DIR/${id}.jpg"
+  dest_file="$OUTPUT_DIR/${basename_noext}.jpg"
 
   if [ "$ext_lower" = "heic" ]; then
     sips -s format jpeg "$file" --out "$dest_file" >/dev/null
@@ -56,8 +91,7 @@ for file in "${files[@]}"; do
     cp "$file" "$dest_file"
   fi
 
-  # Strip only privacy-sensitive metadata, preserve everything photographic
-  # (ICC profile, camera/lens model, focal length, aperture, ISO, white balance, etc.)
+  # Strip only privacy-sensitive metadata, preserve photographic EXIF
   exiftool -m \
     '-GPS*=' \
     -SerialNumber= \
@@ -85,7 +119,9 @@ with open('$DATA_FILE', 'r') as f:
     data = json.load(f)
 data.append({
     'id': '$id',
-    'src': '/assets/images/photos/${id}.jpg',
+    'src': '/assets/images/photos/${basename_noext}.jpg',
+    'captureDate': '$capture_date',
+    'active': True,
     'width': $width,
     'height': $height
 })
