@@ -25,31 +25,37 @@
     return h || null;
   }
 
+  function getMonthWeighted(pool, count) {
+    var currentMonth = (new Date().getMonth() + 1).toString().padStart(2, "0");
+    var current = pool.filter(function (p) {
+      return p.captureDate && p.captureDate.split("-")[1] === currentMonth;
+    });
+    var other = pool.filter(function (p) {
+      return !p.captureDate || p.captureDate.split("-")[1] !== currentMonth;
+    });
+    var target = Math.ceil(count / 3);
+    var fromCurrent = shuffle(current).slice(0, Math.min(target, current.length));
+    var remainder = count - fromCurrent.length;
+    var fromOther = shuffle(other).slice(0, remainder);
+    return shuffle(fromCurrent.concat(fromOther));
+  }
+
   function pickPhotos() {
     var hashId = getHashId();
-    var shuffled = shuffle(photos);
-    var selected = [];
     var hashPhoto = null;
 
     if (hashId) {
       hashPhoto = photos.find(function (p) { return p.id === hashId; });
     }
 
-    // Pick GRID_SIZE photos, ensuring hashPhoto is included if it exists
     if (hashPhoto) {
-      selected.push(hashPhoto);
-      for (var i = 0; i < shuffled.length && selected.length < GRID_SIZE; i++) {
-        if (shuffled[i].id !== hashPhoto.id) {
-          selected.push(shuffled[i]);
-        }
-      }
-      // Shuffle again so the hash photo isn't always first
-      selected = shuffle(selected);
-    } else {
-      selected = shuffled.slice(0, GRID_SIZE);
+      // Ensure the linked photo is always included; fill remaining slots with month-weighted picks
+      var pool = photos.filter(function (p) { return p.id !== hashPhoto.id; });
+      var rest = getMonthWeighted(pool, GRID_SIZE - 1);
+      return shuffle([hashPhoto].concat(rest));
     }
 
-    return selected;
+    return getMonthWeighted(photos, GRID_SIZE);
   }
 
   function buildDealCard() {
