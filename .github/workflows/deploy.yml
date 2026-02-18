@@ -21,6 +21,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Cache generated images
+        uses: actions/cache@v4
+        with:
+          path: _site/img
+          key: eleventy-img-${{ hashFiles('_data/photos.json') }}
+          restore-keys: eleventy-img-
+
       - name: Build the site
         run: npx eleventy
 
