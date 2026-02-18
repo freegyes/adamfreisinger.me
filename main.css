@@ -287,7 +287,8 @@ a[data-glightbox]:hover img {
 }
 
 /* Photo gallery */
-#photo-grid {
+#photo-grid,
+#photo-snippet {
   transition: opacity 0.3s ease;
 }
 
