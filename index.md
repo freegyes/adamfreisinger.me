@@ -51,5 +51,5 @@ cta:
     No pressure—just a fellow curious human here, open to a good conversation. Say hi anytime at:
 music:
   title: What I’ve had on repeat for a while
-  subtitle: Songs that found me at just the right time
+  subtitle: Songs that found me at just the right time.
 ---
