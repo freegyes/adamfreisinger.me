@@ -1,9 +1,13 @@
 **/.DS_Store
 .DS_Store
 node_modules/
+AGENTS.md
 
 # Ignore Eleventy's output directory
 _site/
 
 # eleventy-img disk cache
 .cache/
+
+# Photo processing drop zone
+photos-input/

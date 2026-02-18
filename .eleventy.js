@@ -178,6 +178,63 @@ module.exports = async function(eleventyConfig) {
     }
 
   /**
+   * Process all photos from _data/photos.json and return JSON array
+   * with pre-built picture HTML and lightbox href for each photo.
+   * Used by the photos template to embed data for client-side rendering.
+   */
+  eleventyConfig.addShortcode("photosJson", function() {
+    const photosPath = path.join(".", "_data", "photos.json");
+    if (!fs.existsSync(photosPath)) return "[]";
+    const photos = JSON.parse(fs.readFileSync(photosPath, "utf8"));
+    if (!photos.length) return "[]";
+
+    const sizes = "(min-width: 1024px) 25vw, (min-width: 769px) 33vw, 50vw";
+    const result = photos.map(photo => {
+      const metadata = processImage(photo.src);
+      const pictureHtml = buildPictureMarkup(metadata, photo.alt || "", "", sizes, "lazy");
+      const formats = Object.keys(metadata);
+      const fallbackFormat = formats[formats.length - 1];
+      const lightboxHref = metadata[fallbackFormat][metadata[fallbackFormat].length - 1].url;
+      return {
+        id: photo.id,
+        alt: photo.alt || "",
+        pictureHtml: pictureHtml,
+        lightboxHref: lightboxHref,
+        width: photo.width,
+        height: photo.height
+      };
+    });
+    return JSON.stringify(result);
+  });
+
+  /**
+   * Render noscript fallback for photos page — first 11 photos as static grid.
+   */
+  eleventyConfig.addShortcode("photosNoscript", function() {
+    const photosPath = path.join(".", "_data", "photos.json");
+    if (!fs.existsSync(photosPath)) return "";
+    const photos = JSON.parse(fs.readFileSync(photosPath, "utf8"));
+    if (!photos.length) return "";
+
+    const sizes = "(min-width: 1024px) 25vw, (min-width: 769px) 33vw, 50vw";
+    const selected = photos.slice(0, 11);
+    return selected.map(photo => {
+      const metadata = processImage(photo.src);
+      const pictureHtml = buildPictureMarkup(metadata, photo.alt || "", "", sizes, "lazy");
+      const formats = Object.keys(metadata);
+      const fallbackFormat = formats[formats.length - 1];
+      const lightboxHref = metadata[fallbackFormat][metadata[fallbackFormat].length - 1].url;
+      return `<div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
+        <div class="photo-grid-item">
+          <a href="${lightboxHref}" data-glightbox="">
+            ${pictureHtml}
+          </a>
+        </div>
+      </div>`;
+    }).join("\n");
+  });
+
+  /**
    * Standalone renderMedia shortcode.
    * Wraps the media markup in its own "columns" container.
    *

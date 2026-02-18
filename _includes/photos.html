@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+
+    {% include "_head.html" %}
+
+    <body>
+
+    {% include "_navbar.html" %}
+
+    <section class="section">
+      <div class="container">
+        <div class="has-text-centered mb-5">
+          <h1 class="title is-size-2">{{ title }}</h1>
+          <p class="subtitle is-size-5">{{ excerpt }}</p>
+        </div>
+
+        <div id="photo-grid" class="columns is-multiline is-mobile">
+        </div>
+
+        <noscript>
+          <div class="columns is-multiline is-mobile">
+            {% photosNoscript %}
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+    <footer>
+      {% include "_footer.html" %}
+    </footer>
+
+    <script>
+      window.__PHOTOS__ = {% photosJson %};
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js" integrity="sha384-/+Fc1LD6ksHYZ+2MChiSfjEXBcl4q2axUWhs6/CdnfqY5aLmrPwtysVzyeP0s60b" crossorigin="anonymous"></script>
+    <script src="/assets/js/photos.js"></script>
+  </body>
+</html>

@@ -285,3 +285,89 @@ a[data-glightbox]:hover img {
   border-width: 10px 0 10px 18px;
   border-color: transparent transparent transparent #fff;
 }
+
+/* Photo gallery */
+#photo-grid {
+  transition: opacity 0.3s ease;
+}
+
+.photo-grid-item {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Square aspect ratio */
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.photo-grid-item a {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.photo-grid-item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.photo-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.photo-grid-item a:hover img {
+  opacity: 0.85;
+}
+
+.deal-card {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  background-image: url('/assets/images/yellow-splashes-watercolour.jpg');
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.deal-card > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.deal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.deal-card .icon,
+.deal-card .deal-card-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.deal-card .icon {
+  top: 38%;
+  color: #363636;
+}
+
+.deal-card .deal-card-text {
+  top: 58%;
+  font-weight: 600;
+  color: #363636;
+  white-space: nowrap;
+}
+
+.deal-card:hover {
+  opacity: 0.8;
+}
