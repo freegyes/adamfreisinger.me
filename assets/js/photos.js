@@ -117,9 +117,6 @@
     });
 
     lightbox.on("slide_changed", function (data) {
-      var el = data.current.slideNode.querySelector("img");
-      if (!el) return;
-      // Find the matching anchor to get the photo id
       var anchors = grid.querySelectorAll("a.glightbox");
       var idx = data.current.index;
       if (anchors[idx]) {

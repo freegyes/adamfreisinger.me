@@ -343,13 +343,6 @@ a[data-glightbox]:hover img {
   transform: translate(-50%, -50%);
 }
 
-.deal-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .deal-card .icon,
 .deal-card .deal-card-text {
   position: absolute;
