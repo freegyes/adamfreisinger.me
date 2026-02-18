@@ -1,6 +1,7 @@
 **/.DS_Store
 .DS_Store
 node_modules/
+AGENTS.md
 
 # Ignore Eleventy's output directory
 _site/
@@ -10,3 +11,6 @@ _site/
 
 # Claude Code local settings
 .claude/
+
+# Photo processing drop zone
+photos-input/

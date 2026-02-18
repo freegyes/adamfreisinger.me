@@ -142,6 +142,16 @@
 
       <hr class="container" />
 
+      <section class="section">
+        <div class="container">
+          <div id="photo-snippet" class="columns is-multiline is-mobile"></div>
+          <p class="mt-3">
+            <a href="/photos/">See what caught my eye over the years &rarr;</a>
+          </p>
+        </div>
+      </section>
+
+      <hr class="container" />
 
       <section class="section">
         <div class="container">
@@ -151,15 +161,6 @@
               <p class="block">{{ cta.content1 }}</p>
               <p class="block">{{ cta.content2 }}</p>
               <p class="block">{{ cta.content3 }} <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-            </div>
-          </div>
-          <div class="columns is-centered">
-            <div class="column is-one-quarter">
-              <a href="{{site.socials.instagram}}" target="_blank" rel="noopener" >
-                <figure class="image is-3by2">
-                  {% image "/assets/images/postcard-handheld.jpg", "A handheld postcard of mine." %}
-                </figure>
-              </a>
             </div>
           </div>
         </div>
@@ -297,3 +298,8 @@
   });
 </script>
 
+<script>
+  window.__PHOTOS__ = {% photosJson %};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js" integrity="sha384-/+Fc1LD6ksHYZ+2MChiSfjEXBcl4q2axUWhs6/CdnfqY5aLmrPwtysVzyeP0s60b" crossorigin="anonymous"></script>
+<script src="/assets/js/snippet.js"></script>
