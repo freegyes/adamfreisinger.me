@@ -62,8 +62,12 @@ module.exports = async function(eleventyConfig) {
     /**
      * Process an image through eleventy-img, returning metadata with
      * multiple widths and WebP + original format variants.
+     * Results are memoized per src path so each file is only processed once per build.
      */
+    const processImageCache = new Map();
     function processImage(src) {
+      if (processImageCache.has(src)) return processImageCache.get(src);
+
       const inputPath = path.join(".", src);
       const ext = path.extname(src).toLowerCase();
       const formats = (ext === ".png") ? ["webp", "png"] : ["webp", "jpeg"];
@@ -83,7 +87,9 @@ module.exports = async function(eleventyConfig) {
       Image.statsSync(inputPath, options);
       Image(inputPath, options);
 
-      return Image.statsSync(inputPath, options);
+      const metadata = Image.statsSync(inputPath, options);
+      processImageCache.set(src, metadata);
+      return metadata;
     }
 
     /**
