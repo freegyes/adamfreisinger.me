@@ -7,3 +7,6 @@ _site/
 
 # eleventy-img disk cache
 .cache/
+
+# Claude Code local settings
+.claude/
