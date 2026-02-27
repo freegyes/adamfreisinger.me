@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy && node scripts/check.js",
     "check": "node scripts/check.js",
     "serve": "npx @11ty/eleventy --serve",
     "start": "npm run serve",
