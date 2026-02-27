@@ -4,12 +4,143 @@
   <subtitle>Explore, Create, Inspire</subtitle>
   <link href="https://adamfreisinger.me/feed.xml" rel="self" />
   <link href="https://adamfreisinger.me/" />
-  <updated>2026-02-05T00:00:00Z</updated>
+  <updated>2026-02-27T00:00:00Z</updated>
   <id>https://adamfreisinger.me/</id>
   <author>
     <name>Adam Freisinger</name>
     <email>hello@adamfreisinger.me</email>
   </author>
+  <entry>
+    <title>Hungarian Blue Trail Album</title>
+    <link href="https://adamfreisinger.me/posts/2026-02-27/hungarian-blue-trail-album/" />
+    <updated>2026-02-27T00:00:00Z</updated>
+    <id>https://adamfreisinger.me/posts/2026-02-27/hungarian-blue-trail-album/</id>
+    <content type="html">&lt;p&gt;I made a custom photo album about the Hungarian Blue Trail, as a gift for friends I walked it with. Handmade gifts always bring me a special kind of excitement: the freedom to explore and play, while still designing for someone else and moving toward a real deadline. The best part is that the giftee can stay on my mind the whole time.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/album-in-hand-2400w.jpeg&quot; data-glightbox=&quot;title: From idea to held object&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/album-in-hand-400w.webp 400w, https://adamfreisinger.me/img/album-in-hand-800w.webp 800w, https://adamfreisinger.me/img/album-in-hand-1200w.webp 1200w, https://adamfreisinger.me/img/album-in-hand-1600w.webp 1600w, https://adamfreisinger.me/img/album-in-hand-2400w.webp 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/album-in-hand-400w.jpeg 400w, https://adamfreisinger.me/img/album-in-hand-800w.jpeg 800w, https://adamfreisinger.me/img/album-in-hand-1200w.jpeg 1200w, https://adamfreisinger.me/img/album-in-hand-1600w.jpeg 1600w, https://adamfreisinger.me/img/album-in-hand-2400w.jpeg 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/album-in-hand-2400w.jpeg&quot; width=&quot;2400&quot; height=&quot;1800&quot; alt=&quot;The album held in hand&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;From idea to held object&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;One day this was a note and a rough sketch in my notebook: a wooden cover, the trail cut into a map. The next day I could hold that idea in my hand. That transition still feels like wonder every time.&lt;/p&gt;
+&lt;p&gt;The map came from a script I created. It takes a trail in GPX format and merges it with &lt;a href=&quot;https://github.com/nvkelso/natural-earth-vector&quot;&gt;Natural Earth map data&lt;/a&gt; to produce vector files for fabrication machines. I checked the result by running test plots on my pen plotter and adjusted from there: how to represent water bodies, what to do with orphaned river and border segments, how to cut the trail while leaving landmarks readable. I still enjoy the fast iterative loop of turning data into something visual with code.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-multiline is-mobile&quot;&gt;
+  &lt;div class=&quot;column is-half&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;video is-16by9 video-embed&quot;&gt;
+              &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/hungarian-blue-trail-photoalbum/pen-plotter.mp4&quot; class=&quot;video-fallback&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+                &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/pen-plotter-poster-400w.webp 400w, https://adamfreisinger.me/img/pen-plotter-poster-800w.webp 800w, https://adamfreisinger.me/img/pen-plotter-poster-1200w.webp 1200w, https://adamfreisinger.me/img/pen-plotter-poster-1600w.webp 1600w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/pen-plotter-poster-400w.jpeg 400w, https://adamfreisinger.me/img/pen-plotter-poster-800w.jpeg 800w, https://adamfreisinger.me/img/pen-plotter-poster-1200w.jpeg 1200w, https://adamfreisinger.me/img/pen-plotter-poster-1600w.jpeg 1600w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/pen-plotter-poster-1600w.jpeg&quot; width=&quot;1600&quot; height=&quot;900&quot; alt=&quot;Pen plotter drawing the trail map&quot; class=&quot;video-poster&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+                &lt;span class=&quot;video-play-btn&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+              &lt;/a&gt;
+              &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/hungarian-blue-trail-photoalbum/pen-plotter.mp4&quot; class=&quot;video-link&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+                &lt;video class=&quot;video-player&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot; playsinline=&quot;&quot; preload=&quot;none&quot; loading=&quot;lazy&quot; poster=&quot;https://adamfreisinger.me/img/pen-plotter-poster-1600w.jpeg&quot;&gt;
+                  &lt;source src=&quot;https://adamfreisinger.me/assets/images/posts/hungarian-blue-trail-photoalbum/pen-plotter.mp4&quot; type=&quot;video/mp4&quot;&gt;
+                &lt;/video&gt;
+              &lt;/a&gt;
+            &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Pen plotter in action&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;column is-half&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/pen-plotter-result-2400w.jpeg&quot; data-glightbox=&quot;title: The plotted map&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/pen-plotter-result-400w.webp 400w, https://adamfreisinger.me/img/pen-plotter-result-800w.webp 800w, https://adamfreisinger.me/img/pen-plotter-result-1200w.webp 1200w, https://adamfreisinger.me/img/pen-plotter-result-1600w.webp 1600w, https://adamfreisinger.me/img/pen-plotter-result-2400w.webp 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/pen-plotter-result-400w.jpeg 400w, https://adamfreisinger.me/img/pen-plotter-result-800w.jpeg 800w, https://adamfreisinger.me/img/pen-plotter-result-1200w.jpeg 1200w, https://adamfreisinger.me/img/pen-plotter-result-1600w.jpeg 1600w, https://adamfreisinger.me/img/pen-plotter-result-2400w.jpeg 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/pen-plotter-result-2400w.jpeg&quot; width=&quot;2400&quot; height=&quot;1800&quot; alt=&quot;The pen-plotted map of the Hungarian Blue Trail&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;The plotted map&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;When the composition felt right, I borrowed a laser from a friend (thank you, &lt;a href=&quot;https://linktr.ee/balassa_wood&quot;&gt;balassa_wood&lt;/a&gt;!) and tried engraving for the first time. After a few videos about lasers and &lt;a href=&quot;https://lightburnsoftware.com/&quot;&gt;LightBurn&lt;/a&gt;, I started running material tests and worked toward the final cover step by step. The amount of shared knowledge available online still surprises me every time. I feel like I&#39;m never alone when trying to learn something.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-multiline is-mobile&quot;&gt;
+  &lt;div class=&quot;column is-half&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;video is-16by9 video-embed&quot;&gt;
+              &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/hungarian-blue-trail-photoalbum/laser-engraving.mp4&quot; class=&quot;video-fallback&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+                &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/laser-engraving-poster-400w.webp 400w, https://adamfreisinger.me/img/laser-engraving-poster-800w.webp 800w, https://adamfreisinger.me/img/laser-engraving-poster-1200w.webp 1200w, https://adamfreisinger.me/img/laser-engraving-poster-1600w.webp 1600w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/laser-engraving-poster-400w.jpeg 400w, https://adamfreisinger.me/img/laser-engraving-poster-800w.jpeg 800w, https://adamfreisinger.me/img/laser-engraving-poster-1200w.jpeg 1200w, https://adamfreisinger.me/img/laser-engraving-poster-1600w.jpeg 1600w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/laser-engraving-poster-1600w.jpeg&quot; width=&quot;1600&quot; height=&quot;900&quot; alt=&quot;Laser engraving the wooden cover&quot; class=&quot;video-poster&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+                &lt;span class=&quot;video-play-btn&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+              &lt;/a&gt;
+              &lt;a href=&quot;https://adamfreisinger.me/assets/images/posts/hungarian-blue-trail-photoalbum/laser-engraving.mp4&quot; class=&quot;video-link&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+                &lt;video class=&quot;video-player&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot; playsinline=&quot;&quot; preload=&quot;none&quot; loading=&quot;lazy&quot; poster=&quot;https://adamfreisinger.me/img/laser-engraving-poster-1600w.jpeg&quot;&gt;
+                  &lt;source src=&quot;https://adamfreisinger.me/assets/images/posts/hungarian-blue-trail-photoalbum/laser-engraving.mp4&quot; type=&quot;video/mp4&quot;&gt;
+                &lt;/video&gt;
+              &lt;/a&gt;
+            &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Laser engraving the cover&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;column is-half&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/laser-result-2400w.jpeg&quot; data-glightbox=&quot;title: The engraved cover&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/laser-result-400w.webp 400w, https://adamfreisinger.me/img/laser-result-800w.webp 800w, https://adamfreisinger.me/img/laser-result-1200w.webp 1200w, https://adamfreisinger.me/img/laser-result-1600w.webp 1600w, https://adamfreisinger.me/img/laser-result-2400w.webp 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/laser-result-400w.jpeg 400w, https://adamfreisinger.me/img/laser-result-800w.jpeg 800w, https://adamfreisinger.me/img/laser-result-1200w.jpeg 1200w, https://adamfreisinger.me/img/laser-result-1600w.jpeg 1600w, https://adamfreisinger.me/img/laser-result-2400w.jpeg 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/laser-result-2400w.jpeg&quot; width=&quot;2400&quot; height=&quot;1800&quot; alt=&quot;The laser-engraved plywood cover&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;The engraved cover&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;The binding was already familiar territory, more meditative than exploratory. I folded the pages, stitched the spine with waxed thread, and trimmed the edges. Watching it come together was so satisfying.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-multiline is-mobile&quot;&gt;
+  &lt;div class=&quot;column is-half&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/binding-accessories-2400w.jpeg&quot; data-glightbox=&quot;title: The bookbinding setup&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/binding-accessories-400w.webp 400w, https://adamfreisinger.me/img/binding-accessories-800w.webp 800w, https://adamfreisinger.me/img/binding-accessories-1200w.webp 1200w, https://adamfreisinger.me/img/binding-accessories-1600w.webp 1600w, https://adamfreisinger.me/img/binding-accessories-2400w.webp 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/binding-accessories-400w.jpeg 400w, https://adamfreisinger.me/img/binding-accessories-800w.jpeg 800w, https://adamfreisinger.me/img/binding-accessories-1200w.jpeg 1200w, https://adamfreisinger.me/img/binding-accessories-1600w.jpeg 1600w, https://adamfreisinger.me/img/binding-accessories-2400w.jpeg 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/binding-accessories-2400w.jpeg&quot; width=&quot;2400&quot; height=&quot;1800&quot; alt=&quot;Bookbinding tools and materials laid out&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;The bookbinding setup&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;column is-half&quot;&gt;&lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/binding-action-2400w.jpeg&quot; data-glightbox=&quot;title: Coptic stitching&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/binding-action-400w.webp 400w, https://adamfreisinger.me/img/binding-action-800w.webp 800w, https://adamfreisinger.me/img/binding-action-1200w.webp 1200w, https://adamfreisinger.me/img/binding-action-1600w.webp 1600w, https://adamfreisinger.me/img/binding-action-2400w.webp 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/binding-action-400w.jpeg 400w, https://adamfreisinger.me/img/binding-action-800w.jpeg 800w, https://adamfreisinger.me/img/binding-action-1200w.jpeg 1200w, https://adamfreisinger.me/img/binding-action-1600w.jpeg 1600w, https://adamfreisinger.me/img/binding-action-2400w.jpeg 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/binding-action-2400w.jpeg&quot; width=&quot;2400&quot; height=&quot;1800&quot; alt=&quot;Binding the album with waxed thread&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Coptic stitching&lt;/figcaption&gt;
+              &lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Photographing the finished album felt like closing the loop. An idea that started as a sketch, moved through code, machines, and my hands, and became something I could present with a happy heart.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-3by2&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/hero-2400w.jpeg&quot; data-glightbox=&quot;title: The finished album&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/hero-400w.webp 400w, https://adamfreisinger.me/img/hero-800w.webp 800w, https://adamfreisinger.me/img/hero-1200w.webp 1200w, https://adamfreisinger.me/img/hero-1600w.webp 1600w, https://adamfreisinger.me/img/hero-2400w.webp 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/hero-400w.jpeg 400w, https://adamfreisinger.me/img/hero-800w.jpeg 800w, https://adamfreisinger.me/img/hero-1200w.jpeg 1200w, https://adamfreisinger.me/img/hero-1600w.jpeg 1600w, https://adamfreisinger.me/img/hero-2400w.jpeg 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/hero-2400w.jpeg&quot; width=&quot;2400&quot; height=&quot;1599&quot; alt=&quot;A custom photo album with laser-engraved wooden covers&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;The finished album&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;If you want to recreate something similar:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The fabrication-ready vector files are available as &lt;a href=&quot;https://buymeacoffee.com/adam.freisinger/e/514815&quot;&gt;digital downloads&lt;/a&gt;. You can contribute by pledging any amount that feels right, the files are linked regardless in the description.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-4by3&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/vector-map-1109w.png&quot; data-glightbox=&quot;title: Preview of the vector layers&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/vector-map-400w.webp 400w, https://adamfreisinger.me/img/vector-map-800w.webp 800w, https://adamfreisinger.me/img/vector-map-1109w.webp 1109w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/png&quot; srcset=&quot;https://adamfreisinger.me/img/vector-map-400w.png 400w, https://adamfreisinger.me/img/vector-map-800w.png 800w, https://adamfreisinger.me/img/vector-map-1109w.png 1109w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/vector-map-1109w.png&quot; width=&quot;1109&quot; height=&quot;832&quot; alt=&quot;Digital export of the Hungarian Blue Trail map&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Preview of the vector layers&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;If you are more into tinkering, the &lt;a href=&quot;https://github.com/freegyes/gpx-tracks-to-physical-medium&quot;&gt;gpx2fab script I created&lt;/a&gt; takes a trail in &lt;code&gt;.gpx&lt;/code&gt; format and merges it with available map data of a specified country. I tested it on a few through-trail and country combinations I know and it holds up, but note that it is not a polished product yet. I can see myself returning to this later, as visualising data and digital fabrication can still make me very excited.&lt;/li&gt;
+&lt;li&gt;The covers are 4mm birch plywood, cut and engraved on a 20W diode laser operated using LightBurn. Cut-through was 350 mm/min at 100% power, engrave was 11,000 mm/min at 60%.&lt;/li&gt;
+&lt;li&gt;If you want to try your hand at Coptic binding:
+&lt;ul&gt;
+&lt;li&gt;here is &lt;a href=&quot;https://www.youtube.com/watch?v=fohRMjGBvWY&quot;&gt;a longer walkthrough that is very easy to follow by Christine Guenard&lt;/a&gt;, and&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=P-h3Lq8Zfpo&quot;&gt;a beautiful take on Coptic stitch that is just mesmerising to watch by Ido Agassi&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let me know, if you create something similar, I would really like to see it!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Internet Radios and a Standalone Concept</title>
     <link href="https://adamfreisinger.me/posts/2026-02-05/internet-radio-concept/" />
@@ -765,64 +896,6 @@ Something I can carry in my pocket, not because it contains all the music in the
 &lt;p&gt;This was just a small wave of my hand, but it felt like a giant step toward something bigger—an instrument that blends woodworking, sound, coding, and visuals into something truly expressive. I’m hooked.&lt;/p&gt;
 &lt;h2&gt;If You’re Curious&lt;/h2&gt;
 &lt;p&gt;If Max, Pure Data, or plugdata sounds like your kind of thing, &lt;a href=&quot;https://www.takumiogata.com/&quot;&gt;Takumi Ogata&lt;/a&gt;’s &lt;a href=&quot;https://www.youtube.com/watch?v=1o5Wasmd8yU&amp;amp;list=PLyFkFo29zHvD4eRftIAjcLqIXCtSo7w8g&amp;amp;ab_channel=SoundSimulator&quot;&gt;Sound Simulator YouTube series&lt;/a&gt; has been my main guide so far, and I can’t recommend it enough—and if you end up experimenting with it, I’d love to hear what you create.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Background Birds – A Collection of Nine Bird Portraits as Wallpapers</title>
-    <link href="https://adamfreisinger.me/posts/2025-02-16/background-birds/" />
-    <updated>2025-02-16T00:00:00Z</updated>
-    <id>https://adamfreisinger.me/posts/2025-02-16/background-birds/</id>
-    <content type="html">&lt;p&gt;Somewhere in the rhythm of my life, birds have been a quiet, constant presence. Perched on branches, gliding through open skies, or simply watching the world with that sharp, knowing gaze—these small creatures have a way of reminding me to pause and notice. And when I do, I unconsciously smile.&lt;/p&gt;
-&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
-              &lt;div class=&quot;column is-four-fifths&quot;&gt;
-                &lt;div&gt;
-                &lt;figure class=&quot;image is-4by3&quot;&gt;
-            &lt;a href=&quot;https://adamfreisinger.me/img/background-birds-01-1024w.jpeg&quot; data-glightbox=&quot;&quot;&gt;
-              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/background-birds-01-400w.webp 400w, https://adamfreisinger.me/img/background-birds-01-800w.webp 800w, https://adamfreisinger.me/img/background-birds-01-1024w.webp 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/background-birds-01-400w.jpeg 400w, https://adamfreisinger.me/img/background-birds-01-800w.jpeg 800w, https://adamfreisinger.me/img/background-birds-01-1024w.jpeg 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/background-birds-01-1024w.jpeg&quot; width=&quot;1024&quot; height=&quot;768&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
-            &lt;/a&gt;
-          &lt;/figure&gt;
-&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;Birds fascinate me—not just for their movement and freedom, but for the intricate details in their feathers, the way they observe their surroundings, and the quiet moments they allow when I stop to notice them. Over time, I’ve captured a set of bird portraits that I keep on rotation (a little round robin, if you will) as my desktop background. They bring a sense of stillness, curiosity, and fleeting connection.&lt;/p&gt;
-&lt;p&gt;Birds, for me, have always been tied to rhythm and story—both in nature and in the music that has accompanied my thoughts on them:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I wholeheartedly recommend &lt;a href=&quot;https://hiddenorchestra.bandcamp.com/album/wingbeats&quot;&gt;Hidden Orchestra’s Wingbeats&lt;/a&gt;. It’s a stunning piece of music, and what makes it even more special for me is that the birds are treated as an individual instrument in the released source tracks on the album.&lt;/li&gt;
-&lt;li&gt;I also recommend &lt;a href=&quot;https://www.youtube.com/watch?v=_RZpphITFM4&quot;&gt;Laurie Anderson’s The Beginning of Memory&lt;/a&gt;, a moving imagining of how memory was born.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In a way, this collection is part of that same thread—something fleeting, yet worth holding onto.&lt;/p&gt;
-&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
-              &lt;div class=&quot;column is-four-fifths&quot;&gt;
-                &lt;div&gt;
-                &lt;figure class=&quot;image is-4by3&quot;&gt;
-            &lt;a href=&quot;https://adamfreisinger.me/img/background-birds-07-1024w.jpeg&quot; data-glightbox=&quot;&quot;&gt;
-              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/background-birds-07-400w.webp 400w, https://adamfreisinger.me/img/background-birds-07-800w.webp 800w, https://adamfreisinger.me/img/background-birds-07-1024w.webp 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/background-birds-07-400w.jpeg 400w, https://adamfreisinger.me/img/background-birds-07-800w.jpeg 800w, https://adamfreisinger.me/img/background-birds-07-1024w.jpeg 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/background-birds-07-1024w.jpeg&quot; width=&quot;1024&quot; height=&quot;768&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
-            &lt;/a&gt;
-          &lt;/figure&gt;
-&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;These birds have been my quiet digital companions for years, shifting with light and mood. Now, I’d love to share them with you.&lt;/p&gt;
-&lt;h2&gt;Download the Collection&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;No fuss—no sign-ups, no emails, just the birds:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;➡️ &lt;a href=&quot;https://adamfreisinger.me/assets/digital_downloads/background-birds.zip&quot;&gt;Download Background Birds (.zip)&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;A Little More About This Collection&lt;/h3&gt;
-&lt;p&gt;This curated set includes nine high-resolution images (available in 16:9 and 16:10), detailed enough to appreciate yet subtle enough to sit comfortably as a background. Each bird carries its own presence—some mid-flight, some still, each with a quiet story to tell.&lt;/p&gt;
-&lt;h3&gt;If You’d Like to Support My Work&lt;/h3&gt;
-&lt;p&gt;This collection is free, and I’m happy to share it. But if you enjoy it and would like to support me in creating more, you can consider a small “pay-what-you-feel” donation:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://buymeacoffee.com/adam.freisinger/e/374227&quot;&gt;💛 Donate (at least $1 per bird)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Whether or not you do, I hope these birds find a good place to perch.&lt;/p&gt;
-&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
-              &lt;div class=&quot;column is-four-fifths&quot;&gt;
-                &lt;div&gt;
-                &lt;figure class=&quot;image is-4by3&quot;&gt;
-            &lt;a href=&quot;https://adamfreisinger.me/img/background-birds-09-1024w.jpeg&quot; data-glightbox=&quot;&quot;&gt;
-              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/background-birds-09-400w.webp 400w, https://adamfreisinger.me/img/background-birds-09-800w.webp 800w, https://adamfreisinger.me/img/background-birds-09-1024w.webp 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/background-birds-09-400w.jpeg 400w, https://adamfreisinger.me/img/background-birds-09-800w.jpeg 800w, https://adamfreisinger.me/img/background-birds-09-1024w.jpeg 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/background-birds-09-1024w.jpeg&quot; width=&quot;1024&quot; height=&quot;768&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
-            &lt;/a&gt;
-          &lt;/figure&gt;
-&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>

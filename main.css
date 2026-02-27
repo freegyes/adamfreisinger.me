@@ -11,9 +11,13 @@ html, body {
     flex-direction: column;
     height: 100%;
   }
-  
+
   .custom-card-posts .card-content {
     flex-grow: 1;
+  }
+
+  .custom-card-posts .card-image img {
+    object-fit: cover;
   }
 
 .navbar,
