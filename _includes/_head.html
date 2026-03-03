@@ -19,19 +19,26 @@
 
 
     {%- assign og_type = "website" -%}
-    {%- if page.date -%}
+    {%- if tags contains "post" -%}
       {%- assign og_type = "article" -%}
     {%- endif -%}
-    
-    <!-- Determine the hero image source -->
+
+    <!-- Determine the hero image source, alt, and dimensions -->
     {%- assign hero_image = site.defaultHero -%}
+    {%- assign hero_alt = title -%}
+    {%- assign hero_width = nil -%}
+    {%- assign hero_height = nil -%}
     {%- if images.hero -%}
-      {%- assign hero_image = images.hero -%}
+      {%- assign hero_basename = images.hero | split: "/" | last | split: "." | first -%}
+      {%- assign hero_image = "/img/" | append: hero_basename | append: "-1200w.jpeg" -%}
     {%- elsif media.hero -%}
       {%- assign hero_basename = media.hero.src | split: "/" | last | split: "." | first -%}
       {%- assign hero_image = "/img/" | append: hero_basename | append: "-1200w.jpeg" -%}
+      {%- if media.hero.alt -%}{%- assign hero_alt = media.hero.alt -%}{%- endif -%}
+      {%- if media.hero.width -%}{%- assign hero_width = media.hero.width -%}{%- endif -%}
+      {%- if media.hero.height -%}{%- assign hero_height = media.hero.height -%}{%- endif -%}
     {%- endif -%}
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:site_name" content="{{ site.title | escape }}">
     <meta property="og:title" content="{{ title | escape }}">
@@ -39,15 +46,18 @@
     <meta property="og:type" content="{{ og_type }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:image" content="{{ hero_image | absolute_url }}">
-    <meta property="og:image:alt" content="{{ title | escape }}">
-    {%- if page.date -%}
+    <meta property="og:image:alt" content="{{ hero_alt | escape }}">
+    {%- if hero_width -%}<meta property="og:image:width" content="{{ hero_width }}">{%- endif -%}
+    {%- if hero_height -%}<meta property="og:image:height" content="{{ hero_height }}">{%- endif -%}
+    {%- if tags contains "post" -%}
       <meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%dT%H:%M:%SZ' }}">
     {%- endif -%}
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ title | escape }}">
     <meta name="twitter:description" content="{{ excerpt | escape }}">
     <meta name="twitter:image" content="{{ hero_image | absolute_url }}">
+    <meta name="twitter:image:alt" content="{{ hero_alt | escape }}">
 
 </head>
