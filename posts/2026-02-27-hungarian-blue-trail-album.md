@@ -8,14 +8,14 @@ tags:
   - diy
 media:
   hero:
-    src: /assets/images/posts/hungarian-blue-trail-photoalbum/hero.jpg
+    src: /assets/images/posts/hungarian-blue-trail-photoalbum/album-cover.jpg
     alt: A custom photo album with laser-engraved wooden covers
     title: The finished album
     width: 5843
     height: 3895
     aspect: is-3by2
   thumbnail:
-    src: /assets/images/posts/hungarian-blue-trail-photoalbum/hero.jpg
+    src: /assets/images/posts/hungarian-blue-trail-photoalbum/album-cover.jpg
     alt: A custom photo album with laser-engraved wooden covers
     title: The finished album
     width: 5843

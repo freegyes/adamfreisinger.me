@@ -28,7 +28,8 @@
     {%- if images.hero -%}
       {%- assign hero_image = images.hero -%}
     {%- elsif media.hero -%}
-      {%- assign hero_image = media.hero.src -%}
+      {%- assign hero_basename = media.hero.src | split: "/" | last | split: "." | first -%}
+      {%- assign hero_image = "/img/" | append: hero_basename | append: "-1200w.jpeg" -%}
     {%- endif -%}
     
     <!-- Open Graph Meta Tags -->
