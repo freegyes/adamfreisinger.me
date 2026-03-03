@@ -5,37 +5,82 @@ on:
     branches:
       - main
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            **
+            !/assets/images/photos/**
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Cache generated images
+      - name: Restore generated images
+        id: img-cache
         uses: actions/cache@v4
         with:
           path: _site/img
           key: eleventy-img-${{ hashFiles('_data/photos.json') }}
           restore-keys: eleventy-img-
 
-      - name: Build the site
-        run: npx eleventy
+      - name: Fetch source photos (image cache miss)
+        if: steps.img-cache.outputs.cache-hit != 'true'
+        run: |
+          # git sparse-checkout disable expands the working tree to include all paths.
+          # With a blobless partial clone (filter: blob:none), git demand-loads the missing
+          # photo blobs from the remote as it populates those paths — no explicit fetch needed.
+          git sparse-checkout disable
+          if [ -z "$(ls -A assets/images/photos 2>/dev/null)" ]; then
+            echo "::error::Photos directory empty after checkout — blobless blob fetch may have failed"
+            exit 1
+          fi
 
-      - name: Check build output
-        run: node scripts/check.js
+      # Note: the image cache above relies on Eleventy's default non-destructive output
+      # behaviour (it writes into _site/ without wiping it). Do NOT add --deleteOutputPath
+      # to the build command; it would delete _site/img/ before the cached images are used.
+      - name: Build the site
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site/
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e  # v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
