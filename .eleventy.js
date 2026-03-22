@@ -62,35 +62,69 @@ module.exports = async function(eleventyConfig) {
     /**
      * Process an image through eleventy-img, returning metadata with
      * multiple widths and WebP + original format variants.
-     * Results are memoized per src path so each file is only processed once per build.
+     *
+     * Memoized per src + file size. A manifest (_site/img/.source-manifest.json)
+     * tracks each source file's size across builds. When a source file changes
+     * size, stale output variants are deleted so eleventy-img regenerates them.
+     * File size (not mtime) is used because mtime is reset by git checkout,
+     * which would defeat the CI image cache.
      */
-    const processImageCache = new Map();
-    function processImage(src) {
-      if (processImageCache.has(src)) return processImageCache.get(src);
+    const manifestPath = path.join(".", "_site", "img", ".source-manifest.json");
+    let sourceManifest = {};
+    try {
+      sourceManifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+    } catch (e) { /* no manifest yet — first build or clean _site */ }
 
+    const processImageCache = new Map();
+    const IMAGE_WIDTHS = [400, 800, 1200, 1600, 2400];
+
+    function processImage(src) {
       const inputPath = path.join(".", src);
+      const srcSize = fs.statSync(inputPath).size;
+      const cacheKey = `${src}:${srcSize}`;
+
+      if (processImageCache.has(cacheKey)) return processImageCache.get(cacheKey);
+
       const ext = path.extname(src).toLowerCase();
       const formats = (ext === ".png") ? ["webp", "png"] : ["webp", "jpeg"];
+      const name = path.basename(src, ext);
+      const outputDir = "./_site/img/";
+
+      // If source file size changed since last build, delete stale output variants
+      if (sourceManifest[src] != null && sourceManifest[src] !== srcSize) {
+        for (const w of IMAGE_WIDTHS) {
+          for (const fmt of formats) {
+            const stale = path.join(outputDir, `${name}-${w}w.${fmt}`);
+            if (fs.existsSync(stale)) fs.unlinkSync(stale);
+          }
+        }
+      }
+      sourceManifest[src] = srcSize;
 
       const options = {
-        widths: [400, 800, 1200, 1600, 2400],
+        widths: IMAGE_WIDTHS,
         formats,
         fixOrientation: true,
-        outputDir: "./_site/img/",
+        outputDir,
         urlPath: "/img/",
         filenameFormat: function (_id, _src, width, format) {
-          const name = path.basename(src, ext);
           return `${name}-${width}w.${format}`;
         },
       };
 
-      Image.statsSync(inputPath, options);
       Image(inputPath, options);
 
       const metadata = Image.statsSync(inputPath, options);
-      processImageCache.set(src, metadata);
+      processImageCache.set(cacheKey, metadata);
       return metadata;
     }
+
+    // Persist manifest after each build so stale detection works across restarts
+    eleventyConfig.on("eleventy.after", () => {
+      const dir = path.dirname(manifestPath);
+      if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(manifestPath, JSON.stringify(sourceManifest, null, 2));
+    });
 
     /**
      * Build a <picture> element from eleventy-img metadata.
