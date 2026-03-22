@@ -30,10 +30,14 @@
     {%- assign hero_height = nil -%}
     {%- if images.hero -%}
       {%- assign hero_basename = images.hero | split: "/" | last | split: "." | first -%}
-      {%- assign hero_image = "/img/" | append: hero_basename | append: "-1200w.jpeg" -%}
+      {%- assign hero_ext = images.hero | split: "." | last | downcase -%}
+      {%- if hero_ext == "png" -%}{%- assign og_ext = "png" -%}{%- else -%}{%- assign og_ext = "jpeg" -%}{%- endif -%}
+      {%- assign hero_image = "/img/" | append: hero_basename | append: "-1200w." | append: og_ext -%}
     {%- elsif media.hero -%}
       {%- assign hero_basename = media.hero.src | split: "/" | last | split: "." | first -%}
-      {%- assign hero_image = "/img/" | append: hero_basename | append: "-1200w.jpeg" -%}
+      {%- assign hero_ext = media.hero.src | split: "." | last | downcase -%}
+      {%- if hero_ext == "png" -%}{%- assign og_ext = "png" -%}{%- else -%}{%- assign og_ext = "jpeg" -%}{%- endif -%}
+      {%- assign hero_image = "/img/" | append: hero_basename | append: "-1200w." | append: og_ext -%}
       {%- if media.hero.alt -%}{%- assign hero_alt = media.hero.alt -%}{%- endif -%}
       {%- if media.hero.width -%}{%- assign hero_width = media.hero.width -%}{%- endif -%}
       {%- if media.hero.height -%}{%- assign hero_height = media.hero.height -%}{%- endif -%}
