@@ -12,8 +12,27 @@
 <pre><code>npm run build
 </code></pre>
 <p>Builds the site and runs post-build consistency checks. The checks must pass before CI will deploy.</p>
+<h3>Image Processing</h3>
+<p>Source images are processed by <code>@11ty/eleventy-img</code> into multiple width/format variants in <code>_site/img/</code>. A file-size manifest (<code>_site/img/.source-manifest.json</code>) tracks each source file so that changed images are automatically regenerated.</p>
+<p><strong>If you replace a source image and don't see the change:</strong></p>
+<ol>
+<li><strong>Restart the dev server.</strong> The image processor caches file existence in memory for the lifetime of the process, so hot-reload won't pick up replaced files. Stop <code>npm run start</code> and start it again.</li>
+<li><strong>If that doesn't work:</strong> <code>rm -rf _site</code> and rebuild. This forces full regeneration.</li>
+</ol>
+<p>Thumbnails must be exactly <strong>4:3</strong> (e.g. 1024x768) to match the card layout. Other aspect ratios will leave visible gaps on the homepage grid.</p>
 <h3>Deployment</h3>
-<p>The site is configured to be built and deployed to GitHub Pages (<code>gh/pages</code> branch) automatically via GitHub Actions on each push to the <code>main</code> branch.</p>
+<p>Pushes to <code>main</code> trigger a GitHub Actions workflow (<code>.github/workflows/deploy.yml</code>) that builds and deploys to GitHub Pages (<code>gh-pages</code> branch).</p>
+<p>The build uses two caching layers to keep deploys fast (~2–3 min instead of ~10 min):</p>
+<ul>
+<li><strong>Generated images</strong> (<code>_site/img/</code>) — cached and restored by the hash of <code>_data/photos.json</code>. This includes processed variants for both gallery photos and post images. The file-size manifest (<code>.source-manifest.json</code>) is included in this cache, so changed post images are detected and regenerated automatically.</li>
+<li><strong>Source photos</strong> (<code>assets/images/photos/</code>) — cached separately. The repo uses a blobless partial clone with sparse checkout that excludes gallery photos from the initial checkout. If the source photos cache misses, sparse checkout is disabled to fetch them on demand.</li>
+</ul>
+<p>Things to know:</p>
+<ul>
+<li><strong>Do not add <code>--deleteOutputPath</code> to the build command.</strong> The image cache relies on Eleventy's default non-destructive output (it writes into <code>_site/</code> without wiping it). Deleting the output path would destroy the cached images before they're used.</li>
+<li><strong>The image cache key is <code>_data/photos.json</code>'s hash.</strong> Adding or removing gallery photos changes this hash, which invalidates both caches and triggers a full rebuild on the next deploy. Post image changes alone do not invalidate the cache — stale post images are handled by the file-size manifest instead.</li>
+<li><strong>Post images are always checked out</strong> (only <code>assets/images/photos/**</code> is sparse-excluded). They are available from the initial clone.</li>
+</ul>
 <h3>Adding a Post</h3>
 <p>Create <code>posts/YYYY-MM-DD-slug.md</code>. Use descriptive camelCase keys for media content (e.g. <code>albumInHand</code>, not <code>img01</code>).
 See <code>posts/2026-02-05-internet-radio-concept.md</code> for a complete example.</p>

@@ -4,12 +4,115 @@
   <subtitle>Explore, Create, Inspire</subtitle>
   <link href="https://adamfreisinger.me/feed.xml" rel="self" />
   <link href="https://adamfreisinger.me/" />
-  <updated>2026-02-27T00:00:00Z</updated>
+  <updated>2026-03-21T00:00:00Z</updated>
   <id>https://adamfreisinger.me/</id>
   <author>
     <name>Adam Freisinger</name>
     <email>hello@adamfreisinger.me</email>
   </author>
+  <entry>
+    <title>Building a Home for My Stray Ideas</title>
+    <link href="https://adamfreisinger.me/posts/2026-03-21/building-contemplace/" />
+    <updated>2026-03-21T00:00:00Z</updated>
+    <id>https://adamfreisinger.me/posts/2026-03-21/building-contemplace/</id>
+    <content type="html">&lt;p&gt;I notice things. A weird-sounding word in a book I&#39;m reading. An urge to understand how drone flutes work. An odd graffiti that keeps popping up in my neighbourhood. These aren&#39;t plans or tasks. They&#39;re fragments. And the part of my thinking that I really enjoy happens between them, in the sometimes accidental, organic connections that I make as I ponder about them.&lt;/p&gt;
+&lt;p&gt;I have been taking notes for as long as I can remember. Yearly bullet journals, Evernote, Obsidian, Bear, Apple Notes, and I even have a &lt;a href=&quot;https://johnnydecimal.com/&quot;&gt;Johnny Decimal&lt;/a&gt; index. For the structured parts of life, these work. But for creative fragments, reflections, stray observations, nothing held. Every system either asked me to organise a lot (my brain ran faster than my organisational patience, so the spark would be gone) or let me dump things in and never surface them again.&lt;/p&gt;
+&lt;p&gt;About six weeks ago, three tools I was already using fit together in a way I didn&#39;t plan. &lt;a href=&quot;https://wisprflow.ai/r?ADAM22995&quot;&gt;Wispr Flow&lt;/a&gt; for voice dictation. &lt;a href=&quot;https://docs.anthropic.com/en/docs/claude-code&quot;&gt;Claude Code&lt;/a&gt; for building things through conversation. And an &lt;a href=&quot;https://obsidian.md/&quot;&gt;Obsidian&lt;/a&gt; vault with &lt;a href=&quot;https://smartconnections.app/&quot;&gt;Smart Connections&lt;/a&gt;, a plugin that vector-embeds notes and exposes them to AI tools through &lt;a href=&quot;https://modelcontextprotocol.io/&quot;&gt;MCP&lt;/a&gt;. I could dictate a thought, and Claude would find how it connected to things I&#39;d written weeks ago. Capture and connection happened in the same place for the first time. That felt like something.&lt;/p&gt;
+&lt;h2&gt;From my desk to my pocket&lt;/h2&gt;
+&lt;p&gt;I started using the combination and building on it at the same time. Voice in, structured fragment out, a link to an older note I&#39;d forgotten about. That loop was exciting. But it only worked at my desk. Obsidian had to be running, Claude Code had to be open, and I had to be physically there, while I kept having ideas away from it.&lt;/p&gt;
+&lt;p&gt;So I started building a solution I could reach from anywhere. This was not a weekend hack. It took about two weeks of focused work, dozens of architectural decisions, a lot of iteration and rethinking. But I could use it from day one, even while it was rough, and that kept the momentum going. I call it &lt;a href=&quot;https://github.com/freegyes/project-ContemPlace&quot;&gt;ContemPlace&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;ContemPlace captures idea fragments in my own voice through a Telegram bot. I send a message, sometimes a photo, and the system structures it: title, body, tags, links to related notes. Everything gets vector-embedded for semantic search. My raw words are always preserved alongside the structured version.&lt;/p&gt;
+&lt;p&gt;Overnight, an automated gardener runs. It compares every fragment against every other by embedding similarity, creates connections I didn&#39;t explicitly make, and groups notes into thematic clusters using Louvain community detection. The next time I or any AI tool explores the knowledge base, the graph is richer than what I put in. The system speaks MCP, so my notes travel with me across tools. They aren&#39;t trapped in any vendor&#39;s memory.&lt;/p&gt;
+&lt;h2&gt;Böhönc&lt;/h2&gt;
+&lt;p&gt;Here is what it actually feels like when it works.&lt;/p&gt;
+&lt;p&gt;I&#39;m browsing the internet and I spot the word &amp;quot;böhönc.&amp;quot; Hungarian for ancient trees that have overgrown their neighbours. I love that. I take a screenshot, open Telegram, and send the photo with a one-line note to my capture bot:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;very old trees that have overgrown their neighbours have a name in Hungarian: &amp;quot;böhönc&amp;quot;, think like ents of Middle Earth&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A few seconds later, the bot replies.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-9by16&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/telegram-capture-554w.png&quot; data-glightbox=&quot;title: Capture in action&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/telegram-capture-400w.webp 400w, https://adamfreisinger.me/img/telegram-capture-554w.webp 554w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/png&quot; srcset=&quot;https://adamfreisinger.me/img/telegram-capture-400w.png 400w, https://adamfreisinger.me/img/telegram-capture-554w.png 554w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/telegram-capture-554w.png&quot; width=&quot;554&quot; height=&quot;985&quot; alt=&quot;Telegram conversation showing a photo of an ancient tree with a note about the Hungarian word böhönc, and the bot&#39;s structured reply with title, tags, and a link to a related note&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;Capture in action&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;The title is a claim extracted from my words: Böhönc: Hungarian word for ancient trees that have overgrown their neighbours. Four tags. And a link. The system embedded my raw text, searched for semantically similar notes, and the capture agent decided a connection existed to a note about a book that uses unusual, evocative words. I didn&#39;t ask for that. My photo is stored. My exact words are preserved. I close Telegram and I don&#39;t think about organisation or administration at all.&lt;/p&gt;
+&lt;p&gt;That night at 2am, the automated gardener wakes up. The capture agent had already found one connection at the moment I sent the message, but it only saw the top few candidates and only compared against what existed at that point. The gardener is different. It looks at everything at once, compares every note to every other note, and works in bulk. It creates similarity links between fragments that are close in meaning. Then it does something the capture agent can&#39;t: it runs Louvain community detection on the full similarity graph, grouping notes into thematic neighbourhoods based on how closely they relate across the entire corpus.&lt;/p&gt;
+&lt;p&gt;My böhönc fragment ends up clustered with the note about unusual words. I didn&#39;t organise this. I didn&#39;t tag them the same way on purpose. The semantic proximity was enough. And the cluster reveals something I hadn&#39;t consciously noticed: I didn&#39;t just like the tree. I liked the &lt;em&gt;word&lt;/em&gt;. The thread running through these fragments is my attraction to rare, evocative vocabulary. I can see this on my dashboard, a web interface I built for browsing clusters visually.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-16by9&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/cluster-discovery-hero-2400w.png&quot; data-glightbox=&quot;title: The gardener clustered them overnight&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/cluster-discovery-hero-400w.webp 400w, https://adamfreisinger.me/img/cluster-discovery-hero-800w.webp 800w, https://adamfreisinger.me/img/cluster-discovery-hero-1200w.webp 1200w, https://adamfreisinger.me/img/cluster-discovery-hero-1600w.webp 1600w, https://adamfreisinger.me/img/cluster-discovery-hero-2400w.webp 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/png&quot; srcset=&quot;https://adamfreisinger.me/img/cluster-discovery-hero-400w.png 400w, https://adamfreisinger.me/img/cluster-discovery-hero-800w.png 800w, https://adamfreisinger.me/img/cluster-discovery-hero-1200w.png 1200w, https://adamfreisinger.me/img/cluster-discovery-hero-1600w.png 1600w, https://adamfreisinger.me/img/cluster-discovery-hero-2400w.png 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/cluster-discovery-hero-2400w.png&quot; width=&quot;2400&quot; height=&quot;1514&quot; alt=&quot;Dashboard cluster view showing the böhönc capture clustered with a note about unusual words in a force-directed graph&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;The gardener clustered them overnight&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;Days later, I&#39;m in a Claude session. Claude has no memory of me, but it has an MCP connection to my ContemPlace, so it can query my entire knowledge base as if it had already built an extensive memory of me. I&#39;ve just seen a forest I liked. On impulse, I type: &amp;quot;I saw a great looking forest, and that made me think about trees in general. Search my notes for trees, check for anything related, see what comes up!&amp;quot;&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-1by1&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/semantic-exploration-1600w.png&quot; data-glightbox=&quot;title: One prompt, and the agent traverses the knowledge base&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/semantic-exploration-400w.webp 400w, https://adamfreisinger.me/img/semantic-exploration-800w.webp 800w, https://adamfreisinger.me/img/semantic-exploration-1200w.webp 1200w, https://adamfreisinger.me/img/semantic-exploration-1600w.webp 1600w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/png&quot; srcset=&quot;https://adamfreisinger.me/img/semantic-exploration-400w.png 400w, https://adamfreisinger.me/img/semantic-exploration-800w.png 800w, https://adamfreisinger.me/img/semantic-exploration-1200w.png 1200w, https://adamfreisinger.me/img/semantic-exploration-1600w.png 1600w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/semantic-exploration-1600w.png&quot; width=&quot;1600&quot; height=&quot;1619&quot; alt=&quot;Claude.ai searching for tree-related notes and returning direct tree connections and unexpected wood and material connections&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;One prompt, and the agent traverses the knowledge base&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;The böhönc capture comes back. But so do notes I&#39;d nearly forgotten: someone making prints from cross-sections of felled trees, an idea about making a drone flute by routing, wooden board games. The agent organises them into &amp;quot;direct tree connections&amp;quot; and &amp;quot;wood/material connections&amp;quot; without being told to. I hadn&#39;t thought of these things together. The instrument idea was from weeks ago, the board games from a different context entirely. But the embedding space puts them in the same neighbourhood, and the agent traverses it in one call.&lt;/p&gt;
+&lt;p&gt;I finish my coffee. My morning walk, which was going to be a routine stroll, now has a destination. Yesterday I noticed a huge tree by the river that had split in two. And something clicks. Could I make a print from its cross-section? Could a piece of it become material for an instrument or a board game I will be making soon, maybe even with a hidden nod to a böhönc, as another layer of connections?&lt;/p&gt;
+&lt;p&gt;The system didn&#39;t send me there. It didn&#39;t recommend a walk. It reminded me why I&#39;d want to go, by connecting a word I liked to a material I work with to a craft I practice. A fragment I captured days ago, without thinking about it, became a thread that pulled me into the physical world.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-3by4&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/bohonc-tree-walk-2400w.jpeg&quot; data-glightbox=&quot;title: My own böhönc by the river&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/bohonc-tree-walk-400w.webp 400w, https://adamfreisinger.me/img/bohonc-tree-walk-800w.webp 800w, https://adamfreisinger.me/img/bohonc-tree-walk-1200w.webp 1200w, https://adamfreisinger.me/img/bohonc-tree-walk-1600w.webp 1600w, https://adamfreisinger.me/img/bohonc-tree-walk-2400w.webp 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/bohonc-tree-walk-400w.jpeg 400w, https://adamfreisinger.me/img/bohonc-tree-walk-800w.jpeg 800w, https://adamfreisinger.me/img/bohonc-tree-walk-1200w.jpeg 1200w, https://adamfreisinger.me/img/bohonc-tree-walk-1600w.jpeg 1600w, https://adamfreisinger.me/img/bohonc-tree-walk-2400w.jpeg 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/bohonc-tree-walk-2400w.jpeg&quot; width=&quot;2400&quot; height=&quot;3200&quot; alt=&quot;A massive ancient tree with a split trunk, covered in ivy, with a person standing next to it for scale&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;My own böhönc by the river&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;h2&gt;Why I built it&lt;/h2&gt;
+&lt;p&gt;The short answer is that I enjoy building. Building is how I think through problems and how I understand things. I could probably have assembled something close enough from existing products. Maybe Obsidian on a VPS would have worked. A few days ago, Anthropic announced ways to connect a Telegram bot to a remote Claude Code session. If that had existed three weeks earlier, I might not have started.&lt;/p&gt;
+&lt;p&gt;But building it gave me things that a ready-made product wouldn&#39;t. I know exactly what happens to my data. I know why the capture agent is forbidden from adding conclusions I didn&#39;t express. I know how reassuring it is that my raw input is always preserved, so I can recompute everything from first principles if I find a better way later.&lt;/p&gt;
+&lt;p&gt;A delightful detail from development: the development process could directly use ContemPlace for mining product ideas about itself, a kind of recursive dogfooding I enjoyed on a very meta level.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://github.com/freegyes/project-ContemPlace&quot;&gt;repo&lt;/a&gt; has been public from day zero, and every &lt;a href=&quot;https://github.com/freegyes/project-ContemPlace/blob/main/docs/decisions.md&quot;&gt;design decision&lt;/a&gt; and the &lt;a href=&quot;https://github.com/freegyes/project-ContemPlace/blob/main/docs/philosophy.md&quot;&gt;core philosophy&lt;/a&gt; are documented extensively.&lt;/p&gt;
+&lt;h2&gt;A door left open&lt;/h2&gt;
+&lt;p&gt;I&#39;m proud that I built this, and I enjoy using it daily. I don&#39;t know what it will become.&lt;/p&gt;
+&lt;p&gt;I&#39;m at the point in this project where my excitement is levelling off and my mind starts noticing new things outside its domain. Fewer new features from here. More real use, more observing how it shapes my thinking over a longer stretch.&lt;/p&gt;
+&lt;p&gt;If this made you curious, or if you recognise the itch from the opening paragraphs, the &lt;a href=&quot;https://github.com/freegyes/project-ContemPlace&quot;&gt;repository&lt;/a&gt; is public. You can have your own instance running in about half an hour, for virtually nothing. If it inspires you to build your own version, or to think differently about how you capture your ideas, or if it just sends you down an interesting train of thought, I would enjoy hearing about it.&lt;/p&gt;
+&lt;div class=&quot;columns is-centered is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-four-fifths&quot;&gt;
+                &lt;div&gt;
+                &lt;figure class=&quot;image is-16by9&quot;&gt;
+            &lt;a href=&quot;https://adamfreisinger.me/img/github-repo-2400w.png&quot; data-glightbox=&quot;title: The repository, public from day zero&quot;&gt;
+              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/github-repo-400w.webp 400w, https://adamfreisinger.me/img/github-repo-800w.webp 800w, https://adamfreisinger.me/img/github-repo-1200w.webp 1200w, https://adamfreisinger.me/img/github-repo-1600w.webp 1600w, https://adamfreisinger.me/img/github-repo-2400w.webp 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/png&quot; srcset=&quot;https://adamfreisinger.me/img/github-repo-400w.png 400w, https://adamfreisinger.me/img/github-repo-800w.png 800w, https://adamfreisinger.me/img/github-repo-1200w.png 1200w, https://adamfreisinger.me/img/github-repo-1600w.png 1600w, https://adamfreisinger.me/img/github-repo-2400w.png 2400w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/github-repo-2400w.png&quot; width=&quot;2400&quot; height=&quot;1514&quot; alt=&quot;The ContemPlace GitHub repository showing the project structure, recent commits, and description&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
+            &lt;/a&gt;
+          &lt;/figure&gt;
+                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;The repository, public from day zero&lt;/figcaption&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;p&gt;Böhönc. An ancient tree that outgrew everything around it. I found the word on a screen, sent it to a bot, and a week later it sent me on a walk. That&#39;s the whole thing.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;ContemPlace — Under the Hood&lt;/h2&gt;
+&lt;p&gt;Cloudflare Workers (TypeScript) for compute. Supabase (Postgres with pgvector) for storage. OpenRouter for LLM calls. Cloudflare Pages for the dashboard. Four Workers handle the Telegram webhook, the MCP server, the nightly gardener, and the dashboard API. Everything except the LLM calls runs on free tiers. Running cost with daily use: about two to three dollars a month.&lt;/p&gt;
+&lt;p&gt;The MCP server exposes tools for: semantic search, single-note retrieval, related-note traversal, recent captures, cluster listing, capture, remove, and on-demand gardening. Any MCP-compatible tool can connect and query the full knowledge base. The &lt;a href=&quot;https://github.com/freegyes/project-ContemPlace&quot;&gt;repository&lt;/a&gt; has detailed documentation on every layer, from the &lt;a href=&quot;https://github.com/freegyes/project-ContemPlace/blob/main/docs/capture-agent.md&quot;&gt;capture pipeline&lt;/a&gt; to the &lt;a href=&quot;https://github.com/freegyes/project-ContemPlace/blob/main/docs/architecture.md&quot;&gt;gardening algorithms&lt;/a&gt; to the &lt;a href=&quot;https://github.com/freegyes/project-ContemPlace/blob/main/docs/setup.md&quot;&gt;setup guide&lt;/a&gt; for deploying your own instance.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Hungarian Blue Trail Album</title>
     <link href="https://adamfreisinger.me/posts/2026-02-27/hungarian-blue-trail-album/" />
@@ -831,71 +934,6 @@ Something I can carry in my pocket, not because it contains all the music in the
 &lt;p&gt;Creating this drying rack was particularly meaningful because it marked my first entirely original design—not a remix, nor inspired by something I&#39;d seen elsewhere. Having the freedom to draw directly onto the wood, cut freehand, and make intuitive changes on the fly was liberating. It feels like a personal milestone: a confirmation that I can create something with confidence, from concept to finished object, that will live up to my (sometimes unrelenting) standards.&lt;/p&gt;
 &lt;p&gt;Some friends asked if I’d consider making more to sell. But part of me knows the joy lies in the creation itself—the planning, the woodworking, the problem-solving—not in mass production. Sure, I might enjoy creating another one, perhaps refining the process, working more efficiently. But by the third repetition, I suspect I&#39;d already be redesigning it for CNC manufacturing and finding ways to simplify construction for outsourcing. Honestly, I&#39;d rather just share the design files openly online, making it accessible for others to replicate and improve freely. Maybe this makes me a terrible businessman—but I’m very much at peace with that idea. Perhaps that’s a good lesson learned: the things I love most lose their charm when mass-produced.&lt;/p&gt;
 &lt;p&gt;So here it hangs—useful, elegant, mine. A reminder that surrounding myself intentionally with beautiful things that reflect back the qualities I want to nurture in myself is a worthy aspiration.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Waving My Hand and Hearing Sound Respond in Real-Time</title>
-    <link href="https://adamfreisinger.me/posts/2025-02-23/microbit-and-plugdata/" />
-    <updated>2025-02-23T00:00:00Z</updated>
-    <id>https://adamfreisinger.me/posts/2025-02-23/microbit-and-plugdata/</id>
-    <content type="html">&lt;h2&gt;plugdata&lt;/h2&gt;
-&lt;p&gt;For the past two weeks, I’ve been diving into &lt;a href=&quot;https://plugdata.org/&quot;&gt;plugdata&lt;/a&gt;, a modern reimagining of Pure Data, a &amp;quot;visual programming environment designed for sound experimentation, prototyping, and education&amp;quot;. If you&#39;ve ever been fascinated by modular synths, interactive sound design, or generative music, plugdata makes these ideas instantly accessible, so it instantly won me over.&lt;/p&gt;
-&lt;p&gt;It offers the same enjoyment for me that working with modular synthesizers (both in the physical world and via emulations like &lt;a href=&quot;https://vcvrack.com/&quot;&gt;vcvrack&lt;/a&gt;) or the &lt;a href=&quot;https://empresseffects.com/products/zoia&quot;&gt;Empress Zoia&lt;/a&gt; always had. I love modular thinking—connecting objects, seeing the flow of information—and plugdata aligns perfectly with that mindset.&lt;/p&gt;
-&lt;h2&gt;The Catalyst: A Local Workshop on Electronic Instruments&lt;/h2&gt;
-&lt;p&gt;I’ve been experimenting with music, instruments, and coding for years, but two weeks ago, I stumbled upon a three-part &lt;a href=&quot;https://adapterujbuda.hu/hangszerepito-kurzus/&quot;&gt;electronic instrument workshop&lt;/a&gt; nearby. The first session introduced the fundamentals of sound synthesis in &lt;a href=&quot;http://cycling74.com/&quot;&gt;Max&lt;/a&gt;—and just like that, I was all in again.&lt;/p&gt;
-&lt;p&gt;The workshop reignited something in me—this desire to build something that exists outside of a traditional computer setup, something tangible and expressive. That led me down a rabbit hole of research into embeddable systems that could support the kind of instruments I want to build. That’s how I landed on the &lt;a href=&quot;https://electro-smith.com/products/daisy-seed&quot;&gt;Electrosmith Daisy Seed&lt;/a&gt;, a powerful microcontroller designed for audio applications. It can host Pure Data patches (converted to C++), meaning I could eventually run my creations as standalone instruments—no laptop required. That vision became my new north star. But before I could get there, I wanted to test something simpler: how motion could shape sound in real-time.&lt;/p&gt;
-&lt;h2&gt;Bringing Motion into the Equation&lt;/h2&gt;
-&lt;p&gt;After spending hours patching in plugdata, I wondered—what if I could control sound with motion? I had an early version of a &lt;a href=&quot;https://microbit.org/&quot;&gt;micro:bit&lt;/a&gt; lying around, which has a built-in accelerometer. The idea was simple: use the XYZ coordinates of the micro:bit&#39;s accelerometer to modify parameters in my patch.&lt;/p&gt;
-&lt;p&gt;To make this work, I:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;flashed a custom JavaScript program onto the micro:bit to continuously send accelerometer data,&lt;/li&gt;
-&lt;li&gt;ran a Python script using &lt;a href=&quot;https://pypi.org/project/python-osc/&quot;&gt;python-osc&lt;/a&gt; to translate motion data into a format plugdata can read, and&lt;/li&gt;
-&lt;li&gt;modified my plugdata patch to receive, filter, and scale the motion data to control sound in real-time.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;columns is-centered is-multiline is-mobile&quot;&gt;
-  &lt;div class=&quot;column is-3&quot;&gt;&lt;div&gt;
-                &lt;figure class=&quot;image is-4by3&quot;&gt;
-            &lt;a href=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-01-1024w.jpeg&quot; data-glightbox=&quot;title: MakeCode editor for uploading to micro:bit&quot;&gt;
-              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-01-400w.webp 400w, https://adamfreisinger.me/img/microbit-and-plugdata-01-800w.webp 800w, https://adamfreisinger.me/img/microbit-and-plugdata-01-1024w.webp 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-01-400w.jpeg 400w, https://adamfreisinger.me/img/microbit-and-plugdata-01-800w.jpeg 800w, https://adamfreisinger.me/img/microbit-and-plugdata-01-1024w.jpeg 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-01-1024w.jpeg&quot; width=&quot;1024&quot; height=&quot;768&quot; alt=&quot;A screenshot of MakeCode editor&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
-            &lt;/a&gt;
-          &lt;/figure&gt;
-                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;MakeCode editor for uploading to micro:bit&lt;/figcaption&gt;
-              &lt;/div&gt;&lt;/div&gt; 
-  &lt;div class=&quot;column is-3&quot;&gt;&lt;div&gt;
-                &lt;figure class=&quot;image is-4by3&quot;&gt;
-            &lt;a href=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-02-1024w.jpeg&quot; data-glightbox=&quot;title: The Python bridge script sending data&quot;&gt;
-              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-02-400w.webp 400w, https://adamfreisinger.me/img/microbit-and-plugdata-02-800w.webp 800w, https://adamfreisinger.me/img/microbit-and-plugdata-02-1024w.webp 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-02-400w.jpeg 400w, https://adamfreisinger.me/img/microbit-and-plugdata-02-800w.jpeg 800w, https://adamfreisinger.me/img/microbit-and-plugdata-02-1024w.jpeg 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-02-1024w.jpeg&quot; width=&quot;1024&quot; height=&quot;768&quot; alt=&quot;A screenshot of Visual Studio Code&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
-            &lt;/a&gt;
-          &lt;/figure&gt;
-                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;The Python bridge script sending data&lt;/figcaption&gt;
-              &lt;/div&gt;&lt;/div&gt; 
-  &lt;div class=&quot;column is-3&quot;&gt;&lt;div&gt;
-                &lt;figure class=&quot;image is-4by3&quot;&gt;
-            &lt;a href=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-03-1024w.jpeg&quot; data-glightbox=&quot;title: The plugdata patcher receiving parameters&quot;&gt;
-              &lt;picture&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-03-400w.webp 400w, https://adamfreisinger.me/img/microbit-and-plugdata-03-800w.webp 800w, https://adamfreisinger.me/img/microbit-and-plugdata-03-1024w.webp 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-03-400w.jpeg 400w, https://adamfreisinger.me/img/microbit-and-plugdata-03-800w.jpeg 800w, https://adamfreisinger.me/img/microbit-and-plugdata-03-1024w.jpeg 1024w&quot; sizes=&quot;(min-width: 1024px) 50vw, 100vw&quot;&gt;&lt;img src=&quot;https://adamfreisinger.me/img/microbit-and-plugdata-03-1024w.jpeg&quot; width=&quot;1024&quot; height=&quot;768&quot; alt=&quot;A screenshot of plugdata&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;
-            &lt;/a&gt;
-          &lt;/figure&gt;
-                &lt;figcaption class=&quot;has-text-centered is-italic is-size-6&quot;&gt;The plugdata patcher receiving parameters&lt;/figcaption&gt;
-              &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
-&lt;h2&gt;A Tiny Card, a Big Feeling&lt;/h2&gt;
-&lt;p&gt;And then, it worked.&lt;/p&gt;
-&lt;figure class=&quot;image is-16by9 block youtube-embed&quot;&gt;
-  &lt;a href=&quot;https://www.youtube.com/watch?v=JhcDPnzj3jU&quot; class=&quot;youtube-fallback&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
-    &lt;img src=&quot;https://img.youtube.com/vi/JhcDPnzj3jU/maxresdefault.jpg&quot; alt=&quot;Micro:bit and plugdata demo&quot; loading=&quot;lazy&quot; style=&quot;width:100%;height:100%;object-fit:cover;&quot;&gt;
-    &lt;span class=&quot;youtube-play-btn&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-  &lt;/a&gt;
-  &lt;iframe class=&quot;has-ratio youtube-iframe&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/JhcDPnzj3jU&quot; title=&quot;Micro:bit and plugdata demo&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;
-&lt;/figure&gt;
-&lt;p&gt;I lifted my hand, tilting the tiny card ever so slightly. Instantly, the sound shifted—trembling, bending, shimmering—like a living thing responding to my touch. For a moment, it felt like I was sculpting sound in mid-air. Pure magic.&lt;/p&gt;
-&lt;p&gt;It reminded me of watching &lt;a href=&quot;https://www.youtube.com/watch?v=3QtklTXbKUQ&amp;amp;t=689s&quot;&gt;Imogen Heap’s Tiny Desk performance&lt;/a&gt;, where she demonstrated her MiMU gloves. That performance was one of many inspirations that planted a seed in my mind years ago—of making music in a way that feels fluid, intuitive, and physically expressive.&lt;/p&gt;
-&lt;h2&gt;Code &amp;amp; Patch Downloads&lt;/h2&gt;
-&lt;p&gt;For anyone interested in taking a closer look at this setup, find my experimental code and patcher &lt;a href=&quot;https://gist.github.com/freegyes/db35bc8d0b530abe511fdf8a1d54cdd7&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Takeaways &amp;amp; Next Steps&lt;/h2&gt;
-&lt;p&gt;This was a small experiment, but it opened up so many possibilities. What if I combine this with other sensors? What if I replace the micro:bit with a more powerful and versatile device? What if the instrument I eventually build is less about pushing buttons and more about sculpting sound in space?&lt;/p&gt;
-&lt;p&gt;This was just a small wave of my hand, but it felt like a giant step toward something bigger—an instrument that blends woodworking, sound, coding, and visuals into something truly expressive. I’m hooked.&lt;/p&gt;
-&lt;h2&gt;If You’re Curious&lt;/h2&gt;
-&lt;p&gt;If Max, Pure Data, or plugdata sounds like your kind of thing, &lt;a href=&quot;https://www.takumiogata.com/&quot;&gt;Takumi Ogata&lt;/a&gt;’s &lt;a href=&quot;https://www.youtube.com/watch?v=1o5Wasmd8yU&amp;amp;list=PLyFkFo29zHvD4eRftIAjcLqIXCtSo7w8g&amp;amp;ab_channel=SoundSimulator&quot;&gt;Sound Simulator YouTube series&lt;/a&gt; has been my main guide so far, and I can’t recommend it enough—and if you end up experimenting with it, I’d love to hear what you create.&lt;/p&gt;
 </content>
   </entry>
 </feed>
