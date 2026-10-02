@@ -28,6 +28,8 @@ Source images are processed by `@11ty/eleventy-img` into multiple width/format v
 1. **Restart the dev server.** The image processor caches file existence in memory for the lifetime of the process, so hot-reload won't pick up replaced files. Stop `npm run start` and start it again.
 2. **If that doesn't work:** `rm -rf _site` and rebuild. This forces full regeneration.
 
+Variants are named after their source file, all in one flat folder. When two sources share a base name (camera counters like `_DSF3450` wrap around), the one added to git first keeps the plain name and each later one gets a short path hash, e.g. `_DSF3450-36ea3b`. Untracked files count as the latest. The build logs every such rename. This needs git history, so CI checks out with `fetch-depth: 0`, and a shallow clone that meets a collision fails the build instead of guessing.
+
 Thumbnails must be exactly **4:3** (e.g. 1024x768) to match the card layout. Other aspect ratios will leave visible gaps on the homepage grid.
 
 ### Deployment

@@ -4,6 +4,7 @@ const Image = require("@11ty/eleventy-img").default;
 const path = require("path");
 const fs = require("fs");
 const crypto = require("crypto");
+const { execFileSync } = require("child_process");
 
 module.exports = async function(eleventyConfig) {
   // Passthrough copies
@@ -75,6 +76,93 @@ module.exports = async function(eleventyConfig) {
       sourceManifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
     } catch (e) { /* no manifest yet — first build or clean _site */ }
 
+    /**
+     * Every processed variant lands in the flat _site/img/ folder, named after
+     * its source file. Two sources with the same base name (camera counters
+     * like _DSF3450 wrap around) would overwrite each other's variants.
+     *
+     * The source added to git first keeps the plain name. Each later one gets
+     * a short hash of its path appended, e.g. _DSF3450-1a2b3c. Untracked files
+     * count as the latest. Ordering needs git history, so CI fetches it in full
+     * (fetch-depth: 0); a shallow clone with a collision fails the build.
+     */
+    const IMAGE_SOURCE = /\.(jpe?g|png|webp|gif|avif|tiff?|heic)$/i;
+
+    function plainOutputName(src) {
+      return path.basename(src, path.extname(src).toLowerCase());
+    }
+
+    function normaliseSrc(src) {
+      return path.normalize(src).replace(/^\/+/, "");
+    }
+
+    function git(args) {
+      return execFileSync("git", args, { encoding: "utf8" }).trim();
+    }
+
+    function listImageSources() {
+      const sources = new Set();
+      const walk = dir => {
+        for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+          const full = path.join(dir, entry.name);
+          if (entry.isDirectory()) walk(full);
+          else if (IMAGE_SOURCE.test(entry.name)) sources.add(normaliseSrc(full));
+        }
+      };
+      walk("assets");
+      // Sparse CI checkouts may not have every file on disk yet
+      for (const file of git(["ls-files", "assets"]).split("\n")) {
+        if (IMAGE_SOURCE.test(file)) sources.add(normaliseSrc(file));
+      }
+      return [...sources];
+    }
+
+    function resolveOutputNames() {
+      const groups = new Map();
+      for (const src of listImageSources()) {
+        const name = plainOutputName(src);
+        if (!groups.has(name)) groups.set(name, []);
+        groups.get(name).push(src);
+      }
+
+      const names = new Map();
+      const collisions = [...groups.values()].filter(group => group.length > 1);
+      if (collisions.length && git(["rev-parse", "--is-shallow-repository"]) === "true") {
+        throw new Error(
+          "Image name collision in a shallow clone, cannot tell which source came first: " +
+          collisions.map(group => group.join(" vs ")).join("; ") +
+          ". Fetch full history (fetch-depth: 0)."
+        );
+      }
+      for (const group of collisions) {
+        const added = src => {
+          const times = git(["log", "--diff-filter=A", "--format=%at", "--", src]);
+          return times ? Number(times.split("\n").pop()) : Infinity;
+        };
+        const ordered = group
+          .map(src => ({ src, time: added(src) }))
+          .sort((a, b) => a.time - b.time || a.src.localeCompare(b.src));
+        for (const { src } of ordered.slice(1)) {
+          const suffix = crypto.createHash("md5").update(src).digest("hex").slice(0, 6);
+          names.set(src, `${plainOutputName(src)}-${suffix}`);
+          console.log(`[images] ${src} shares a name with ${ordered[0].src}, output as ${names.get(src)}`);
+        }
+      }
+      return names;
+    }
+
+    const outputNames = resolveOutputNames();
+
+    function outputName(src) {
+      return outputNames.get(normaliseSrc(src)) || plainOutputName(src);
+    }
+
+    // Open Graph image URL for a source, matching what processImage writes
+    eleventyConfig.addFilter("ogImage", function(src) {
+      const ext = path.extname(src).toLowerCase() === ".png" ? "png" : "jpeg";
+      return `/img/${outputName(src)}-1200w.${ext}`;
+    });
+
     const processImageCache = new Map();
     const IMAGE_WIDTHS = [400, 800, 1200, 1600, 2400];
 
@@ -87,7 +175,7 @@ module.exports = async function(eleventyConfig) {
 
       const ext = path.extname(src).toLowerCase();
       const formats = (ext === ".png") ? ["webp", "png"] : ["webp", "jpeg"];
-      const name = path.basename(src, ext);
+      const name = outputName(src);
       const outputDir = "./_site/img/";
 
       // If source file size changed since last build, delete stale output variants
