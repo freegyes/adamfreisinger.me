@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 concurrency:
   group: deploy-${{ github.ref }}
@@ -17,7 +18,7 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           filter: blob:none
           sparse-checkout-cone-mode: false
@@ -26,7 +27,7 @@ jobs:
             !/assets/images/photos/**
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '24'
           cache: 'npm'
@@ -36,7 +37,7 @@ jobs:
 
       - name: Restore generated images
         id: img-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: _site/img
           key: eleventy-img-${{ hashFiles('_data/photos.json') }}
@@ -44,7 +45,7 @@ jobs:
 
       - name: Restore source photos
         id: photos-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: assets/images/photos
           key: source-photos-${{ hashFiles('_data/photos.json') }}
@@ -68,7 +69,7 @@ jobs:
         run: npm run build
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: site
           path: _site/
@@ -81,13 +82,13 @@ jobs:
 
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: site
           path: _site/
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e  # v4
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453  # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
