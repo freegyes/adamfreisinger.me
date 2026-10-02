@@ -410,6 +410,22 @@ module.exports = async function(eleventyConfig) {
   });
 
   /**
+   * lightboxImage shortcode for square grid tiles that open in the lightbox.
+   * Images sharing a gallery name can be paged through together.
+   * Usage: {% lightboxImage src, alt, gallery %}
+   */
+  eleventyConfig.addAsyncShortcode("lightboxImage", async function(src, alt, gallery) {
+    const metadata = await processImage(src);
+    const sizes = "(min-width: 1024px) 33vw, 50vw";
+    const pictureHtml = buildPictureMarkup(metadata, alt || "", "", sizes, "lazy");
+    const formats = Object.keys(metadata);
+    const fallbackFormat = formats[formats.length - 1];
+    const largestImage = metadata[fallbackFormat][metadata[fallbackFormat].length - 1];
+    const galleryAttr = gallery ? ` data-gallery="${gallery}"` : "";
+    return `<a href="${largestImage.url}" data-glightbox=""${galleryAttr}>${pictureHtml}</a>`;
+  });
+
+  /**
    * mediaGrid paired shortcode.
    * Wraps a group of media items (presumably rendered with gridMedia) inside a container and a columns row.
    *

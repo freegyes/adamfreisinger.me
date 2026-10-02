@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+
+    {% include "_head.html" %}
+
+    <body>
+
+    {% include "_navbar.html" %}
+
+    <header class="wood-hero">
+      {% image images.hero, images.hero_alt, "wood-hero-img", "100vw", "eager" %}
+    </header>
+
+    <section class="section">
+      <div class="container">
+        {% for piece in pieces %}
+        <div class="columns is-mobile is-variable is-2 wood-row">
+          {% for photo in piece.photos %}
+          <div class="column is-one-third">
+            <div class="photo-grid-item">
+              {% lightboxImage photo.src, photo.alt, "wood" %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <div class="wood-closing" aria-hidden="true"></div>
+
+    <footer>
+      {% include "_footer.html" %}
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js" integrity="sha384-/+Fc1LD6ksHYZ+2MChiSfjEXBcl4q2axUWhs6/CdnfqY5aLmrPwtysVzyeP0s60b" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        GLightbox({
+          selector: '[data-glightbox]',
+          touchNavigation: true,
+          loop: true,
+          closeOnOutsideClick: true
+        });
+      });
+    </script>
+  </body>
+</html>
