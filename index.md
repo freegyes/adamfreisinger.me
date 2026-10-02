@@ -18,15 +18,21 @@ about:
     Over the years, I’ve worked across design, education, and craftsmanship, always blending structure with creativity. I believe good design is not just about aesthetics but about solving problems in a way that feels intuitive, functional, and meaningful.
   photo: /assets/images/adam_rainbow.jpg
   alt: Yes, that is also me.
+makes:
+  title: Things I Make
+  items:
+    - name: From light
+      url: /photos/
+      image: /assets/images/photos/_DSF3615.jpg
+      alt: A white egret spreading its wings over a pond.
+    - name: From wood
+      url: /wood/
+      image: /assets/images/wood/_DSF3188.jpg
+      alt: A turntable on a wooden bookshelf filled with books.
 projects:
   title: A Gallery of My Focused Hours
   subtitle: Projects that shaped me as much as I shaped them.
   items:
-    - name: facirkli.design – Functional and Aesthetic Custom Furniture
-      url: https://facirkli.design
-      image: /assets/images/facirkli.png
-      alt: facirkli.design custom furniture
-      description: My one-man venture where design, craftsmanship, and problem-solving come together. I work closely with clients from first sketches to final installation, crafting furniture that’s not just beautiful but uniquely tailored to their home and lifestyle. Every piece is a blend of function, aesthetics, and personal story.
     - name: CodeBerry School – Making Coding Accessible for Everyone
       url: https://codeberryschool.com
       image: /assets/images/codeberry.png
