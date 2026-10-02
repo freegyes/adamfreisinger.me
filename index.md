@@ -43,6 +43,11 @@ projects:
       image: /assets/images/yearcompass.png
       alt: YearCompass booklet illustration
       description: As a co-founder of YearCompass, I played a key role in both designing the virtual booklet and overseeing its physical production. This simple yet powerful tool guides you through structured self-reflection, helping turn past experiences into stepping stones for the future. YearCompass has quietly found its way into the hands of millions worldwide.
+    - name: SotePedia – A Shared Notebook for Semmelweis Students
+      url: https://sotepedia.hu
+      image: /assets/images/sotepedia.png
+      alt: SotePedia logo
+      description: Between 2011 and 2016, SotePedia was the shared notebook of Semmelweis University students. It began years earlier, when I shared my own notes as a student. I built and ran its technical side, championed it across the university, and brought together and led the community of volunteer editors who helped it grow. Over the years it was visited hundreds of thousands of times.
 posts:
   title: Field Notes
   subtitle: Following curiosity, one post at a time.
