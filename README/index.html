@@ -19,6 +19,7 @@
 <li><strong>Restart the dev server.</strong> The image processor caches file existence in memory for the lifetime of the process, so hot-reload won't pick up replaced files. Stop <code>npm run start</code> and start it again.</li>
 <li><strong>If that doesn't work:</strong> <code>rm -rf _site</code> and rebuild. This forces full regeneration.</li>
 </ol>
+<p>Variants are named after their source file, all in one flat folder. When two sources share a base name (camera counters like <code>_DSF3450</code> wrap around), the one added to git first keeps the plain name and each later one gets a short path hash, e.g. <code>_DSF3450-36ea3b</code>. Untracked files count as the latest. The build logs every such rename. This needs git history, so CI checks out with <code>fetch-depth: 0</code>, and a shallow clone that meets a collision fails the build instead of guessing.</p>
 <p>Thumbnails must be exactly <strong>4:3</strong> (e.g. 1024x768) to match the card layout. Other aspect ratios will leave visible gaps on the homepage grid.</p>
 <h3>Deployment</h3>
 <p>Pushes to <code>main</code> trigger a GitHub Actions workflow (<code>.github/workflows/deploy.yml</code>) that builds and deploys to GitHub Pages (<code>gh-pages</code> branch).</p>
