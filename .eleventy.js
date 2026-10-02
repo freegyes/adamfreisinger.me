@@ -1,6 +1,6 @@
 const siteData = require("./_data/site.json");
 const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
-const Image = require("@11ty/eleventy-img");
+const Image = require("@11ty/eleventy-img").default;
 const path = require("path");
 const fs = require("fs");
 const crypto = require("crypto");
@@ -78,7 +78,7 @@ module.exports = async function(eleventyConfig) {
     const processImageCache = new Map();
     const IMAGE_WIDTHS = [400, 800, 1200, 1600, 2400];
 
-    function processImage(src) {
+    async function processImage(src) {
       const inputPath = path.join(".", src);
       const srcSize = fs.statSync(inputPath).size;
       const cacheKey = `${src}:${srcSize}`;
@@ -112,9 +112,8 @@ module.exports = async function(eleventyConfig) {
         },
       };
 
-      Image(inputPath, options);
-
-      const metadata = Image.statsSync(inputPath, options);
+      // Cache the promise, not the value, so concurrent callers share one run
+      const metadata = Image(inputPath, options);
       processImageCache.set(cacheKey, metadata);
       return metadata;
     }
@@ -166,12 +165,12 @@ module.exports = async function(eleventyConfig) {
      * @param {Object} media - The media object from front matter.
      * @returns {String} HTML markup for the media element with optional figcaption.
      */
-    function generateMediaMarkup(media) {
+    async function generateMediaMarkup(media) {
       let elementMarkup = "";
       if (media.type && media.type.toLowerCase() === "video") {
         if (media.poster) {
           // With poster: fallback image for RSS/email, video overlays on web
-          const posterMetadata = processImage(media.poster);
+          const posterMetadata = await processImage(media.poster);
           const posterMarkup = buildPictureMarkup(posterMetadata, media.alt || "", "video-poster", undefined, "lazy");
           const formats = Object.keys(posterMetadata);
           const fallbackFormat = formats[formats.length - 1];
@@ -198,7 +197,7 @@ module.exports = async function(eleventyConfig) {
             </figure>`;
         }
       } else {
-        const metadata = processImage(media.src);
+        const metadata = await processImage(media.src);
         const pictureMarkup = buildPictureMarkup(metadata, media.alt || "", "", undefined, "lazy");
         // Use the largest processed image for the lightbox href
         const formats = Object.keys(metadata);
@@ -222,7 +221,7 @@ module.exports = async function(eleventyConfig) {
    * with pre-built picture HTML and lightbox href for each photo.
    * Used by the photos template to embed data for client-side rendering.
    */
-  eleventyConfig.addShortcode("photosJson", function() {
+  eleventyConfig.addAsyncShortcode("photosJson", async function() {
     const photosPath = path.join(".", "_data", "photos.json");
     if (!fs.existsSync(photosPath)) return "[]";
     const photos = JSON.parse(fs.readFileSync(photosPath, "utf8"));
@@ -232,8 +231,8 @@ module.exports = async function(eleventyConfig) {
     if (!activePhotos.length) return "[]";
 
     const sizes = "(min-width: 1024px) 25vw, (min-width: 769px) 33vw, 50vw";
-    const result = activePhotos.map(photo => {
-      const metadata = processImage(photo.src);
+    const result = await Promise.all(activePhotos.map(async photo => {
+      const metadata = await processImage(photo.src);
       const pictureHtml = buildPictureMarkup(metadata, photo.alt || "", "", sizes, "lazy");
       const formats = Object.keys(metadata);
       const fallbackFormat = formats[formats.length - 1];
@@ -247,14 +246,14 @@ module.exports = async function(eleventyConfig) {
         width: photo.width,
         height: photo.height
       };
-    });
+    }));
     return JSON.stringify(result);
   });
 
   /**
    * Render noscript fallback for photos page — first 11 photos as static grid.
    */
-  eleventyConfig.addShortcode("photosNoscript", function() {
+  eleventyConfig.addAsyncShortcode("photosNoscript", async function() {
     const photosPath = path.join(".", "_data", "photos.json");
     if (!fs.existsSync(photosPath)) return "";
     const photos = JSON.parse(fs.readFileSync(photosPath, "utf8"));
@@ -263,8 +262,8 @@ module.exports = async function(eleventyConfig) {
     const sizes = "(min-width: 1024px) 25vw, (min-width: 769px) 33vw, 50vw";
     const activePhotos = photos.filter(p => p.active !== false);
     const selected = activePhotos.slice(0, 11);
-    return selected.map(photo => {
-      const metadata = processImage(photo.src);
+    const items = await Promise.all(selected.map(async photo => {
+      const metadata = await processImage(photo.src);
       const pictureHtml = buildPictureMarkup(metadata, photo.alt || "", "", sizes, "lazy");
       const formats = Object.keys(metadata);
       const fallbackFormat = formats[formats.length - 1];
@@ -276,7 +275,8 @@ module.exports = async function(eleventyConfig) {
           </a>
         </div>
       </div>`;
-    }).join("\n");
+    }));
+    return items.join("\n");
   });
 
   /**
@@ -287,11 +287,11 @@ module.exports = async function(eleventyConfig) {
    * @param {String} columnClass - (Optional) CSS classes for the column container.
    * @returns {String} HTML markup for the standalone media element.
    */
-  eleventyConfig.addShortcode("renderMedia", function(
+  eleventyConfig.addAsyncShortcode("renderMedia", async function(
     media,
     columnClass = "column is-four-fifths"
   ) {
-    const mediaMarkup = generateMediaMarkup(media);
+    const mediaMarkup = await generateMediaMarkup(media);
     return `<div class="columns is-centered is-mobile">
               <div class="${columnClass}">
                 ${mediaMarkup}
@@ -307,8 +307,8 @@ module.exports = async function(eleventyConfig) {
    * @param {String} columnClass - (Optional) CSS classes for the column container.
    * @returns {String} HTML markup for the grid media element.
    */
-  eleventyConfig.addShortcode("gridMedia", function(media, columnClass = "column is-4") {
-    const mediaMarkup = generateMediaMarkup(media);
+  eleventyConfig.addAsyncShortcode("gridMedia", async function(media, columnClass = "column is-4") {
+    const mediaMarkup = await generateMediaMarkup(media);
     return `<div class="${columnClass}">${mediaMarkup}</div>`;
   });
 
@@ -316,8 +316,8 @@ module.exports = async function(eleventyConfig) {
    * image shortcode for template use.
    * Usage: {% image src, alt, cls, sizes, loading %}
    */
-  eleventyConfig.addShortcode("image", function(src, alt, cls, sizes, loading) {
-    const metadata = processImage(src);
+  eleventyConfig.addAsyncShortcode("image", async function(src, alt, cls, sizes, loading) {
+    const metadata = await processImage(src);
     return buildPictureMarkup(metadata, alt || "", cls || "", sizes || undefined, loading || "lazy");
   });
 
