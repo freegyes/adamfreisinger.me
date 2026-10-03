@@ -21,14 +21,18 @@ about:
 makes:
   title: Things I Make
   items:
-    - name: From light
+    - name: from light
       url: /photos/
       image: /assets/images/photos/_DSF3615.jpg
       alt: A white egret spreading its wings over a pond.
-    - name: From wood
+    - name: from wood
       url: /wood/
       image: /assets/images/wood/_DSF3188.jpg
       alt: A turntable on a wooden bookshelf filled with books.
+    - name: from scratch
+      url: "#field-notes"
+      image: /assets/images/posts/ginkgo-notebook-thumbnail.jpg
+      alt: Notebook and paper printed with lino block
 projects:
   title: A Gallery of My Focused Hours
   subtitle: Projects that shaped me as much as I shaped them.

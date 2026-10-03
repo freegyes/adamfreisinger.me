@@ -31,15 +31,16 @@
     
     <main>
 
+
       <section class="section">
         <div class="container">
           <h3 class="title is-size-3">{{ makes.title }}</h3>
           <div class="columns">
             {% for item in makes.items %}
-            <div class="column is-half">
+            <div class="column is-one-third">
               <a href="{{ item.url }}" class="makes-card">
                 <figure class="image is-4by3">
-                  {% image item.image, item.alt, "", "(min-width: 769px) 50vw, 100vw" %}
+                  {% image item.image, item.alt, "", "(min-width: 769px) 33vw, 100vw" %}
                 </figure>
                 <span class="makes-caption">{{ item.name }}</span>
               </a>
@@ -49,59 +50,7 @@
         </div>
       </section>
 
-      <section class="welcome section has-background-light">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column is-6">
-              <h3 class="title is-size-3">{{ welcome.title }}</h3>
-              <p>{{ welcome.content }}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-      <section class="section">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column is-6">
-              <h3 class="title is-size-3">{{ about.title }}</h3>
-              <p class="block">{{ about.content1 }}</p>
-              <figure class="image is-5by3 block">
-                {% image about.photo, about.alt %}
-              </figure>
-              <p>{{ about.content2 }}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-
-      <section class="section has-background-light">
-        <div class="container">
-          <h3 class="title is-size-3">{{ projects.title }}</h3>
-          <p class="subtitle is-size-5">{{ projects.subtitle }}</p>
-
-          {% for project in projects.items %}
-            <a href="{{ project.url }}" target="_blank" rel="noopener">
-              <div class="columns is-vcentered box my-3">
-                <div class="column is-narrow">
-                  <figure class="image is-128x128 container">
-                    {% image project.image, project.alt %}
-                  </figure>
-                </div>
-                <div class="column">
-                  <h3 class="title is-size-5">{{ project.name }}</h3>
-                  <p>{{ project.description }}</p>
-                  <span class="no-wrap is-small has-text-grey">[ 🔗 {{ project.url | replace: 'https://', '' }} ]</span>
-                </div>
-              </div>
-            </a>
-          {% endfor %}
-        
-        </div>
-      </section>
-
-      <section class="section">
+      <section class="section" id="field-notes">
         <div class="container">
           <div class="ribbon-head">
             <div>
@@ -164,6 +113,59 @@
 
         </div>
       </section>
+
+      <section class="welcome section has-background-light">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <h3 class="title is-size-3">{{ welcome.title }}</h3>
+              <p>{{ welcome.content }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <section class="section">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <h3 class="title is-size-3">{{ about.title }}</h3>
+              <p class="block">{{ about.content1 }}</p>
+              <figure class="image is-5by3 block">
+                {% image about.photo, about.alt %}
+              </figure>
+              <p>{{ about.content2 }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+
+      <section class="section has-background-light">
+        <div class="container">
+          <h3 class="title is-size-3">{{ projects.title }}</h3>
+          <p class="subtitle is-size-5">{{ projects.subtitle }}</p>
+
+          {% for project in projects.items %}
+            <a href="{{ project.url }}" target="_blank" rel="noopener">
+              <div class="columns is-vcentered box my-3">
+                <div class="column is-narrow">
+                  <figure class="image is-128x128 container">
+                    {% image project.image, project.alt %}
+                  </figure>
+                </div>
+                <div class="column">
+                  <h3 class="title is-size-5">{{ project.name }}</h3>
+                  <p>{{ project.description }}</p>
+                  <span class="no-wrap is-small has-text-grey">[ 🔗 {{ project.url | replace: 'https://', '' }} ]</span>
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        
+        </div>
+      </section>
+
 
       <hr class="container" />
 
@@ -305,6 +307,21 @@
       row.appendChild(items[j]);
       items.splice(j, 1);
     }
+  });
+</script>
+
+<script>
+  // from scratch: glide down to the field notes rather than jump
+  document.addEventListener("DOMContentLoaded", function() {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.querySelectorAll('.makes-card[href^="#"]').forEach(function(link) {
+      link.addEventListener("click", function(e) {
+        var target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+      });
+    });
   });
 </script>
 
