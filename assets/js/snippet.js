@@ -5,9 +5,6 @@
   var SNIPPET_SIZE = 3;
   var container = document.getElementById("photo-snippet");
   if (!container) return;
-  var columnClass = container.getAttribute("data-column-class") ||
-    "column is-one-quarter-desktop is-one-third-tablet is-half-mobile";
-  var dealCaption = container.getAttribute("data-deal-caption");
 
   // Fisher-Yates shuffle
   function shuffle(arr) {
@@ -45,7 +42,7 @@
     for (var i = 0; i < selected.length; i++) {
       var p = selected[i];
       // Link to the photos page with this photo's hash — opens it directly in the grid lightbox
-      html += '<div class="' + columnClass + '">' +
+      html += '<div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">' +
         '<div class="photo-grid-item">' +
           '<a href="/photos/#' + p.id + '">' +
             p.pictureHtml +
@@ -54,9 +51,8 @@
       '</div>';
     }
     // Deal card
-    html += '<div class="' + columnClass + '">' +
-      '<div class="deal-card' + (dealCaption ? ' has-caption' : '') + '" id="snippet-deal-card" role="button" tabindex="0" aria-label="Deal a new set of photos">' +
-        (dealCaption ? '<span class="deal-card-caption">' + dealCaption + '</span>' : '') +
+    html += '<div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">' +
+      '<div class="deal-card" id="snippet-deal-card" role="button" tabindex="0" aria-label="Deal a new set of photos">' +
         '<span class="icon is-large"><i class="fas fa-shuffle fa-2x"></i></span>' +
         '<span class="deal-card-text">Deal again</span>' +
       '</div>' +
