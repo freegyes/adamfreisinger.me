@@ -103,30 +103,64 @@
 
       <section class="section">
         <div class="container">
-          <h3 class="title is-size-3">{{ posts.title }}</h3>
-          <p class="subtitle is-size-5">{{ posts.subtitle }}</p>
-          <div class="shelf" id="shelf">
-            {% for post in collections.posts reversed %}
-            <article class="notebook{% if forloop.index <= 3 %} is-out{% endif %}" data-slug="{{ post.url }}"
-              style="--thick: {{ post.rawInput | spineThickness }}; --base: {{ post.url | hashUnit }}; --slice: {{ post.url | hashUnit: 'slice' }};">
-              <button class="notebook-spine" type="button" aria-expanded="false" title="{{ post.data.title | escape }}">
-                <span class="notebook-spine-title">{{ post.data.title }}</span>
+          <div class="ribbon-head">
+            <div>
+              <h3 class="title is-size-3">{{ posts.title }}</h3>
+              <p class="subtitle is-size-5">{{ posts.subtitle }}</p>
+            </div>
+            <div class="ribbon-carets">
+              <button class="ribbon-caret" type="button" data-dir="-1" aria-label="Newer field notes" disabled>
+                <span class="icon"><i class="fas fa-chevron-left"></i></span>
               </button>
-              <a class="notebook-cover" href="{{ post.url }}">
-                <figure class="notebook-photo">
-                  {% image post.data.media.thumbnail.src, post.data.media.thumbnail.alt, "", "240px" %}
-                </figure>
-                <span class="notebook-title">{{ post.data.title }}</span>
-                <span class="notebook-meta">
-                  <span>{{ post.date | date: '%Y-%m-%d' }}</span>
-                  <span>{{ post.data.readingTime }}</span>
-                </span>
-              </a>
-            </article>
-            {% endfor %}
+              <button class="ribbon-caret" type="button" data-dir="1" aria-label="Older field notes">
+                <span class="icon"><i class="fas fa-chevron-right"></i></span>
+              </button>
+            </div>
           </div>
+          <div class="ribbon" id="ribbon">
+           
+            {% for post in collections.posts reversed %}
+            <div class="ribbon-item">
+              <a href="{{ post.url }}" class="card-link">
+                <div class="card custom-card-posts">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      {% image post.data.media.thumbnail.src, post.data.media.thumbnail.alt, "", "(min-width: 769px) 280px, 75vw" %}
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="title is-5">{{ post.data.title }}</h3>
+                    <div class="content">
+                      {{ post.data.excerpt }}
+                    </div>
+                  </div>
+                  <footer class="card-footer is-size-7">
+                    <span class="card-footer-item has-text-grey">
+                      <span class="icon">
+                        <i class="fas fa-pencil"></i>
+                      </span>
+                      &nbsp;
+                      {{ post.date | date: '%Y-%m-%d' }}</span>
+                    <span class="card-footer-item has-text-link">
+                      <span class="icon">
+                        <i class="fas fa-glasses"></i>
+                      </span>
+                      &nbsp;
+                      {{ post.data.readingTime }}</span>
+                    <span class="card-footer-item fire-footer-item" data-slug="{{ post.url }}" style="display: none;">
+                      <span class="icon has-text-warning">
+                        <i class="fas fa-fire"></i>
+                      </span>
+                      &nbsp;
+                      <span class="fire-footer-count"></span>
+                    </span>
+                  </footer>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
 
-          {% include "_get-notified.html" %}
+          </div>
 
         </div>
       </section>
@@ -275,37 +309,45 @@
 </script>
 
 <script>
-  // Field notes shelf: a few random notebooks face out, spines pull out on
-  // click, and each notebook's height follows its fires.
+  // Field notes ribbon: the carets scroll one screenful and grey out at the ends
   document.addEventListener("DOMContentLoaded", function() {
-    var shelf = document.getElementById("shelf");
-    if (!shelf) return;
-    var notebooks = Array.prototype.slice.call(shelf.querySelectorAll(".notebook"));
+    var ribbon = document.getElementById("ribbon");
+    if (!ribbon) return;
+    var carets = document.querySelectorAll(".ribbon-caret");
 
-    var RANDOM_OUT = 2;
-    var spines = notebooks.filter(function(n) { return !n.classList.contains("is-out"); });
-    for (var i = 0; i < RANDOM_OUT && spines.length; i++) {
-      spines.splice(Math.floor(Math.random() * spines.length), 1)[0].classList.add("is-out");
+    function update() {
+      var max = ribbon.scrollWidth - ribbon.clientWidth - 2;
+      carets[0].disabled = ribbon.scrollLeft <= 2;
+      carets[1].disabled = ribbon.scrollLeft >= max;
     }
 
-    notebooks.forEach(function(notebook) {
-      var spine = notebook.querySelector(".notebook-spine");
-      spine.addEventListener("click", function() {
-        notebook.classList.add("is-out");
-        notebook.querySelector(".notebook-cover").focus();
+    carets.forEach(function(caret) {
+      caret.addEventListener("click", function() {
+        var dir = Number(caret.getAttribute("data-dir"));
+        ribbon.scrollBy({ left: dir * ribbon.clientWidth * 0.8, behavior: "smooth" });
       });
     });
+    ribbon.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
+</script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
     var API = "{{ site.likesApiUrl }}".replace(/\/+$/, "");
     if (!API) return;
-    var FULL_AT = 16; // fires at which a notebook reaches the full shelf height
-    notebooks.forEach(function(notebook) {
-      var slug = notebook.getAttribute("data-slug");
+
+    var items = document.querySelectorAll(".fire-footer-item");
+    items.forEach(function(item) {
+      var slug = item.getAttribute("data-slug");
       fetch(API + "/likes/" + encodeURIComponent(slug))
         .then(function(r) { return r.json(); })
         .then(function(data) {
-          var fire = Math.min(1, Math.sqrt(data.likes || 0) / Math.sqrt(FULL_AT));
-          notebook.style.setProperty("--fire", fire.toFixed(3));
+          if (data.likes > 0) {
+            item.querySelector(".fire-footer-count").textContent = data.likes;
+            item.style.display = "";
+          }
         })
         .catch(function() {});
     });

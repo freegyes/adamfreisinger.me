@@ -439,158 +439,116 @@ a[data-glightbox]:hover img {
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
 
-/* Field notes shelf: each post is a notebook, either a spine or face out.
-   Thickness follows the post's length, height follows its fires. Every
-   notebook sits in a slot of the full shelf height, so heights set after
-   load never move the page. */
-.shelf {
-  --shelf-h: 360px;
-  --shelf-gap: 40px;
-  --cover-w: 220px;
+/* Field notes ribbon: one row, newest first, running out past the right
+   edge of the page so it's plain there is more */
+.ribbon-head {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-end;
-  column-gap: 6px;
-  row-gap: var(--shelf-gap);
-  padding-bottom: 2px;
-  margin-bottom: 2.5rem;
-  /* the baseline under every row, full width like a real shelf */
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0 var(--shelf-h),
-    #363636 var(--shelf-h) calc(var(--shelf-h) + 2px),
-    transparent calc(var(--shelf-h) + 2px) calc(var(--shelf-h) + var(--shelf-gap))
-  );
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.notebook {
-  --h: calc(var(--shelf-h) * (0.8 + 0.1 * var(--base) + 0.1 * var(--fire, 0)));
-  height: var(--shelf-h);
+.ribbon-head .subtitle {
+  margin-bottom: 0;
+}
+
+.ribbon-carets {
   display: flex;
-  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
 
-.notebook-spine,
-.notebook-cover {
-  height: var(--h);
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  border-bottom: 0;
-  border-radius: 3px 3px 0 0;
-}
-
-.notebook-spine {
-  width: calc(34px + 26px * var(--thick));
-  padding: 0.6rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background-image: url('/assets/images/yellow-splashes-watercolour.jpg');
-  background-size: auto 100%;
-  background-position: calc(var(--slice) * 100%) 0;
+.ribbon-caret {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 50%;
+  background: #fff;
+  color: #363636;
   cursor: pointer;
+}
+
+.ribbon-caret:hover:not(:disabled) {
+  border-color: #363636;
+}
+
+.ribbon-caret:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.ribbon {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding-left: 0;
+  /* bleed to the right edge of the viewport */
+  margin-right: calc(50% - 50vw);
+  /* room on the left for the first card's tilt; scrolled cards still
+     slide under this edge */
+  margin-left: -1.5rem;
+  padding: 0.75rem calc(50vw - 50%) 1.25rem 1.5rem;
+  scroll-padding-left: 1.5rem;
+  scrollbar-width: thin;
+  /* a sideways swipe that hits the end stays here instead of
+     triggering the browser's back and forward */
+  overscroll-behavior-x: contain;
+}
+
+.ribbon-item {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  display: flex;
+}
+
+.ribbon-item .card-link {
+  display: flex;
+  width: 100%;
+}
+
+.ribbon-item .card {
+  width: 100%;
   transform-origin: bottom left;
   transition: transform 0.2s ease;
 }
 
-.notebook-spine-title {
-  writing-mode: vertical-rl;
-  max-height: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding: 0.4rem 0.15rem;
-  background: rgba(255, 255, 255, 0.88);
-  border-radius: 2px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #363636;
+.ribbon-item .card-content {
+  padding: 1rem;
 }
 
-.notebook-cover {
-  width: var(--cover-w);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  position: relative;
-  padding-left: 6px;
-  background: #fff;
-  color: #363636;
-}
-
-/* the bound edge keeps the notebook's watercolour slice */
-.notebook-cover::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 6px;
-  background-image: url('/assets/images/yellow-splashes-watercolour.jpg');
-  background-size: auto 100%;
-  background-position: calc(var(--slice) * 100%) 0;
-}
-
-/* the photo takes whatever height the notebook has, so taller notebooks
-   simply show more of it */
-.notebook-photo {
-  flex: 1;
-  min-height: 0;
-}
-
-.notebook-photo picture,
-.notebook-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.notebook-title {
-  padding: 0.6rem 0.75rem 0;
-  font-weight: 600;
-  line-height: 1.3;
+.ribbon-item .card-content .content {
+  font-size: 0.9rem;
+  /* long enough for nearly every excerpt; the rare long one is cut */
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.notebook-meta {
-  margin-top: auto;
-  padding: 0.5rem 0.75rem 0.6rem;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  color: #7a7a7a;
-}
-
-.notebook:not(.is-out) .notebook-cover,
-.notebook.is-out .notebook-spine {
-  display: none;
-}
-
+/* the small tilt, like a card nudged on a table */
 @media (hover: hover) {
-  .notebook-spine:hover {
-    transform: rotate(-3deg);
+  .ribbon-item .card-link:hover .card {
+    transform: rotate(-1.5deg);
   }
-}
-
-.notebook-spine:focus-visible,
-.notebook-cover:focus-visible {
-  outline: 2px solid #363636;
-  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .notebook-spine { transition: none; }
+  .ribbon-item .card { transition: none; }
+  .ribbon { scroll-behavior: auto; }
 }
 
-@media (max-width: 768px) {
-  .shelf {
-    --shelf-h: 280px;
-    --shelf-gap: 32px;
-    --cover-w: 150px;
-    column-gap: 4px;
-  }
-  .notebook-title { font-size: 0.9rem; padding: 0.5rem 0.5rem 0; }
-  .notebook-meta { padding: 0.4rem 0.5rem 0.5rem; }
-  .notebook-meta span + span { display: none; }
+/* the same card width everywhere, narrowing only on the smallest phones */
+@media (max-width: 360px) {
+  .ribbon-item { flex-basis: 80vw; }
+}
+
+.ribbon-item .card-footer-item {
+  padding: 0.6rem 0.25rem;
+  white-space: nowrap;
+}
+
+.ribbon-item .card-footer-item .icon {
+  width: 1.25rem;
 }
