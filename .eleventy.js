@@ -60,6 +60,25 @@ module.exports = async function(eleventyConfig) {
     }
   });
 
+  // Field notes shelf: a stable 0–1 value per post, so each notebook keeps its
+  // own height and watercolour slice across visits
+  eleventyConfig.addFilter("hashUnit", function(str, salt = "") {
+    const hex = crypto.createHash("md5").update(salt + str).digest("hex").slice(0, 8);
+    return (parseInt(hex, 16) / 0xffffffff).toFixed(3);
+  });
+
+  // Field notes shelf: spine thickness from post length, on a square-root scale
+  // so a long post reads thicker without dwarfing the short ones (0–1)
+  eleventyConfig.addFilter("spineThickness", function(rawInput) {
+    const text = (rawInput || "")
+      .replace(/^---[\s\S]+?---/, " ")
+      .replace(/\{%[\s\S]*?%\}/g, " ")
+      .replace(/<[^>]+>/g, " ");
+    const words = text.split(/\s+/).filter(Boolean).length;
+    const t = (Math.sqrt(words) - 10) / (40 - 10);
+    return Math.min(1, Math.max(0, t)).toFixed(3);
+  });
+
     /**
      * Process an image through eleventy-img, returning metadata with
      * multiple widths and WebP + original format variants.
