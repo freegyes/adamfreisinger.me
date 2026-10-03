@@ -32,19 +32,84 @@
     <main>
 
       <section class="section">
-        <div class="container">
-          <h3 class="title is-size-3">{{ makes.title }}</h3>
-          <div class="columns">
-            {% for item in makes.items %}
+        <div class="container makes" id="makes">
+          <h3 class="title is-size-3 makes-title">{{ makes.title }}</h3>
+
+          <div class="makes-notes">
+            <div class="ribbon-head">
+              <h4 class="title is-size-5">{{ posts.title }}</h4>
+              <div class="ribbon-carets">
+                <button class="ribbon-caret" type="button" data-dir="-1" aria-label="Newer field notes" disabled>
+                  <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                </button>
+                <button class="ribbon-caret" type="button" data-dir="1" aria-label="Older field notes">
+                  <span class="icon"><i class="fas fa-chevron-right"></i></span>
+                </button>
+              </div>
+            </div>
+            <div class="ribbon" id="ribbon">
+           
+              {% for post in collections.posts reversed %}
+              <div class="ribbon-item">
+                <a href="{{ post.url }}" class="card-link">
+                  <div class="card custom-card-posts">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        {% image post.data.media.thumbnail.src, post.data.media.thumbnail.alt, "", "(min-width: 769px) 280px, 75vw" %}
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <h3 class="title is-5">{{ post.data.title }}</h3>
+                      <div class="content">
+                        {{ post.data.excerpt }}
+                      </div>
+                    </div>
+                    <footer class="card-footer is-size-7">
+                      <span class="card-footer-item has-text-grey">
+                        <span class="icon">
+                          <i class="fas fa-pencil"></i>
+                        </span>
+                        &nbsp;
+                        {{ post.date | date: '%Y-%m-%d' }}</span>
+                      <span class="card-footer-item has-text-link">
+                        <span class="icon">
+                          <i class="fas fa-glasses"></i>
+                        </span>
+                        &nbsp;
+                        {{ post.data.readingTime }}</span>
+                      <span class="card-footer-item fire-footer-item" data-slug="{{ post.url }}" style="display: none;">
+                        <span class="icon has-text-warning">
+                          <i class="fas fa-fire"></i>
+                        </span>
+                        &nbsp;
+                        <span class="fire-footer-count"></span>
+                      </span>
+                    </footer>
+                  </div>
+                </a>
+              </div>
+              {% endfor %}
+
+            </div>
+          </div>
+
+          {% assign wood = makes.items[1] %}
+          <div class="columns makes-pair">
             <div class="column is-half">
-              <a href="{{ item.url }}" class="makes-card">
-                <figure class="image is-4by3">
-                  {% image item.image, item.alt, "", "(min-width: 769px) 50vw, 100vw" %}
+              <a href="{{ wood.url }}" class="makes-card makes-fill">
+                <figure>
+                  {% image wood.image, wood.alt, "", "(min-width: 769px) 50vw, 100vw" %}
                 </figure>
-                <span class="makes-caption">{{ item.name }}</span>
+                <span class="makes-caption">{{ wood.name }}</span>
               </a>
             </div>
-            {% endfor %}
+            <div class="column is-half">
+              <div id="photo-snippet" class="columns is-multiline is-mobile"
+                data-column-class="column is-half" data-deal-caption="From light"></div>
+              <p class="has-text-right">
+                <a href="/photos/">See more photos &rarr;</a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -101,87 +166,12 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="ribbon-head">
-            <div>
-              <h3 class="title is-size-3">{{ posts.title }}</h3>
-              <p class="subtitle is-size-5">{{ posts.subtitle }}</p>
-            </div>
-            <div class="ribbon-carets">
-              <button class="ribbon-caret" type="button" data-dir="-1" aria-label="Newer field notes" disabled>
-                <span class="icon"><i class="fas fa-chevron-left"></i></span>
-              </button>
-              <button class="ribbon-caret" type="button" data-dir="1" aria-label="Older field notes">
-                <span class="icon"><i class="fas fa-chevron-right"></i></span>
-              </button>
-            </div>
-          </div>
-          <div class="ribbon" id="ribbon">
-           
-            {% for post in collections.posts reversed %}
-            <div class="ribbon-item">
-              <a href="{{ post.url }}" class="card-link">
-                <div class="card custom-card-posts">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      {% image post.data.media.thumbnail.src, post.data.media.thumbnail.alt, "", "(min-width: 769px) 280px, 75vw" %}
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <h3 class="title is-5">{{ post.data.title }}</h3>
-                    <div class="content">
-                      {{ post.data.excerpt }}
-                    </div>
-                  </div>
-                  <footer class="card-footer is-size-7">
-                    <span class="card-footer-item has-text-grey">
-                      <span class="icon">
-                        <i class="fas fa-pencil"></i>
-                      </span>
-                      &nbsp;
-                      {{ post.date | date: '%Y-%m-%d' }}</span>
-                    <span class="card-footer-item has-text-link">
-                      <span class="icon">
-                        <i class="fas fa-glasses"></i>
-                      </span>
-                      &nbsp;
-                      {{ post.data.readingTime }}</span>
-                    <span class="card-footer-item fire-footer-item" data-slug="{{ post.url }}" style="display: none;">
-                      <span class="icon has-text-warning">
-                        <i class="fas fa-fire"></i>
-                      </span>
-                      &nbsp;
-                      <span class="fire-footer-count"></span>
-                    </span>
-                  </footer>
-                </div>
-              </a>
-            </div>
-            {% endfor %}
-
-          </div>
-
-        </div>
-      </section>
 
       <hr class="container" />
 
       {% include "_music.html" %}
 
       <hr class="container" />
-
-      <section class="section">
-        <div class="container">
-          <h3 class="title is-size-3">Caught My Eye Over the Years</h3>
-          <p class="subtitle is-size-5">Enjoy a randomly dealt hand from the archive.</p>
-          <div id="photo-snippet" class="columns is-multiline is-mobile"></div>
-          <p class="mt-3 has-text-right">
-            <a href="/photos/">See more photos &rarr;</a>
-          </p>
-        </div>
-      </section>
-
       <hr class="container" />
 
       <section class="section">
@@ -306,6 +296,14 @@
       items.splice(j, 1);
     }
   });
+</script>
+
+<script>
+  // PROTOTYPE ONLY, remove before merging: ?order=doors puts wood and light
+  // above the field notes, to compare the two orders on localhost
+  if (new URLSearchParams(location.search).get("order") === "doors") {
+    document.getElementById("makes").classList.add("is-doors-first");
+  }
 </script>
 
 <script>
